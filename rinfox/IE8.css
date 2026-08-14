@@ -1,0 +1,65 @@
+@supports -moz-bool-pref("RinFox.Appearance.IE8") {
+  #navigator-toolbox-background {
+    background-color: #F2F6FB !important;
+  }
+  .tabbrowser-tab[visuallyselected=""] .tab-background {
+    background-image: linear-gradient(to bottom, #C3DDFB 0%, #F0F4FB 100%) !important;
+  }
+  .tabbrowser-tab[visuallyselected=""] {
+    min-height: var(--tab-min-height) !important;
+  }
+  .tab-background,
+  #tabs-newtab-button,
+  #alltabs-button,
+  #TabsToolbar #tiptab_william_wong-BAP,
+  #webext_com_github_du33169_tabstray-BAP,
+  #scrollbutton-up, #scrollbutton-down
+  {
+    background-color: #E3EEFB !important;
+    background-image: none !important;
+    box-shadow: inset 1px 0 0 #FEFEFE, inset -1px 0 0 #FEFEFE, inset 0 1px 0 #FEFEFE !important;
+    border-color: #A3A7AC !important;
+  }
+  .tabbrowser-tab:not([visuallyselected=""]):hover .tab-background,
+  #tabs-newtab-button:hover,
+  #alltabs-button:hover,
+  #TabsToolbar #tiptab_william_wong-BAP:hover,
+  #webext_com_github_du33169_tabstray-BAP,
+  #scrollbutton-up:hover, #scrollbutton-down:hover
+  {
+    background-image: linear-gradient(to bottom, #A3C9F8 0%, #EEF3FA 100%) !important;
+  }
+  .tabbrowser-tab[visuallyselected=""] .tab-background::before, 
+  .tabbrowser-tab[visuallyselected=""] .tab-background::after {
+    height: 4px !important;
+    background-image: url('assets/tab-corners-ie8.png') !important;
+    border-bottom: 1px solid #F2F6FB !important;
+  }
+  #PanelUI-menu-button .toolbarbutton-icon,
+  #unified-extensions-button .toolbarbutton-icon
+  {
+    display: none !important;
+    list-style-image: none !important;
+  }
+  #history-panelmenu > .toolbarbutton-icon {
+    background-image: url('assets/history-ie8.png') !important;
+  }
+  #PersonalToolbar #bookmarksSidebarButton {
+    padding-inline: 7px 11px !important;
+    gap: 5px !important;
+  }
+  #TabsToolbar #bookmarksSidebarButton {
+    margin-left: -5px !important;
+  }
+  #PersonalToolbar #bookmarksSidebarButton > .toolbarbutton-text {
+    background-color: transparent !important;
+    padding: 0 !important;
+    border-radius: 0 !important;
+    display: flex !important;
+    align-items: center !important;
+    margin-bottom: 2px !important;
+  }
+  #addToBookmarksBarButton {
+    list-style-image: url('assets/add-favorite-ie8.png') !important;
+  }
+}

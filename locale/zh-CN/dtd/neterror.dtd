@@ -1,0 +1,4 @@
+<!ENTITY neterror.nointernet	"未连接到互联网">
+<!ENTITY neterror.try			"请试试以下办法：">
+<!ENTITY neterror.cable			"检查网线、调制解调器和路由器">
+<!ENTITY neterror.wifi			"重新连接到 Wi-Fi 网络">

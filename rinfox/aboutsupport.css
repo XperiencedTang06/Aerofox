@@ -1,0 +1,53 @@
+@-moz-document url-prefix(about:support) {
+    #reset-box h3 {
+font-size: 0 !important;
+        margin-bottom: 17.55px !important;
+    }
+
+    #reset-box h3::after {
+        content: "Reset Internet Explorer";
+        font-size: 17.55px !important;
+    }
+
+    #reset-box-button {
+        font-size: 0 !important;
+    }
+
+#reset-box-button::after {
+    content: "Reset Internet Explorer";
+font-size: 15px !important;
+margin-top: 4px !important;
+margin-right: 8px !important;
+margin-inline-end: 8px !important;
+padding-left: 22.5px !important;
+padding-right: 22.5px !important;
+}
+
+#app-basics {
+font-size: 0 !important;
+        margin-bottom: 18px !important;
+    }
+
+    #app-basics::after {
+        content: "About Internet Explorer";
+        font-size: 18px !important;
+    }
+
+td#application-box {
+font-size: 0 !important;
+        margin-bottom: 18px !important;
+    }
+
+    
+    td#application-box::after {
+        content: "Windows Internet Explorer 7";
+        font-size: 11px !important;
+    }
+
+    @supports -moz-bool-pref("RinFox.Appearance.IE8") {
+        td#application-box::after {
+            content: "WIndows Internet Explorer 8"
+        }
+    }
+
+}

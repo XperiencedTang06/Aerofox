@@ -1,0 +1,134 @@
+#nav-bar
+{
+  /*margin-top: -2px !important;*/
+
+  background-color: transparent !important;
+
+  /*From Tweaks*/
+  padding: 2px 0 2px 1px !important;
+}
+
+/*
+  Navigation Buttons
+*/
+
+#back-button,
+#forward-button 
+{
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  width: 29px !important;
+  height: 29px !important;
+  padding: 0 !important;
+  background-image: url('assets/navigation_frame.png') !important;
+  opacity: 1 !important;
+
+
+  /*From tweaks*/
+  z-index: 1 !important;
+      background-image: url('assets/history-vista.png') !important;
+}
+
+#back-button {
+  background-position-x: 0px !important;
+}
+
+#forward-button {
+  background-position-x: -29px !important;
+}
+
+
+/*<>BACK/FORWARD BUTTONS<>*/
+
+#back-button > .toolbarbutton-icon,
+#forward-button > .toolbarbutton-icon 
+{
+  width: 29px !important;
+  height: 29px !important;
+  background-position-y: -87px !important;
+  list-style-image: none !important;
+
+  /*From Tweaks*/
+  background-image: url('assets/navigation-vista.png') !important;
+}
+
+#back-button > .toolbarbutton-icon
+{
+  background-position-x: 0px !important;
+}
+
+#forward-button > .toolbarbutton-icon
+{
+  background-position-x: -29px !important;
+}
+
+#back-button:not([disabled="true"]) > .toolbarbutton-icon,
+#forward-button:not([disabled="true"]) > .toolbarbutton-icon
+{
+  background-position-y: 0 !important;
+}
+
+#back-button:not([disabled="true"]):hover > .toolbarbutton-icon,
+#forward-button:not([disabled="true"]):hover > .toolbarbutton-icon
+{
+  background-position-y: -29px !important;
+}
+
+#back-button:not([disabled="true"]):active > .toolbarbutton-icon,
+#forward-button:not([disabled="true"]):active > .toolbarbutton-icon
+{
+  background-position-y: -58px !important;
+}
+
+/* History Dropdown */
+
+#history-panelmenu {
+z-index: 0 !important;
+}
+
+
+#history-panelmenu,
+#history-panelmenu > .toolbarbutton-icon
+{
+  width: 23px !important;
+  height: 29px !important;
+  padding: 0 !important;
+  opacity: 1 !important;
+}
+
+
+
+#history-panelmenu > .toolbarbutton-icon {
+  list-style-image: none !important;
+
+
+  /*From tweaks*/
+  background-position-x: -128px !important;
+  background-image: url('assets/history-vista.png') !important;
+}
+
+
+#history-panelmenu:hover > .toolbarbutton-icon {
+  
+
+  /*From Tweaks*/
+background-position-x: -204px !important;
+}
+
+
+#history-panelmenu:active > .toolbarbutton-icon,
+#history-panelmenu[open="true"] > .toolbarbutton-icon {
+  
+
+  /*From Tweaks*/
+background-position-x: -280px !important;
+}
+
+
+#forward-button + #history-panelmenu {
+  transform: translateX(-7px) !important;
+
+  /*From Tweaks*/
+
+}

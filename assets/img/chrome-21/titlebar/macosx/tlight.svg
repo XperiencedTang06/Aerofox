@@ -1,0 +1,24 @@
+<svg width="12" height="12" fill="context-fill" version="1.1" viewBox="0 0 3.1749998 3.1750001" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+        <mask id="mask3_0_1" x="0" y="0" width="24" height="24" maskUnits="userSpaceOnUse">
+            <circle cx="12" cy="12" r="12" fill="#fff"/>
+        </mask>
+        <radialGradient id="paint6_radial_0_1" cx="0" cy="0" r="1" gradientTransform="matrix(-1.5904138e-4,8.284,-10.0802,-1.9352595e-4,12,20.5)" gradientUnits="userSpaceOnUse">
+            <stop stop-color="#fff" stop-opacity=".7" offset=".205"/>
+            <stop stop-color="#fff" stop-opacity="0" offset="1"/>
+        </radialGradient>
+        <radialGradient id="paint7_radial_0_1" cx="0" cy="0" r="1" gradientTransform="matrix(.05000355 8.5317435 -14.450652 .08469358 12.45 3.35714)" gradientUnits="userSpaceOnUse">
+            <stop stop-color="#fff" offset=".02"/>
+            <stop stop-color="#fff" stop-opacity="0" offset=".59"/>
+        </radialGradient>
+    </defs>
+    <g transform="matrix(.26458333 0 0 .26458333 -2.1202221 -1.8614163)">
+        <mask x="0" y="0" width="24" height="24" maskUnits="userSpaceOnUse">
+            <circle cx="12" cy="12" r="12" fill="#fff"/>
+        </mask>
+        <g transform="matrix(.5 0 0 .5 8.0134376 7.0352745)" mask="url(#mask3_0_1)">
+            <ellipse cx="12" cy="20.5" rx="10" ry="9.5" fill="url(#paint6_radial_0_1)" fill-opacity=".86" stroke-width="2.82843"/>
+            <path d="m12 3c6.5 0 9 5 9 5s-6-2.22222-9-2.22222-9 2.22222-9 2.22222 2.5-5 9-5z" fill="url(#paint7_radial_0_1)" stroke-width="1.99999"/>
+        </g>
+    </g>
+</svg>

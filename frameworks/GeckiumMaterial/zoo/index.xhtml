@@ -1,0 +1,793 @@
+<?xml version="1.0"?>
+
+<?xml-stylesheet href="chrome://global/skin/global.css" type="text/css"?>
+<?xml-stylesheet href="chrome://userchrome/content/frameworks/GeckiumMaterial/styles/final.css" type="text/css"?>
+<?xml-stylesheet href="chrome://userchrome/content/frameworks/GeckiumMaterial/zoo/style.css" type="text/css"?>
+
+<window xmlns:html="http://www.w3.org/1999/xhtml"
+		xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"
+		windowtype="geckiummaterial:zoo"
+		containertype="page"
+		title="Controls Zoo"
+		width="1180"
+		height="730">
+	<html:div id="window-container">
+		<hbox id="window" class="primary-color" style="--primary-color: rgb(55,103,212); --chosen-secondary-color: var(--pink)" preview-pane="false">
+			<vbox id="navigation-drawer" class="banner color iconic item-radius">
+				<vbox class="window-top-bars">
+					<vbox class="window-top-bar">
+						<hbox class="window-toolbar">
+							<h3 id="window-title"/>
+							<spacer />
+							<button />
+						</hbox>
+					</vbox>
+				</vbox>
+				<vbox class="navigation-items">
+					<button class="item ripple-enabled icon-tungsten" data-page-container="main" data-page="0" data-page-title="Welcome to the GeckiumMaterial showcase" label="Welcome" selected="true" />
+					<separator />
+					<h4>Controls</h4>
+					<html:button class="item ripple-enabled icon-click" data-page-container="main" data-page="10" label="Buttons" />
+					<html:button class="item ripple-enabled icon-edit" data-page-container="main" data-page="11" label="Inputs" />
+					<html:button class="item ripple-enabled icon-dashboard" data-page-container="main" data-page="12" label="Cards" />
+					<html:button class="item ripple-enabled icon-chat" data-page-container="main" data-page="13" label="Dialogs" />
+					<separator />
+					<h4>Style</h4>
+					<html:button class="item ripple-enabled icon-palette" data-page-container="main" data-page="20" label="Colors" />
+					<html:button class="item ripple-enabled icon-layers" data-page-container="main" data-page="21" label="Elevations" />
+					<separator />
+					<h4>Miscelleneous</h4>
+					<html:button class="item ripple-enabled icon-auto-awesome" data-page-container="main" data-page="30" label="Fun" />
+				</vbox>
+			</vbox>
+			<vbox id="window-content-container">
+				<vbox class="window-top-bars light">
+					<hbox class="window-top-bar">
+						<hbox class="window-toolbar">
+							<h3 id="page-title" data-page-container="main"/>
+							<spacer />
+							<button />
+						</hbox>
+					</hbox>
+				</vbox>
+				<hbox id="window-content">
+					<div class="pages">
+						<vbox class="pages-container" data-page-container="main">
+							<vbox class="page" data-page="0" selected="true">
+								<vbox class="content-container">
+									<vbox class="content">
+										<p class="body-2">This is a fine looking about.</p>
+										<p class="body-2">GeckiumMaterial is a framework designed to power Geckium's UI for custom window content, drawing inspiration from Google's Material Design principles.</p>
+										<h4>Controls</h4>
+										<vbox class="link-container">
+											<hbox>
+												<html:button class="link icon-click ripple-enabled" onclick="gmPages.skipToPage('main', 10)">
+													<vbox>
+														<label>Buttons</label>
+														<p>Showcase of different types of buttons.</p>
+													</vbox>
+													<hbox>
+														<label>Go to page</label>
+														<spacer />
+														<div class="icon" />
+													</hbox>
+												</html:button>
+												<html:button class="link icon-edit ripple-enabled" onclick="gmPages.skipToPage('main', 11)">
+													<vbox>
+														<label>Inputs</label>
+														<p>Showcase of different types of inputs, namely, Textboxes, Checkboxes, Switches.</p>
+													</vbox>
+													<hbox>
+														<label>Go to page</label>
+														<spacer />
+														<div class="icon" />
+													</hbox>
+												</html:button>
+											</hbox>
+											<hbox>
+												<html:button class="link icon-dashboard ripple-enabled" onclick="gmPages.skipToPage('main', 12)">
+													<vbox>
+														<label>Cards</label>
+														<p>Showcase of different types of cards.</p>
+													</vbox>
+													<hbox>
+														<label>Go to page</label>
+														<spacer />
+														<div class="icon" />
+													</hbox>
+												</html:button>
+												<html:button class="link icon-chat ripple-enabled" onclick="gmPages.skipToPage('main', 13)">
+													<vbox>
+														<label>Dialogs</label>
+														<p>Showcase of different types of dialogs.</p>
+													</vbox>
+													<hbox>
+														<label>Go to page</label>
+														<spacer />
+														<div class="icon" />
+													</hbox>
+												</html:button>
+											</hbox>
+										</vbox>
+										<h4>Style</h4>
+										<vbox class="link-container">
+											<hbox>
+												<html:button class="link icon-palette ripple-enabled" onclick="gmPages.skipToPage('main', 20)">
+													<vbox>
+														<label>Colors</label>
+														<p>Showcase of the color palette.</p>
+													</vbox>
+													<hbox>
+														<label>Go to page</label>
+														<spacer />
+														<div class="icon" />
+													</hbox>
+												</html:button>
+												<html:button class="link icon-layers ripple-enabled" onclick="gmPages.skipToPage('main', 21)">
+													<vbox>
+														<label>Elevation</label>
+														<p>Showcase of different shadows depending on an element's elevation.</p>
+													</vbox>
+													<hbox>
+														<label>Go to page</label>
+														<spacer />
+														<div class="icon" />
+													</hbox>
+												</html:button>
+											</hbox>
+										</vbox>
+										<h4>Miscelleneous</h4>
+										<vbox class="link-container">
+											<hbox>
+												<html:button class="link icon-auto-awesome ripple-enabled" onclick="gmPages.skipToPage('main', 30)">
+													<vbox>
+														<label>Fun</label>
+													</vbox>
+													<hbox>
+														<label>Go to page</label>
+														<spacer />
+														<div class="icon" />
+													</hbox>
+												</html:button>
+											</hbox>
+										</vbox>
+									</vbox>
+								</vbox>
+							</vbox>
+							<vbox class="page" data-page="10">
+								<hbox class="tabs light">
+									<div class="indicator"/>
+									<button class="tab ripple-enabled" label="Normal Buttons" data-page-container="buttons" data-page="0" />
+									<button class="tab ripple-enabled" label="Floating Action Buttons" data-page-container="buttons" data-page="1" />
+									<button class="tab ripple-enabled" label="Link Buttons" data-page-container="buttons" data-page="2" />
+								</hbox>
+								<vbox class="content-container">
+									<hbox class="content" data-page-container="buttons">
+										<vbox class="tab-page" data-page="0">
+											<h4>Raised Desktop</h4>
+											<div>
+												<button class="button ripple-enabled raised desktop" label="Default Raised Desktop" />
+												<button class="button ripple-enabled dense raised desktop" label="Dense Raised Desktop" />
+												<button class="button ripple-enabled text color raised desktop" label="Text Colorized Raised Desktop" />
+												<button class="button ripple-enabled text raised desktop" label="Text Raised Desktop" />
+											</div>
+											<h4>Raised</h4>
+											<div>
+												<button class="button ripple-enabled raised" label="Default Raised" />
+												<button class="button ripple-enabled dense raised" label="Dense Raised" />
+												<button class="button ripple-enabled text color raised" label="Text Colorized Raised" />
+												<button class="button ripple-enabled text raised" label="Text Raised" />
+											</div>
+											<h4>Outlined</h4>
+											<div>
+												<button class="button ripple-enabled outlined color" label="Outlined Colorized" />
+												<button class="button ripple-enabled outlined" label="Outlined" />
+												<button class="button ripple-enabled dense outlined color" label="Dense Outlined Colorized" />
+												<button class="button ripple-enabled dense outlined" label="Dense Outlined" />
+											</div>
+											<h4>Text</h4>
+											<div>
+												<button class="button ripple-enabled text color" label="Text Colorized" />
+												<button class="button ripple-enabled text" label="Text" />
+											</div>
+											<h4>Disabled</h4>
+											<div>
+												<button class="button ripple-enabled text" label="Disabled" disabled="true" />
+											</div>
+										</vbox>
+										<vbox class="tab-page" data-page="1">
+											<button class="floating-action-button ripple-enabled leading-icon icon-add mini" label="Mini FAB" />
+											<button class="floating-action-button ripple-enabled leading-icon icon-add" label="Normal FAB" />
+											<button class="floating-action-button ripple-enabled leading-icon icon-add extended" label="Extended FAB with icon and label" />
+											<button class="floating-action-button ripple-enabled extended" label="Extended FAB with label" />
+										</vbox>
+										<vbox class="tab-page" data-page="2">
+											<html:button class="link icon-tungsten ripple-enabled">
+												<vbox>
+													<label>Name</label>
+													<p>Description</p>
+												</vbox>
+												<hbox>
+													<label>Related article</label>
+													<spacer />
+													<div class="icon" />
+												</hbox>
+											</html:button>
+										</vbox>
+									</hbox>
+								</vbox>
+							</vbox>
+							<vbox class="page" data-page="11">
+								<vbox class="content-container">
+									<vbox class="content">
+										<vbox>
+											<h4>Textboxes</h4>
+											<hbox style="gap: 16px">
+												<div class="input-parent size-md" flex="1">
+													<html:input type="text" class="input" id="example" name="example" required="true"/>
+													<label class="placeholder">Example Input</label>
+													<label for="example" class="helper">Helper message</label>
+												</div>
+												<div class="input-parent input-error size-md" flex="1">
+													<html:input type="text" class="input" id="example" name="example" required="true"/>
+													<label class="placeholder">Example Input</label>
+													<label for="example" class="helper">Helper message</label>
+												</div>
+											</hbox>
+											<h4>Checkbox</h4>
+											<div style="display: flex; gap: 20px;">
+												<div class="checkbox-parent">
+													<html:input class="checkbox" type="checkbox" id="checked_check" name="checked_check" checked="true" />
+													<div class="gutter" for="checked_check"></div>
+													<html:label for="checked_check" class="label">Checked</html:label>
+												</div>
+												<div class="checkbox-parent">
+													<html:input class="checkbox" type="checkbox" id="normal_check" name="normal_check" />
+													<div class="gutter" for="normal_check"></div>
+													<html:label for="normal_check" class="label">Normal</html:label>
+												</div>
+												<div class="checkbox-parent" disabled="true">
+													<html:input class="checkbox" type="checkbox" id="disabled_check" name="disabled_check" disabled="true" />
+													<div class="gutter" for="disabled_check"></div>
+													<html:label for="disabled_check" class="label">Disabled</html:label>
+												</div>
+											</div>
+											<h4>Menu</h4>
+											<hbox style="gap: 16px;">
+												<html:button class="menu size-md" data-name="Pets" id="pet-select">
+													<label class="placeholder" />
+													<label class="selected" />
+													<vbox class="list">
+														<hbox class="item ripple-enabled" value="dog">Dog</hbox>
+														<hbox class="item ripple-enabled" value="cat">Cat</hbox>
+														<hbox class="item ripple-enabled" value="hamster">Hamster</hbox>
+														<hbox class="item ripple-enabled" value="parrot">Parrot</hbox>
+														<hbox class="item ripple-enabled" value="spider">Spider</hbox>
+														<hbox class="item ripple-enabled" value="goldfish">Goldfish</hbox>
+													</vbox>
+												</html:button>
+												<html:button class="menu size-md" data-name="Cars" id="cars-select">
+													<label class="placeholder" />
+													<label class="selected" />
+													<vbox class="list">
+														<hbox class="item ripple-enabled" value="volvo">Volvo</hbox>
+														<hbox class="item ripple-enabled" value="saab">Saab</hbox>
+														<hbox class="item ripple-enabled" value="mercedes">Mercedes</hbox>
+														<hbox class="item ripple-enabled" value="audi" selected="true">Audi</hbox>
+													</vbox>
+												</html:button>
+											</hbox>
+											<h4>Switch</h4>
+											<div style="display: flex; gap: 20px;">
+												<div class="switch-parent">
+													<html:input class="switch" type="checkbox" id="switched_switch" name="switched_switch" checked="true"/>
+													<html:label class="gutter" for="switched_switch"></html:label>
+													<html:label for="switched_switch" class="label">Switched</html:label>
+												</div>
+												<div class="switch-parent">
+													<html:input class="switch" type="checkbox" id="normal_switch" name="normal_switch" />
+													<html:label class="gutter" for="normal_switch"></html:label>
+													<html:label for="normal_switch" class="label">Normal</html:label>
+												</div>
+												<div class="switch-parent" disabled="true">
+													<html:input class="switch" type="checkbox" id="disabled_switch" name="disabled_switch" disabled="true" />
+													<html:label class="gutter" for="disabled_switch"></html:label>
+													<html:label for="disabled_switch" class="label">Disabled</html:label>
+												</div>
+											</div>
+											<h4>Radio</h4>
+											<div style="display: flex; gap: 16px">
+												<div class="radio-parent">
+													<html:input class="radio" type="radio" id="option1" name="option" checked="true"/>
+													<div class="gutter"></div>
+													<html:label class="label" for="option1">Option 1</html:label>
+												</div>
+												<div class="radio-parent">
+													<html:input class="radio" type="radio" id="option2" name="option"/>
+													<div class="gutter"></div>
+													<html:label class="label" for="option2">Option 2</html:label>
+												</div>
+												<div class="radio-parent">
+													<html:input class="radio" type="radio" id="option3" name="option"/>
+													<div class="gutter"></div>
+													<html:label class="label" for="option3">Option 3</html:label>
+												</div>
+											</div>
+										</vbox>
+									</vbox>
+								</vbox>
+							</vbox>
+							<vbox class="page" data-page="12">
+								<vbox class="content-container">
+									<vbox class="content">
+										<vbox class="card">
+											<label>Normal Card</label>
+											<footer>
+												<button class="button ripple-enabled text color" label="This is a card button" />
+											</footer>
+										</vbox>
+										<vbox class="card outlined">
+											<label>Outlined Card</label>
+											<footer>
+												<button class="button ripple-enabled text color" label="This is a card button" />
+											</footer>
+										</vbox>
+									</vbox>
+								</vbox>
+							</vbox>
+							<vbox class="page" data-page="13">
+								<vbox class="content-container">
+									<vbox class="content">
+										<h4>Dialog</h4>
+										<div style="display: flex;">
+											<button class="button ripple-enabled raised" label="Open Example Dialog" data-toggle-modals="example_modal"/>
+											<div class="modal" data-modal="example_modal">
+												<div class="wrapper">
+													<div class="card">
+														<vbox class="body">
+															<div class="header">Dialog header</div>
+															<div class="description">
+																This is a fine lookin' dialog body text, isn't it betty...?
+															</div>
+															<div class="footer">
+																<button class="button ripple-enabled text color" label="Cancel" data-toggle-modals="example_modal"/>
+																<button class="button ripple-enabled text color" label="OK" data-toggle-modals="example_modal" />
+															</div>
+														</vbox>
+													</div>
+												</div>
+											</div>
+										</div>
+									</vbox>
+								</vbox>
+							</vbox>
+							<vbox class="page" data-page="20">
+								<vbox class="content-container">
+									<vbox class="content">
+										<vbox id="current-color" class="card elevation-0 primary-color" style="margin-block-end: 24px">
+											<hbox class="color-tag light" style="background: var(--primary-color-tone-500);">
+												<label>Current Color</label>
+												<spacer />
+												<label>500</label>
+											</hbox>
+											<hbox>
+												<div class="color-tag" style="background: var(--primary-color-tone-50);">50</div>
+												<div class="color-tag" style="background: var(--primary-color-tone-100);">100</div>
+												<div class="color-tag" style="background: var(--primary-color-tone-200);">200</div>
+												<div class="color-tag" style="background: var(--primary-color-tone-300);">300</div>
+												<div class="color-tag light" style="background: var(--primary-color-tone-400);">400</div>
+												<div class="color-tag light" style="background: var(--primary-color-tone-500);">500</div>
+												<div class="color-tag light" style="background: var(--primary-color-tone-600);">600</div>
+												<div class="color-tag light" style="background: var(--primary-color-tone-700);">700</div>
+												<div class="color-tag light" style="background: var(--primary-color-tone-800);">800</div>
+												<div class="color-tag light" style="background: var(--primary-color-tone-900);">900</div>
+											</hbox>
+										</vbox>
+										<grid style="grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px">
+											<vbox class="card elevation-0 primary-color primary-color-red">
+												<vbox class="color-tag light" style="background: var(--primary-color-tone-500);">
+													<label>Red</label>
+													<spacer />
+													<label>500</label>
+												</vbox>
+												<div class="color-tag" style="background: var(--primary-color-tone-50);">50</div>
+												<div class="color-tag" style="background: var(--primary-color-tone-100);">100</div>
+												<div class="color-tag" style="background: var(--primary-color-tone-200);">200</div>
+												<div class="color-tag" style="background: var(--primary-color-tone-300);">300</div>
+												<div class="color-tag light" style="background: var(--primary-color-tone-400);">400</div>
+												<div class="color-tag light" style="background: var(--primary-color-tone-500);">500</div>
+												<div class="color-tag light" style="background: var(--primary-color-tone-600);">600</div>
+												<div class="color-tag light" style="background: var(--primary-color-tone-700);">700</div>
+												<div class="color-tag light" style="background: var(--primary-color-tone-800);">800</div>
+												<div class="color-tag light" style="background: var(--primary-color-tone-900);">900</div>
+											</vbox>
+											<vbox class="card elevation-0 primary-color primary-color-pink">
+												<vbox class="color-tag light" style="background: var(--primary-color-tone-500);">
+													<label>Pink</label>
+													<spacer />
+													<label>500</label>
+												</vbox>
+												<div class="color-tag" style="background: var(--primary-color-tone-50);">50</div>
+												<div class="color-tag" style="background: var(--primary-color-tone-100);">100</div>
+												<div class="color-tag" style="background: var(--primary-color-tone-200);">200</div>
+												<div class="color-tag light" style="background: var(--primary-color-tone-300);">300</div>
+												<div class="color-tag light" style="background: var(--primary-color-tone-400);">400</div>
+												<div class="color-tag light" style="background: var(--primary-color-tone-500);">500</div>
+												<div class="color-tag light" style="background: var(--primary-color-tone-600);">600</div>
+												<div class="color-tag light" style="background: var(--primary-color-tone-700);">700</div>
+												<div class="color-tag light" style="background: var(--primary-color-tone-800);">800</div>
+												<div class="color-tag light" style="background: var(--primary-color-tone-900);">900</div>
+											</vbox>
+											<vbox class="card elevation-0 primary-color primary-color-purple">
+												<vbox class="color-tag light" style="background: var(--primary-color-tone-500);">
+													<label>Purple</label>
+													<spacer />
+													<label>500</label>
+												</vbox>
+												<div class="color-tag" style="background: var(--primary-color-tone-50);">50</div>
+												<div class="color-tag" style="background: var(--primary-color-tone-100);">100</div>
+												<div class="color-tag" style="background: var(--primary-color-tone-200);">200</div>
+												<div class="color-tag light" style="background: var(--primary-color-tone-300);">300</div>
+												<div class="color-tag light" style="background: var(--primary-color-tone-400);">400</div>
+												<div class="color-tag light" style="background: var(--primary-color-tone-500);">500</div>
+												<div class="color-tag light" style="background: var(--primary-color-tone-600);">600</div>
+												<div class="color-tag light" style="background: var(--primary-color-tone-700);">700</div>
+												<div class="color-tag light" style="background: var(--primary-color-tone-800);">800</div>
+												<div class="color-tag light" style="background: var(--primary-color-tone-900);">900</div>
+											</vbox>
+											<vbox class="card elevation-0 primary-color primary-color-deep-purple">
+												<vbox class="color-tag light" style="background: var(--primary-color-tone-500);">
+													<label>Deep Purple</label>
+													<spacer />
+													<label>500</label>
+												</vbox>
+												<div class="color-tag" style="background: var(--primary-color-tone-50);">50</div>
+												<div class="color-tag" style="background: var(--primary-color-tone-100);">100</div>
+												<div class="color-tag" style="background: var(--primary-color-tone-200);">200</div>
+												<div class="color-tag light" style="background: var(--primary-color-tone-300);">300</div>
+												<div class="color-tag light" style="background: var(--primary-color-tone-400);">400</div>
+												<div class="color-tag light" style="background: var(--primary-color-tone-500);">500</div>
+												<div class="color-tag light" style="background: var(--primary-color-tone-600);">600</div>
+												<div class="color-tag light" style="background: var(--primary-color-tone-700);">700</div>
+												<div class="color-tag light" style="background: var(--primary-color-tone-800);">800</div>
+												<div class="color-tag light" style="background: var(--primary-color-tone-900);">900</div>
+											</vbox>
+											<vbox class="card elevation-0 primary-color primary-color-indigo">
+												<vbox class="color-tag" style="background: var(--primary-color-tone-500);">
+													<label>Indigo</label>
+													<spacer />
+													<label>500</label>
+												</vbox>
+												<div class="color-tag" style="background: var(--primary-color-tone-50);">50</div>
+												<div class="color-tag" style="background: var(--primary-color-tone-100);">100</div>
+												<div class="color-tag" style="background: var(--primary-color-tone-200);">200</div>
+												<div class="color-tag" style="background: var(--primary-color-tone-300);">300</div>
+												<div class="color-tag" style="background: var(--primary-color-tone-400);">400</div>
+												<div class="color-tag" style="background: var(--primary-color-tone-500);">500</div>
+												<div class="color-tag light" style="background: var(--primary-color-tone-600);">600</div>
+												<div class="color-tag light" style="background: var(--primary-color-tone-700);">700</div>
+												<div class="color-tag light" style="background: var(--primary-color-tone-800);">800</div>
+												<div class="color-tag light" style="background: var(--primary-color-tone-900);">900</div>
+											</vbox>
+											<vbox class="card elevation-0 primary-color primary-color-blue">
+												<vbox class="color-tag" style="background: var(--primary-color-tone-500);">
+													<label>Blue</label>
+													<spacer />
+													<label>500</label>
+												</vbox>
+												<div class="color-tag" style="background: var(--primary-color-tone-50);">50</div>
+												<div class="color-tag" style="background: var(--primary-color-tone-100);">100</div>
+												<div class="color-tag" style="background: var(--primary-color-tone-200);">200</div>
+												<div class="color-tag" style="background: var(--primary-color-tone-300);">300</div>
+												<div class="color-tag" style="background: var(--primary-color-tone-400);">400</div>
+												<div class="color-tag" style="background: var(--primary-color-tone-500);">500</div>
+												<div class="color-tag" style="background: var(--primary-color-tone-600);">600</div>
+												<div class="color-tag light" style="background: var(--primary-color-tone-700);">700</div>
+												<div class="color-tag light" style="background: var(--primary-color-tone-800);">800</div>
+												<div class="color-tag light" style="background: var(--primary-color-tone-900);">900</div>
+											</vbox>
+											<vbox class="card elevation-0 primary-color primary-color-light-blue">
+												<vbox class="color-tag" style="background: var(--primary-color-tone-500);">
+													<label>Light Blue</label>
+													<spacer />
+													<label>500</label>
+												</vbox>
+												<div class="color-tag" style="background: var(--primary-color-tone-50);">50</div>
+												<div class="color-tag" style="background: var(--primary-color-tone-100);">100</div>
+												<div class="color-tag" style="background: var(--primary-color-tone-200);">200</div>
+												<div class="color-tag" style="background: var(--primary-color-tone-300);">300</div>
+												<div class="color-tag" style="background: var(--primary-color-tone-400);">400</div>
+												<div class="color-tag" style="background: var(--primary-color-tone-500);">500</div>
+												<div class="color-tag" style="background: var(--primary-color-tone-600);">600</div>
+												<div class="color-tag light" style="background: var(--primary-color-tone-700);">700</div>
+												<div class="color-tag light" style="background: var(--primary-color-tone-800);">800</div>
+												<div class="color-tag light" style="background: var(--primary-color-tone-900);">900</div>
+											</vbox>
+											<vbox class="card elevation-0 primary-color primary-color-cyan">
+												<vbox class="color-tag" style="background: var(--primary-color-tone-500);">
+													<label>Cyan</label>
+													<spacer />
+													<label>500</label>
+												</vbox>
+												<div class="color-tag" style="background: var(--primary-color-tone-50);">50</div>
+												<div class="color-tag" style="background: var(--primary-color-tone-100);">100</div>
+												<div class="color-tag" style="background: var(--primary-color-tone-200);">200</div>
+												<div class="color-tag" style="background: var(--primary-color-tone-300);">300</div>
+												<div class="color-tag" style="background: var(--primary-color-tone-400);">400</div>
+												<div class="color-tag" style="background: var(--primary-color-tone-500);">500</div>
+												<div class="color-tag" style="background: var(--primary-color-tone-600);">600</div>
+												<div class="color-tag light" style="background: var(--primary-color-tone-700);">700</div>
+												<div class="color-tag light" style="background: var(--primary-color-tone-800);">800</div>
+												<div class="color-tag light" style="background: var(--primary-color-tone-900);">900</div>
+											</vbox>
+											<vbox class="card elevation-0 primary-color primary-color-teal">
+												<vbox class="color-tag light" style="background: var(--primary-color-tone-500);">
+													<label>Teal</label>
+													<spacer />
+													<label>500</label>
+												</vbox>
+												<div class="color-tag" style="background: var(--primary-color-tone-50);">50</div>
+												<div class="color-tag" style="background: var(--primary-color-tone-100);">100</div>
+												<div class="color-tag" style="background: var(--primary-color-tone-200);">200</div>
+												<div class="color-tag" style="background: var(--primary-color-tone-300);">300</div>
+												<div class="color-tag" style="background: var(--primary-color-tone-400);">400</div>
+												<div class="color-tag light" style="background: var(--primary-color-tone-500);">500</div>
+												<div class="color-tag light" style="background: var(--primary-color-tone-600);">600</div>
+												<div class="color-tag light" style="background: var(--primary-color-tone-700);">700</div>
+												<div class="color-tag light" style="background: var(--primary-color-tone-800);">800</div>
+												<div class="color-tag light" style="background: var(--primary-color-tone-900);">900</div>
+											</vbox>
+											<vbox class="card elevation-0 primary-color primary-color-green">
+												<vbox class="color-tag" style="background: var(--primary-color-tone-500);">
+													<label>Green</label>
+													<spacer />
+													<label>500</label>
+												</vbox>
+												<div class="color-tag" style="background: var(--primary-color-tone-50);">50</div>
+												<div class="color-tag" style="background: var(--primary-color-tone-100);">100</div>
+												<div class="color-tag" style="background: var(--primary-color-tone-200);">200</div>
+												<div class="color-tag" style="background: var(--primary-color-tone-300);">300</div>
+												<div class="color-tag" style="background: var(--primary-color-tone-400);">400</div>
+												<div class="color-tag" style="background: var(--primary-color-tone-500);">500</div>
+												<div class="color-tag light" style="background: var(--primary-color-tone-600);">600</div>
+												<div class="color-tag light" style="background: var(--primary-color-tone-700);">700</div>
+												<div class="color-tag light" style="background: var(--primary-color-tone-800);">800</div>
+												<div class="color-tag light" style="background: var(--primary-color-tone-900);">900</div>
+											</vbox>
+											<vbox class="card elevation-0 primary-color primary-color-light-green">
+												<vbox class="color-tag" style="background: var(--primary-color-tone-500);">
+													<label>Light Green</label>
+													<spacer />
+													<label>500</label>
+												</vbox>
+												<div class="color-tag" style="background: var(--primary-color-tone-50);">50</div>
+												<div class="color-tag" style="background: var(--primary-color-tone-100);">100</div>
+												<div class="color-tag" style="background: var(--primary-color-tone-200);">200</div>
+												<div class="color-tag" style="background: var(--primary-color-tone-300);">300</div>
+												<div class="color-tag" style="background: var(--primary-color-tone-400);">400</div>
+												<div class="color-tag" style="background: var(--primary-color-tone-500);">500</div>
+												<div class="color-tag" style="background: var(--primary-color-tone-600);">600</div>
+												<div class="color-tag" style="background: var(--primary-color-tone-700);">700</div>
+												<div class="color-tag light" style="background: var(--primary-color-tone-800);">800</div>
+												<div class="color-tag light" style="background: var(--primary-color-tone-900);">900</div>
+											</vbox>
+											<vbox class="card elevation-0 primary-color primary-color-lime">
+												<vbox class="color-tag" style="background: var(--primary-color-tone-500);">
+													<label>Lime</label>
+													<spacer />
+													<label>500</label>
+												</vbox>
+												<div class="color-tag" style="background: var(--primary-color-tone-50);">50</div>
+												<div class="color-tag" style="background: var(--primary-color-tone-100);">100</div>
+												<div class="color-tag" style="background: var(--primary-color-tone-200);">200</div>
+												<div class="color-tag" style="background: var(--primary-color-tone-300);">300</div>
+												<div class="color-tag" style="background: var(--primary-color-tone-400);">400</div>
+												<div class="color-tag" style="background: var(--primary-color-tone-500);">500</div>
+												<div class="color-tag" style="background: var(--primary-color-tone-600);">600</div>
+												<div class="color-tag" style="background: var(--primary-color-tone-700);">700</div>
+												<div class="color-tag" style="background: var(--primary-color-tone-800);">800</div>
+												<div class="color-tag light" style="background: var(--primary-color-tone-900);">900</div>
+											</vbox>
+											<vbox class="card elevation-0 primary-color primary-color-yellow">
+												<vbox class="color-tag" style="background: var(--primary-color-tone-500);">
+													<label>Yellow</label>
+													<spacer />
+													<label>500</label>
+												</vbox>
+												<div class="color-tag" style="background: var(--primary-color-tone-50);">50</div>
+												<div class="color-tag" style="background: var(--primary-color-tone-100);">100</div>
+												<div class="color-tag" style="background: var(--primary-color-tone-200);">200</div>
+												<div class="color-tag" style="background: var(--primary-color-tone-300);">300</div>
+												<div class="color-tag" style="background: var(--primary-color-tone-400);">400</div>
+												<div class="color-tag" style="background: var(--primary-color-tone-500);">500</div>
+												<div class="color-tag" style="background: var(--primary-color-tone-600);">600</div>
+												<div class="color-tag" style="background: var(--primary-color-tone-700);">700</div>
+												<div class="color-tag" style="background: var(--primary-color-tone-800);">800</div>
+												<div class="color-tag" style="background: var(--primary-color-tone-900);">900</div>
+											</vbox>
+											<vbox class="card elevation-0 primary-color primary-color-amber">
+												<vbox class="color-tag" style="background: var(--primary-color-tone-500);">
+													<label>Amber</label>
+													<spacer />
+													<label>500</label>
+												</vbox>
+												<div class="color-tag" style="background: var(--primary-color-tone-50);">50</div>
+												<div class="color-tag" style="background: var(--primary-color-tone-100);">100</div>
+												<div class="color-tag" style="background: var(--primary-color-tone-200);">200</div>
+												<div class="color-tag" style="background: var(--primary-color-tone-300);">300</div>
+												<div class="color-tag" style="background: var(--primary-color-tone-400);">400</div>
+												<div class="color-tag" style="background: var(--primary-color-tone-500);">500</div>
+												<div class="color-tag" style="background: var(--primary-color-tone-600);">600</div>
+												<div class="color-tag" style="background: var(--primary-color-tone-700);">700</div>
+												<div class="color-tag" style="background: var(--primary-color-tone-800);">800</div>
+												<div class="color-tag" style="background: var(--primary-color-tone-900);">900</div>
+											</vbox>
+											<vbox class="card elevation-0 primary-color primary-color-orange">
+												<vbox class="color-tag" style="background: var(--primary-color-tone-500);">
+													<label>Orange</label>
+													<spacer />
+													<label>500</label>
+												</vbox>
+												<div class="color-tag" style="background: var(--primary-color-tone-50);">50</div>
+												<div class="color-tag" style="background: var(--primary-color-tone-100);">100</div>
+												<div class="color-tag" style="background: var(--primary-color-tone-200);">200</div>
+												<div class="color-tag" style="background: var(--primary-color-tone-300);">300</div>
+												<div class="color-tag" style="background: var(--primary-color-tone-400);">400</div>
+												<div class="color-tag" style="background: var(--primary-color-tone-500);">500</div>
+												<div class="color-tag" style="background: var(--primary-color-tone-600);">600</div>
+												<div class="color-tag" style="background: var(--primary-color-tone-700);">700</div>
+												<div class="color-tag" style="background: var(--primary-color-tone-800);">800</div>
+												<div class="color-tag light" style="background: var(--primary-color-tone-900);">900</div>
+											</vbox>
+											<vbox class="card elevation-0 primary-color primary-color-deep-orange">
+												<vbox class="color-tag" style="background: var(--primary-color-tone-500);">
+													<label>Deep Orange</label>
+													<spacer />
+													<label>500</label>
+												</vbox>
+												<div class="color-tag" style="background: var(--primary-color-tone-50);">50</div>
+												<div class="color-tag" style="background: var(--primary-color-tone-100);">100</div>
+												<div class="color-tag" style="background: var(--primary-color-tone-200);">200</div>
+												<div class="color-tag" style="background: var(--primary-color-tone-300);">300</div>
+												<div class="color-tag" style="background: var(--primary-color-tone-400);">400</div>
+												<div class="color-tag" style="background: var(--primary-color-tone-500);">500</div>
+												<div class="color-tag light" style="background: var(--primary-color-tone-600);">600</div>
+												<div class="color-tag light" style="background: var(--primary-color-tone-700);">700</div>
+												<div class="color-tag light" style="background: var(--primary-color-tone-800);">800</div>
+												<div class="color-tag light" style="background: var(--primary-color-tone-900);">900</div>
+											</vbox>
+											<vbox class="card elevation-0 primary-color primary-color-brown">
+												<vbox class="color-tag light" style="background: var(--primary-color-tone-500);">
+													<label>Brown</label>
+													<spacer />
+													<label>500</label>
+												</vbox>
+												<div class="color-tag" style="background: var(--primary-color-tone-50);">50</div>
+												<div class="color-tag" style="background: var(--primary-color-tone-100);">100</div>
+												<div class="color-tag" style="background: var(--primary-color-tone-200);">200</div>
+												<div class="color-tag light" style="background: var(--primary-color-tone-300);">300</div>
+												<div class="color-tag light" style="background: var(--primary-color-tone-400);">400</div>
+												<div class="color-tag light" style="background: var(--primary-color-tone-500);">500</div>
+												<div class="color-tag light" style="background: var(--primary-color-tone-600);">600</div>
+												<div class="color-tag light" style="background: var(--primary-color-tone-700);">700</div>
+												<div class="color-tag light" style="background: var(--primary-color-tone-800);">800</div>
+												<div class="color-tag light" style="background: var(--primary-color-tone-900);">900</div>
+											</vbox>
+											<vbox class="card elevation-0 primary-color primary-color-grey">
+												<vbox class="color-tag" style="background: var(--primary-color-tone-500);">
+													<label>Grey</label>
+													<spacer />
+													<label>500</label>
+												</vbox>
+												<div class="color-tag" style="background: var(--primary-color-tone-50);">50</div>
+												<div class="color-tag" style="background: var(--primary-color-tone-100);">100</div>
+												<div class="color-tag" style="background: var(--primary-color-tone-200);">200</div>
+												<div class="color-tag" style="background: var(--primary-color-tone-300);">300</div>
+												<div class="color-tag" style="background: var(--primary-color-tone-400);">400</div>
+												<div class="color-tag" style="background: var(--primary-color-tone-500);">500</div>
+												<div class="color-tag light" style="background: var(--primary-color-tone-600);">600</div>
+												<div class="color-tag light" style="background: var(--primary-color-tone-700);">700</div>
+												<div class="color-tag light" style="background: var(--primary-color-tone-800);">800</div>
+												<div class="color-tag light" style="background: var(--primary-color-tone-900);">900</div>
+											</vbox>
+											<vbox class="card elevation-0 primary-color primary-color-blue-grey">
+												<vbox class="color-tag light" style="background: var(--primary-color-tone-500);">
+													<label>Blue Grey</label>
+													<spacer />
+													<label>500</label>
+												</vbox>
+												<div class="color-tag" style="background: var(--primary-color-tone-50);">50</div>
+												<div class="color-tag" style="background: var(--primary-color-tone-100);">100</div>
+												<div class="color-tag" style="background: var(--primary-color-tone-200);">200</div>
+												<div class="color-tag" style="background: var(--primary-color-tone-300);">300</div>
+												<div class="color-tag light" style="background: var(--primary-color-tone-400);">400</div>
+												<div class="color-tag light" style="background: var(--primary-color-tone-500);">500</div>
+												<div class="color-tag light" style="background: var(--primary-color-tone-600);">600</div>
+												<div class="color-tag light" style="background: var(--primary-color-tone-700);">700</div>
+												<div class="color-tag light" style="background: var(--primary-color-tone-800);">800</div>
+												<div class="color-tag light" style="background: var(--primary-color-tone-900);">900</div>
+											</vbox>
+										</grid>
+									</vbox>
+								</vbox>
+							</vbox>
+							<vbox class="page" data-page="21">
+								<vbox class="content-container">
+									<vbox class="content">
+										<hbox>
+											<div class="card elevation-0">
+												<label>0dp</label>
+											</div>
+											<div class="card elevation-1">
+												<label>1dp</label>
+											</div>
+											<div class="card elevation-2">
+												<label>2dp</label>
+											</div>
+											<div class="card elevation-3">
+												<label>3dp</label>
+											</div>
+											<div class="card elevation-4">
+												<label>4dp</label>
+											</div>
+											<div class="card elevation-6">
+												<label>6dp</label>
+											</div>
+										</hbox>
+										<hbox>
+											<div class="card elevation-8">
+												<label>8dp</label>
+											</div>
+											<div class="card elevation-9">
+												<label>9dp</label>
+											</div>
+											<div class="card elevation-12">
+												<label>12dp</label>
+											</div>
+											<div class="card elevation-16">
+												<label>16dp</label>
+											</div>
+											<div class="card elevation-24">
+												<label>24dp</label>
+											</div>
+										</hbox>
+									</vbox>
+								</vbox>
+							</vbox>
+							<vbox class="page" data-page="30">
+								<vbox class="content-container">
+									<vbox class="content" style="flex: 1;">
+										<button class="button ripple-enabled text color" style="flex: 1;" label="Ripple Madness!!!" />
+									</vbox>
+								</vbox>
+							</vbox>
+						</vbox>
+					</div>
+				</hbox>
+			</vbox>
+			<vbox id="preview-container">
+				<vbox class="window-top-bars light">
+					<hbox class="window-top-bar">
+						<hbox class="window-toolbar">
+							<h3>Preview</h3>
+							<spacer />
+							<button />
+						</hbox>
+					</hbox>
+				</vbox>
+				<vbox class="content">
+					
+				</vbox>
+			</vbox>
+		</hbox>
+	</html:div>
+
+	<script src="chrome://userchrome/content/frameworks/GeckiumMaterial/scripts/window.js" type="text/javascript" defer="true"/>
+	<script src="chrome://userchrome/content/frameworks/GeckiumMaterial/scripts/sfx.js" type="text/javascript" defer="true" />
+	<script src="chrome://userchrome/content/frameworks/GeckiumMaterial/scripts/ripple.js" type="text/javascript" defer="true"/>
+	<script src="chrome://userchrome/content/frameworks/GeckiumMaterial/scripts/pages.js" type="text/javascript" defer="true"/>
+	<script src="chrome://userchrome/content/frameworks/GeckiumMaterial/scripts/menu.js" type="text/javascript" defer="true"/>
+	<script src="chrome://userchrome/content/frameworks/GeckiumMaterial/zoo/script.js" type="text/javascript" defer="true"/>
+
+	<script src="chrome://userchrome/content/frameworks/GeckiumMaterial/scripts/modal.js" type="text/javascript" defer="true"/>
+</window>

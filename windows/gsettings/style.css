@@ -1,0 +1,694 @@
+@charset "UTF-8";
+:root[contentmode=wizard] .disable-in-wizard,
+:root [disabled=true] {
+  pointer-events: none;
+  opacity: 0.5;
+}
+:root[contentmode=wizard] .disable-in-wizard .appearance-container,
+:root [disabled=true] .appearance-container {
+  max-height: 100px;
+  -webkit-mask-image: linear-gradient(to bottom, black, transparent);
+          mask-image: linear-gradient(to bottom, black, transparent);
+}
+:root[contentmode=wizard] .show-in-wizard {
+  display: flex;
+}
+:root[contentmode=wizard] .content:not([data-page-container]) {
+  padding-block-end: 91px !important;
+}
+:root:not([contentmode=wizard]) .show-in-wizard {
+  display: none;
+}
+:root[geckium-one] [data-browser=chrome] .theme-icons .theme-browser-icon {
+  background-image: url("chrome://userchrome/content/windows/gsettings/imgs/browsers/chrome-2008.svg");
+}
+:root[geckium-one] [data-browser=firefox] .theme-icons .theme-browser-icon {
+  background-image: url("chrome://userchrome/content/windows/gsettings/imgs/browsers/firefox-2008.png");
+}
+:root[geckium-one][geckium-two] [data-browser=firefox] .theme-icons .theme-browser-icon {
+  background-image: url("chrome://userchrome/content/windows/gsettings/imgs/browsers/firefox-2009.png");
+}
+:root[geckium-one][geckium-two][geckium-eleven] [data-browser=chrome] .theme-icons .theme-browser-icon {
+  background-image: url("chrome://userchrome/content/windows/gsettings/imgs/browsers/chrome-2011.png");
+}
+:root[geckium-one][geckium-two][geckium-twentyfive] [data-browser=firefox] .theme-icons .theme-browser-icon {
+  background-image: url("chrome://userchrome/content/windows/gsettings/imgs/browsers/firefox-2013.png");
+}
+:root[geckium-one][geckium-two][geckium-twentyfive][geckium-fortyseven] [data-browser=chrome] .theme-icons .theme-browser-icon {
+  background-image: url("chrome://userchrome/content/windows/gsettings/imgs/browsers/chrome-2015.png");
+}
+:root[geckium-one][geckium-two][geckium-twentyfive][geckium-sixtyeight] [data-browser=firefox] .theme-icons .theme-browser-icon {
+  background-image: url("chrome://userchrome/content/windows/gsettings/imgs/browsers/firefox-2017.png");
+}
+:root [data-browser=msedge] .theme-icons .theme-browser-icon {
+  background-image: url("chrome://userchrome/content/windows/gsettings/imgs/browsers/msedge.svg");
+}
+:root[is120Plus=true] .is-below-120 {
+  display: none !important;
+}
+@media all and (max-width: 640px) {
+  :root[nav-drawer-auto-hide] .banner image {
+    width: 148px;
+  }
+}
+
+.is-linux-only {
+  display: none !important;
+}
+
+@media (-moz-platform: linux) {
+  .is-linux-only {
+    display: flex !important;
+  }
+}
+#window {
+  width: 1160px;
+  height: 710px;
+}
+
+h4 .about-flag {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 28px;
+  width: 28px;
+  margin-inline-start: 4px;
+  cursor: pointer;
+  transition: all 150ms ease-in;
+  border-radius: 50%;
+  overflow: hidden;
+}
+h4 .about-flag::before {
+  content: "";
+  height: 18px;
+  width: 18px;
+  -webkit-mask-image: url("chrome://userchrome/content/frameworks/GeckiumMaterial/icons/info_outline.svg");
+          mask-image: url("chrome://userchrome/content/frameworks/GeckiumMaterial/icons/info_outline.svg");
+  -webkit-mask-size: cover;
+          mask-size: cover;
+  -webkit-mask-position: center center;
+          mask-position: center center;
+  background: rgb(126, 126, 126);
+}
+h4 .about-flag:hover {
+  background: rgba(0, 0, 0, 0.06);
+}
+h4 .about-flag .ripple {
+  background: rgba(0, 0, 0, 0.2);
+}
+
+#overridevisualstyle,
+#ncphelper-maskwidthmode[NCPMaskWidthMode=custom],
+#gkThemeFilterItem,
+#card-avatar > .item:nth-child(2) {
+  border-bottom: 0 !important;
+}
+
+#ncphelper-maskwidthmode[NCPMaskWidthMode=custom] ~ #ncphelper-custommaskwidth {
+  display: flex;
+}
+#ncphelper-maskwidthmode:not([NCPMaskWidthMode=custom]) ~ #ncphelper-custommaskwidth {
+  display: none;
+}
+
+.people-picture {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  display: flex;
+  position: relative;
+  width: 58px;
+  aspect-ratio: 1/1;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  margin: 4px 0px !important;
+}
+.people-picture:not([disabled]) {
+  cursor: pointer;
+}
+.people-picture.color.ripple-enabled .ripple {
+  background: color-mix(in srgb, var(--secondary-color, var(--primary-color)) 40%, transparent);
+}
+.people-picture:checked {
+  outline: 2px solid var(--secondary-color, var(--primary-color));
+  outline-offset: -2px;
+}
+.people-picture:checked::before, .people-picture:checked::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  display: block;
+}
+.people-picture:checked::before {
+  background-color: color-mix(in srgb, color-mix(in srgb, var(--secondary-color, var(--primary-color)), transparent 60%), rgba(0, 0, 0, 0.2));
+}
+.people-picture:checked::after {
+  -webkit-mask-image: url(chrome://userchrome/content/frameworks/GeckiumMaterial/icons/check.svg);
+          mask-image: url(chrome://userchrome/content/frameworks/GeckiumMaterial/icons/check.svg);
+  -webkit-mask-size: 32px 32px;
+          mask-size: 32px 32px;
+  -webkit-mask-position: center center;
+          mask-position: center center;
+  -webkit-mask-repeat: no-repeat;
+          mask-repeat: no-repeat;
+  background: rgb(255, 255, 255);
+}
+
+.banner {
+  position: relative;
+  background: url("chrome://userchrome/content/windows/gsettings/imgs/banner.jpg");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  color: black;
+  list-style-image: url("chrome://userchrome/content/windows/gsettings/imgs/logo.svg");
+  fill: AccentColor;
+  -moz-context-properties: fill, fill-opacity;
+  padding: var(--inner-padding);
+  align-items: center;
+  font-weight: 500;
+  gap: 32px;
+}
+.banner image {
+  width: 200px;
+  transition: fill 320ms, width 200ms;
+}
+.banner image:hover {
+  fill: #209f43;
+}
+.banner > image {
+  filter: drop-shadow(0px 1px 2px rgba(0, 0, 0, 0.5));
+}
+
+#ntp-visual-styles-grid .link.chrome-appearance {
+  height: 163px;
+}
+
+.chrome-appearance .radio-parent {
+  margin-inline-start: 0 !important;
+}
+
+.profile-mode-option {
+  display: none;
+}
+
+#card-avatar:not([profile-pic-mode=none],
+[profile-pic-mode=geckium],
+[profile-pic-mode=firefox]) {
+  padding-block-end: 19px;
+}
+#card-avatar > .item:nth-child(3) {
+  display: none;
+}
+#card-avatar[profile-pic-mode=chromium] > .item:nth-child(3) {
+  display: flex;
+}
+#card-avatar[profile-pic-mode=chromium] #profile-pictures-grid {
+  display: grid;
+}
+#card-avatar[profile-pic-mode=custom] > .item:nth-child(3) {
+  display: flex;
+}
+#card-avatar[profile-pic-mode=custom] #profile-pictures-path {
+  display: flex;
+}
+
+#gk_version {
+  position: relative;
+  overflow: hidden;
+  padding-inline: 8px;
+  border-radius: 9999px;
+  width: -moz-fit-content;
+  width: fit-content;
+  transition: background-color 155ms;
+}
+#gk_version:not([disabled]) {
+  cursor: pointer;
+}
+#gk_version:not([disabled]):hover, #gk_version:not([disabled]):focus-visible {
+  background: rgba(153, 153, 153, 0.2);
+}
+#gk_version:not([disabled]) .ripple {
+  background: rgba(153, 153, 153, 0.4);
+}
+
+.item.app {
+  padding-block: 6px;
+}
+.item.app image {
+  width: 48px;
+  height: 48px;
+  margin-inline-start: -8px;
+}
+.item.app label {
+  display: flex;
+  margin-inline-start: 8px;
+}
+
+.thememode {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  display: flex;
+  position: relative;
+  width: 76px;
+  height: 76px;
+  border-radius: 50%;
+  -moz-context-properties: fill, fill-opacity;
+  background-position: center, center !important;
+  background-repeat: no-repeat, no-repeat !important;
+}
+.thememode:not([disabled]) {
+  cursor: pointer;
+}
+.thememode:checked {
+  outline: 2px solid var(--secondary-color, var(--primary-color));
+  outline-offset: 2px;
+}
+
+#thememode-auto {
+  background-image: url(chrome://mozapps/content/extensions/default-theme/icon.svg);
+  background-size: 76px 76px, auto !important;
+}
+
+#thememode-light {
+  background-image: url(resource://builtin-themes/light/icon.svg);
+  background-size: 76px 76px, auto !important;
+}
+
+#thememode-dark {
+  background-image: url(resource://builtin-themes/dark/icon.svg);
+  background-size: 76px 76px, auto !important;
+}
+
+#thememode-themed {
+  background-color: color-mix(in srgb, currentColor, transparent 92%);
+  fill: color-mix(in srgb, currentColor, transparent 46%);
+  background-image: url(chrome://mozapps/skin/extensions/category-themes.svg);
+  background-size: 40px 40px, auto !important;
+}
+#thememode-themed:not(:checked) {
+  display: none !important;
+}
+
+.link.chrome-appearance {
+  -moz-context-properties: fill, fill-opacity;
+  fill: white;
+  background-repeat: no-repeat !important;
+}
+.link.chrome-appearance.mozstore {
+  background-image: url(chrome://mozapps/skin/extensions/category-themes.svg), url(resource://builtin-themes/alpenglow/background-noodles-right-dark.svg), url(resource://builtin-themes/alpenglow/background-noodles-left-dark.svg), url(resource://builtin-themes/alpenglow/background-gradient-dark.svg) !important;
+  background-position: center, right top, left top, right top !important;
+  background-repeat: no-repeat, no-repeat, no-repeat, repeat-x !important;
+  background-size: 64px 64px, auto, auto, auto !important;
+}
+.link.chrome-appearance.chrstore {
+  background-image: url(chrome://userchrome/content/pages/newTabHome/assets/chrome-21/imgs/1.png) !important;
+  background-position: center !important;
+  background-repeat: no-repeat !important;
+  background-size: 76px 76px !important;
+}
+.link.chrome-appearance.edgestore {
+  background-image: url(chrome://userchrome/content/windows/gsettings/imgs/edgeaddons.svg), linear-gradient(90deg, #072139, #1a416c 90%) !important;
+  background-position: center, center !important;
+  background-repeat: no-repeat, no-repeat !important;
+  background-size: 76px 76px, auto !important;
+}
+.link.geckium-appearance {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 160px;
+  background-size: cover;
+  background-position: top center;
+  cursor: pointer;
+}
+.link.geckium-appearance:hover {
+  background-size: cover !important;
+  background-position: top center !important;
+  box-shadow: var(--elevation-8);
+}
+.link.geckium-appearance {
+  /*&:not(
+  	[data-browser="chrome"],
+  	[data-browser="msedge"]
+  ) {
+  	#manage {
+  		display: none !important;
+  	}
+  }*/
+}
+.link.geckium-appearance[data-browser=firefox]:not([disabled]):hover .year, .link.geckium-appearance[data-browser=chrome]:not([disabled]):hover .year, .link.geckium-appearance[data-browser=msedge]:not([disabled]):hover .year {
+  opacity: 0;
+}
+.link.geckium-appearance[data-browser=firefox]:not([disabled]):hover #manage, .link.geckium-appearance[data-browser=chrome]:not([disabled]):hover #manage, .link.geckium-appearance[data-browser=msedge]:not([disabled]):hover #manage {
+  opacity: 1;
+}
+.link.geckium-appearance .theme-icons {
+  top: 10px;
+  left: 10px;
+}
+.link.geckium-appearance .name, .link.geckium-appearance .description {
+  display: block;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+.link.geckium-appearance .radio-parent {
+  margin-inline-start: 0 !important;
+}
+.link.geckium-appearance .ripple {
+  background: rgba(255, 255, 255, 0.25);
+}
+.link.geckium-appearance .wrapper {
+  position: absolute;
+  inset: 0;
+  cursor: pointer;
+}
+.link.geckium-appearance .year,
+.link.geckium-appearance #manage {
+  position: absolute;
+  transition: 155ms;
+}
+.link.geckium-appearance .year {
+  top: 10px;
+  right: 10px;
+}
+.link.geckium-appearance #manage {
+  top: 5px;
+  right: 5px;
+  opacity: 0;
+}
+.link.geckium-appearance .identifier {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 82px;
+  display: flex;
+  align-items: end;
+  padding-block-end: 12px;
+  padding-inline: 14px;
+  font-size: 22px;
+  color: rgb(255, 255, 255);
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.6), transparent);
+  box-sizing: border-box;
+}
+.link.geckium-appearance .identifier .radio {
+  min-width: 16px;
+  --radio-border-color: rgb(255, 255, 255, 50%);
+}
+.link.geckium-appearance .identifier .radio:checked:not([disabled=true]):hover + .gutter {
+  background: rgba(255, 255, 255, 0.1);
+}
+.link.geckium-appearance .identifier .radio:checked:not([disabled=true]):active + .gutter {
+  background: rgba(255, 255, 255, 0.15);
+}
+.link.geckium-appearance .identifier .radio:not([disabled=true]):hover + .gutter {
+  background: rgba(255, 255, 255, 0.05);
+}
+.link.geckium-appearance .identifier .radio:not([disabled=true]):active + .gutter {
+  background: rgba(255, 255, 255, 0.12);
+}
+.link.geckium-appearance .identifier .description {
+  font-size: 10pt;
+  font-weight: initial;
+  color: white !important;
+  margin-block-start: unset !important;
+  margin-block-end: unset !important;
+}
+.link.chrome-appearance.systheme-gtk {
+  background-image: url(chrome://userchrome/content/windows/gsettings/imgs/themes/gtk.svg) !important;
+  fill: -moz-dialog;
+  background-color: ActiveCaption !important;
+}
+
+.theme-icons {
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: unset;
+  -webkit-mask-image: unset;
+          mask-image: unset;
+  -webkit-mask-size: unset;
+          mask-size: unset;
+  background: unset;
+  flex-shrink: unset;
+}
+.theme-icons .theme-type-icon,
+.theme-icons .theme-browser-icon {
+  position: absolute;
+}
+.theme-icons .theme-type-icon {
+  width: inherit;
+  height: inherit;
+}
+.theme-icons .theme-type-icon[src="chrome://userchrome/content/windows/gsettings/imgs/logo.svg"] {
+  filter: saturate(0);
+  fill: #209f43;
+  -moz-context-properties: fill, fill-opacity;
+  opacity: 0.5;
+}
+.theme-icons .theme-browser-icon {
+  bottom: 0;
+  right: 0;
+  width: 16px;
+  height: 16px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+}
+
+:root[gkthemefilter=chrthemes] .link.chrome-appearance[data-systheme], :root[gkthemefilter=lwthemes] .link.chrome-appearance[data-systheme] {
+  display: none;
+}
+:root[gkthemefilter=systhemes] .link.geckium-appearance[data-chrtheme-name],
+:root[gkthemefilter=systhemes] #gkwebstoretile,
+:root[gkthemefilter=systhemes] .link.edgestore, :root[gkthemefilter=lwthemes] .link.geckium-appearance[data-chrtheme-name],
+:root[gkthemefilter=lwthemes] #gkwebstoretile,
+:root[gkthemefilter=lwthemes] .link.edgestore {
+  display: none;
+}
+:root[gkthemefilter=systhemes] .link.geckium-appearance[data-lwtheme-name],
+:root[gkthemefilter=systhemes] .link.mozstore, :root[gkthemefilter=chrthemes] .link.geckium-appearance[data-lwtheme-name],
+:root[gkthemefilter=chrthemes] .link.mozstore {
+  display: none;
+}
+
+.systheme-classic {
+  background-image: url(chrome://userchrome/content/windows/gsettings/imgs/themes/classic-1.svg) !important;
+}
+
+.systheme-you {
+  background-image: url(chrome://userchrome/content/windows/gsettings/imgs/themes/you-1.svg) !important;
+}
+
+.systheme-macosx {
+  background-image: url(chrome://userchrome/content/windows/gsettings/imgs/themes/macosx-1.svg) !important;
+}
+
+.systheme-macos {
+  background-image: url(chrome://userchrome/content/windows/gsettings/imgs/themes/macos-1.svg) !important;
+}
+
+.systheme-chromiumos {
+  background-image: url(chrome://userchrome/content/windows/gsettings/imgs/themes/chros-1.svg) !important;
+}
+
+:root[geckium-six] .systheme-classic {
+  background-image: url(chrome://userchrome/content/windows/gsettings/imgs/themes/classic-6.svg) !important;
+}
+:root[geckium-six] .systheme-you {
+  background-image: url(chrome://userchrome/content/windows/gsettings/imgs/themes/you-6.svg) !important;
+}
+:root[geckium-six] .systheme-chromiumos {
+  background-image: url(chrome://userchrome/content/windows/gsettings/imgs/themes/chros-6.svg) !important;
+}
+
+:root[geckium-eleven] .systheme-macosx {
+  background-image: url(chrome://userchrome/content/windows/gsettings/imgs/themes/macosx-11.svg) !important;
+}
+:root[geckium-eleven] .systheme-macos {
+  background-image: url(chrome://userchrome/content/windows/gsettings/imgs/themes/macos-11.svg) !important;
+}
+
+:root[geckium-twentyone] .systheme-chromiumos {
+  background-image: url(chrome://userchrome/content/windows/gsettings/imgs/themes/chros-21.svg) !important;
+}
+
+:root[geckium-sixtyeight] .systheme-classic,
+:root[geckium-sixtyeight] .systheme-you,
+:root[geckium-sixtyeight] .systheme-macosx,
+:root[geckium-sixtyeight] .systheme-macos,
+:root[geckium-sixtyeight] .systheme-chromiumos {
+  background-image: url(chrome://userchrome/content/windows/gsettings/imgs/themes/classic-68.svg) !important;
+}
+
+@media not (-moz-platform: windows) {
+  #os-ux-button,
+  #os-comp-button {
+    display: none;
+  }
+}
+.icon-picker {
+  position: relative;
+  height: -moz-fit-content;
+  height: fit-content;
+  align-items: center;
+}
+.icon-picker label:not([data-icon]) + .action-item.icon-delete {
+  display: none;
+}
+.icon-picker .button {
+  min-width: 0;
+  min-height: 0;
+  padding: 8px;
+  box-sizing: content-box;
+}
+.icon-picker image {
+  width: 100%;
+  height: 100%;
+}
+.icon-picker label {
+  white-space: nowrap;
+}
+.icon-picker.favicon .button {
+  width: 16px;
+  height: 16px;
+}
+.icon-picker.icon .button {
+  width: 128px;
+  height: 128px;
+}
+.icon-picker .action-item {
+  position: absolute;
+  top: 6px;
+  right: 3px;
+}
+.icon-picker .action-item.icon-delete::before {
+  background-color: hsl(0, 0%, 60%);
+}
+
+#app-name::before {
+  content: " ";
+}
+
+.modal[data-modal=editApp_modal][data-app=null] #app_deleteBtn,
+.modal[data-modal=editApp_modal][data-app=null] #app_OKBtn {
+  display: none;
+}
+.modal[data-modal=editApp_modal]:not([data-app=null]) #createBtn {
+  display: none;
+}
+
+#preview-geckium {
+  position: relative;
+  margin-inline: auto;
+  width: 512px;
+  height: 512px;
+  fill: var(--desired-gecko-color, #209f43);
+  -moz-context-properties: fill, fill-opacity;
+  transform: translateX(-15px);
+}
+#preview-geckium::before {
+  content: "";
+  background: url("chrome://userchrome/content/windows/gsettings/imgs/user.jpg");
+  background-size: cover;
+  position: absolute;
+  width: 420px;
+  height: 420px;
+  top: 49px;
+  left: 44px;
+  border-radius: 50%;
+}
+#preview-geckium::after {
+  content: url("chrome://userchrome/content/windows/gsettings/imgs/gecko.svg");
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+#gecko-stuff > .item {
+  min-height: 80px;
+  justify-content: center;
+}
+
+#gecko-hue,
+#gecko-saturation,
+#gecko-lightness {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+}
+#gecko-hue::-moz-range-track,
+#gecko-saturation::-moz-range-track,
+#gecko-lightness::-moz-range-track {
+  width: calc(100% - 10px);
+  height: 4px;
+  border-radius: 2px;
+}
+#gecko-hue::-moz-range-thumb,
+#gecko-saturation::-moz-range-thumb,
+#gecko-lightness::-moz-range-thumb {
+  position: relative;
+  border: 0;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  background-color: var(--desired-gecko-color);
+  box-shadow: 0 0 0 0 color-mix(in srgb, var(--desired-gecko-color) 0%, transparent), var(--elevation-1);
+  -moz-transition: box-shadow 100ms;
+  transition: box-shadow 100ms;
+}
+#gecko-hue:not([disabled]):hover::-moz-range-thumb,
+#gecko-saturation:not([disabled]):hover::-moz-range-thumb,
+#gecko-lightness:not([disabled]):hover::-moz-range-thumb {
+  box-shadow: 0 0 0 15px color-mix(in srgb, var(--desired-gecko-color) 5%, transparent), var(--elevation-1);
+}
+#gecko-hue:not([disabled]):active::-moz-range-thumb,
+#gecko-saturation:not([disabled]):active::-moz-range-thumb,
+#gecko-lightness:not([disabled]):active::-moz-range-thumb {
+  box-shadow: 0 0 0 15px color-mix(in srgb, var(--desired-gecko-color) 20%, transparent), var(--elevation-1);
+}
+
+#gecko-hue::-moz-range-track {
+  background-image: linear-gradient(to right, #ff0000 0%, #ffff00 17%, #00ff00 33%, #00ffff 50%, #0000ff 67%, #ff00ff 83%, #ff0000 100%);
+}
+
+#gecko-saturation::-moz-range-track {
+  background-image: linear-gradient(to right, rgb(128, 128, 128), var(--desired-gecko-color));
+}
+
+#gecko-lightness::-moz-range-track {
+  background-image: linear-gradient(to right, black, var(--desired-gecko-color), white);
+}
+
+@media not (-moz-platform: windows) {
+  .winonly {
+    display: none !important;
+  }
+}
+
+:root[isWindows10] .notwin10 {
+  display: none !important;
+}
+
+:root:not([isWindows10]) .win10 {
+  display: none !important;
+}
+
+:root:not([nativeControls]) .nativecontrols {
+  display: none !important;
+}
+
+@media not (-moz-platform: linux) {
+  .linuxonly {
+    display: none !important;
+  }
+}
+
+@media (-moz-platform: linux) {
+  .notlinux {
+    display: none !important;
+  }
+}/*# sourceMappingURL=style.css.map */

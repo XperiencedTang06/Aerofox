@@ -1,0 +1,71 @@
+
+:root[nav-drawer-auto-hide] {
+	@media all and (max-width: 640px) {
+		.content {
+			padding: 0;
+		}
+
+		.list-container > .card:first-child {
+			margin-block-start: 0;
+		}
+	}
+}
+
+.pages {
+	position: relative;
+	flex: 1;
+	
+	> .pages-container {
+		position: relative;
+		flex: 1;
+
+		> .page {
+			position: absolute;
+			display: flex;
+			height: 100%;
+			width: 100%;
+			visibility: hidden;
+			overflow: hidden;
+
+			> .floating-action-button {
+				position: absolute;
+				z-index: 1;
+				right: 0;
+				bottom: 0;
+			}
+			
+			.content-container {
+				flex: 1;
+				position: relative;
+				overflow: hidden auto;
+
+				.window-top-bar {
+					background: var(--primary-color-tone-700);
+					-moz-window-dragging: no-drag;
+				}
+			}
+
+			&[selected="true"] {
+				visibility: visible;
+				
+				.content {
+					transform: none;
+					transition: all 250ms cubic-bezier(0.4, 0.0, 0.2, 1) !important;
+					opacity: 1;
+				}
+			}
+
+			.content {
+				opacity: 0;
+				transform: translateY(40px);
+				
+				transition: all 100ms cubic-bezier(0.4, 0.0, 1, 1) !important;
+				inset: 0;
+			}
+		}
+	}
+}
+
+.content {
+	padding: var(--inner-padding);
+}

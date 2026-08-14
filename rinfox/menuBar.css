@@ -1,0 +1,44 @@
+#toolbar-menubar 
+{
+  position: relative !important;
+  height: 24px !important;
+
+
+  /*Moved from tweaks.css*/
+  margin-top: 0 !important;
+      background-image: linear-gradient(to bottom, #FEFEFF 0%, #E5EAF5 25%, #D4DBED 25%, #E1E6F6 100%) !important;
+      text-shadow: none !important;
+      border-bottom: 1px solid #B6BCCC !important;
+      opacity: 1 !important;
+      visibility: visible !important;
+}
+
+
+
+
+
+#main-menubar > menu[_moz-menuactive] 
+{
+  color: HighlightText !important;
+}
+
+#menubar-items 
+{
+  height: 21px !important;
+  align-items: stretch !important;
+}
+
+#main-menubar {
+  height: 100% !important;
+}
+
+
+#main-menubar:not(:-moz-lwtheme, :-moz-window-inactive) {
+      background-color: transparent !important;
+      border-radius: 0 !important;
+    }
+
+
+.menubar-text {
+  margin-inline: 9px !important;
+}

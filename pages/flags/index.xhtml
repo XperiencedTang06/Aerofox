@@ -1,0 +1,119 @@
+<?xml version="1.0"?>
+
+<?xml-stylesheet href="chrome://userchrome/content/pages/styles/style.css" type="text/css"?>
+<?xml-stylesheet href="chrome://userchrome/content/pages/flags/eras.css" type="text/css"?>
+
+<!DOCTYPE window SYSTEM "chrome://geckium/locale/dtd/flags.dtd">
+
+<html
+	xmlns:xul="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"
+	xmlns="http://www.w3.org/1999/xhtml"
+	preload="true"
+>
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="icon" href="chrome://global/skin/icons/settings.svg"></link>
+	</head>
+	<body>
+		<vbox id="main-container">
+			<!-- Chrome Flags to Geckium
+				Chrome 13
+				Compact Navigation
+					- Enable;
+					- Disable.
+				Experimental new tab page
+					- Enable;
+					- Disable.
+
+				Chrome 26
+				Action Box
+					- Default;
+					- Enabled;
+					- Disabled.
+
+				Chrome 33
+				#search-button-in-omnibox
+					- Default;
+					- Disabled;
+					- Enabled on all search result pages;
+					- Enabled on all search result pages or when input in progress;
+					- Enabled on all pages.
+
+				Chrome 47
+				#enable-icon-ntp
+					- Default;
+					- Enabled;
+					- Disabled.
+				#enable-settings-window
+					- Default;
+					- Enabled;
+					- Disabled.
+				
+				Chrome 63
+				#omnibox-ui-show-suggestion-favicons
+					- Default;
+					- Enabled;
+					- Disabled.
+				#omnibox-ui-vertical-layout
+					- Default;
+					- Enabled;
+					- Disabled.
+				#omnibox-ui-vertical-margin
+					- Default;
+					- Enabled;
+					- Enabled 4px vertical margin;
+					- Enabled 6px vertical margin;
+					- Enabled 8px vertical margin;
+					- Enabled 10px vertical margin;
+					- Enabled 12px vertical margin;
+					- Enabled 14px vertical margin;
+					- Disabled.
+				#omnibox-ui-swap-title-and-url
+					- Default;
+					- Enabled;
+					- Disabled.
+			-->
+
+			<hbox id="header">
+				<h1>&warning.header;</h1>
+			</hbox>
+			<div class="blurb-container">
+				<span id="blurb-warning">&warning.title;</span>
+				<span>&warning.description;</span>
+			</div>
+			<vbox id="flagsExperimentTemplate">
+				<vbox id="available-experiments">
+					<hbox class="section-header">
+						<label class="section-header-title">&experiments.available.title;</label>
+						<spacer />
+						<!--<button id="experiment-reset-all">Reset all to default</button>-->
+					</hbox>
+					<vbox class="content-container">
+						
+					</vbox>
+				</vbox>
+				<!--<vbox id="unavailable-experiments">
+					<hbox class="section-header">
+						<span class="section-header-title">&experiments.unavailable.title;</span>
+					</hbox>
+					<vbox class="content-container">
+						
+					</vbox>
+				</vbox>-->
+			</vbox>
+		</vbox>
+
+		<script>
+			var { AppConstants } = ChromeUtils.importESModule("resource://gre/modules/AppConstants.sys.mjs");
+		</script>
+
+		<script src="chrome://userchrome/content/JS/Geckium_utils.uc.js" />
+
+		<script src="chrome://userchrome/content/JS/Geckium_styles.uc.js" />
+
+		<script src="chrome://userchrome/content/pages/flags/scripts/flags.js" defer="true" />
+
+		<script src="chrome://userchrome/content/pages/scripts/appearance.js" defer="true" />
+	</body>
+</html>

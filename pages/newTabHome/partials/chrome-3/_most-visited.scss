@@ -1,0 +1,615 @@
+& {
+	--newtab_thumb_off: url("chrome://userchrome/content/pages/newTabHome/assets/chrome-3/imgs/newtab_thumb_off.png");
+	--newtab_thumb_off_h: url("chrome://userchrome/content/pages/newTabHome/assets/chrome-3/imgs/newtab_thumb_off_h.png");
+	--newtab_thumb_off_p: url("chrome://userchrome/content/pages/newTabHome/assets/chrome-3/imgs/newtab_thumb_off_p.png");
+	--newtab_thumb_on: url("chrome://userchrome/content/pages/newTabHome/assets/chrome-3/imgs/newtab_thumb_on.png");
+	--newtab_thumb_on_h: url("chrome://userchrome/content/pages/newTabHome/assets/chrome-3/imgs/newtab_thumb_on_h.png");
+	--newtab_thumb_on_p: url("chrome://userchrome/content/pages/newTabHome/assets/chrome-3/imgs/newtab_thumb_on_p.png");
+
+	--newtab_list_off: url("chrome://userchrome/content/pages/newTabHome/assets/chrome-3/imgs/newtab_list_off.png");
+	--newtab_list_off_h: url("chrome://userchrome/content/pages/newTabHome/assets/chrome-3/imgs/newtab_list_off_h.png");
+	--newtab_list_off_p: url("chrome://userchrome/content/pages/newTabHome/assets/chrome-3/imgs/newtab_list_off_p.png");
+	--newtab_list_on: url("chrome://userchrome/content/pages/newTabHome/assets/chrome-3/imgs/newtab_list_on.png");
+	--newtab_list_on_h: url("chrome://userchrome/content/pages/newTabHome/assets/chrome-3/imgs/newtab_list_on_h.png");
+
+	--newtab_option: url("chrome://userchrome/content/pages/newTabHome/assets/chrome-3/imgs/newtab_option.png");
+	--newtab_option_h: url("chrome://userchrome/content/pages/newTabHome/assets/chrome-3/imgs/newtab_option_h.png");
+	--newtab_option_p: url("chrome://userchrome/content/pages/newTabHome/assets/chrome-3/imgs/newtab_option_p.png");
+
+
+	--newtab_pin_off: url("chrome://userchrome/content/pages/newTabHome/assets/chrome-3/imgs/newtab_pin_off.png");
+	--newtab_pin_off_h: url("chrome://userchrome/content/pages/newTabHome/assets/chrome-3/imgs/newtab_pin_off_h.png");
+	--newtab_pin_off_p: url("chrome://userchrome/content/pages/newTabHome/assets/chrome-3/imgs/newtab_pin_off_p.png");
+
+	--newtab_close: url("chrome://userchrome/content/pages/newTabHome/assets/chrome-3/imgs/newtab_close.png");
+	--newtab_close_h: url("chrome://userchrome/content/pages/newTabHome/assets/chrome-3/imgs/newtab_close_h.png");
+	--newtab_close_p: url("chrome://userchrome/content/pages/newTabHome/assets/chrome-3/imgs/newtab_close_p.png");
+
+	--newtab_pin_on: url("chrome://userchrome/content/pages/newTabHome/assets/chrome-3/imgs/newtab_pin_on.png");
+	--newtab_pin_on_h: url("chrome://userchrome/content/pages/newTabHome/assets/chrome-3/imgs/newtab_pin_on_h.png");
+	--newtab_pin_on_p: url("chrome://userchrome/content/pages/newTabHome/assets/chrome-3/imgs/newtab_pin_on_p.png");
+
+	@media not (resolution: 96dpi) {
+		--newtab_thumb_off: url("chrome://userchrome/content/pages/newTabHome/assets/chrome-3/imgs/newtab_thumb_off.svg");
+		--newtab_thumb_off_h: url("chrome://userchrome/content/pages/newTabHome/assets/chrome-3/imgs/newtab_thumb_off_h.svg");
+		--newtab_thumb_off_p: url("chrome://userchrome/content/pages/newTabHome/assets/chrome-3/imgs/newtab_thumb_off_p.svg");
+		--newtab_thumb_on: url("chrome://userchrome/content/pages/newTabHome/assets/chrome-3/imgs/newtab_thumb_on.svg");
+		--newtab_thumb_on_h: url("chrome://userchrome/content/pages/newTabHome/assets/chrome-3/imgs/newtab_thumb_on_h.svg");
+		--newtab_thumb_on_p: url("chrome://userchrome/content/pages/newTabHome/assets/chrome-3/imgs/newtab_thumb_on_p.svg");
+
+		--newtab_list_off: url("chrome://userchrome/content/pages/newTabHome/assets/chrome-3/imgs/newtab_list_off.svg");
+		--newtab_list_off_h: url("chrome://userchrome/content/pages/newTabHome/assets/chrome-3/imgs/newtab_list_off_h.svg");
+		--newtab_list_off_p: url("chrome://userchrome/content/pages/newTabHome/assets/chrome-3/imgs/newtab_list_off_p.svg");
+		--newtab_list_on: url("chrome://userchrome/content/pages/newTabHome/assets/chrome-3/imgs/newtab_list_on.svg");
+		--newtab_list_on_h: url("chrome://userchrome/content/pages/newTabHome/assets/chrome-3/imgs/newtab_list_on_h.svg");
+
+		--newtab_option: url("chrome://userchrome/content/pages/newTabHome/assets/chrome-3/imgs/newtab_option.svg");
+		--newtab_option_h: url("chrome://userchrome/content/pages/newTabHome/assets/chrome-3/imgs/newtab_option_h.svg");
+		--newtab_option_p: url("chrome://userchrome/content/pages/newTabHome/assets/chrome-3/imgs/newtab_option_p.svg");
+
+
+		--newtab_pin_off: url("chrome://userchrome/content/pages/newTabHome/assets/chrome-3/imgs/newtab_pin_off.svg");
+		--newtab_pin_off_h: url("chrome://userchrome/content/pages/newTabHome/assets/chrome-3/imgs/newtab_pin_off_h.svg");
+		--newtab_pin_off_p: url("chrome://userchrome/content/pages/newTabHome/assets/chrome-3/imgs/newtab_pin_off_p.svg");
+
+		--newtab_close: url("chrome://userchrome/content/pages/newTabHome/assets/chrome-3/imgs/newtab_close.svg");
+		--newtab_close_h: url("chrome://userchrome/content/pages/newTabHome/assets/chrome-3/imgs/newtab_close_h.svg");
+		--newtab_close_p: url("chrome://userchrome/content/pages/newTabHome/assets/chrome-3/imgs/newtab_close_p.svg");
+
+		--newtab_pin_on: url("chrome://userchrome/content/pages/newTabHome/assets/chrome-3/imgs/newtab_pin_on.svg");
+		--newtab_pin_on_h: url("chrome://userchrome/content/pages/newTabHome/assets/chrome-3/imgs/newtab_pin_on_h.svg");
+		--newtab_pin_on_p: url("chrome://userchrome/content/pages/newTabHome/assets/chrome-3/imgs/newtab_pin_on_p.svg");
+	}
+
+	--default-window-menu-item-hover-bg: hsl(213, 66%, 57%);
+	--window-menu-item-hover-bg: var(--default-window-menu-item-hover-bg);
+
+	--default-view-toolbar-buttons-bg: rgb(134,177,231);
+	--view-toolbar-buttons-bg: var(--default-view-toolbar-buttons-bg);
+	--default-window-menu-item-hover-bg: rgb(134,177,231);
+
+	--default-thumbnail-border-color-normal: #E5EFFE;
+	--thumbnail-border-color-normal: var(--default-thumbnail-border-color-normal);
+	--default-thumbnail-border-color-hot: rgb(75,140,220);
+	--thumbnail-border-color-hot: var(--default-thumbnail-border-color-hot);
+	--default-thumbnail-container-color: black;
+	--thumbnail-container-color: var(--default-thumbnail-container-color);
+	--default-thumbnail-disabled-color: #DFEAF7;
+	--thumbnail-disabled-color: var(--default-thumbnail-disabled-color);
+	--default-edit-bar-background-color-hot: hsl(213, 66%, 57%);
+	--edit-bar-background-color-hot: var(--default-edit-bar-background-color-hot);
+	--default-edit-bar-background-hot: linear-gradient(
+		to bottom,
+		hsl(213, 87%, 67%),
+		var(--edit-bar-background-color-hot)
+	);
+	--edit-bar-background-hot: var(--default-edit-bar-background-hot);
+
+	--default-link-color: #06C;
+
+	@media (prefers-color-scheme: dark) {
+		--thumbnail-border-color-normal: color-mix(
+			in srgb,
+			color-mix(
+				in srgb,
+				rgb(14, 80, 159) 45%,
+				white
+			) 70%,
+			black
+		);
+		--thumbnail-container-color: white;
+		--thumbnail-disabled-color: color-mix(
+			in srgb,
+			color-mix(
+				in srgb,
+				rgb(14, 80, 159) 40%,
+				white
+			) 70%,
+			black
+		);
+
+		--default-edit-bar-background-hot: linear-gradient(
+			to bottom,
+			rgb(14, 80, 159),
+			rgb(20, 62, 112)
+		);
+		--default-thumbnail-border-color-hot: rgb(20, 62, 112);
+	}
+
+	// Geckium You
+	&[gksystheme="you"]:not([gkthemed], [gkchrthemed]) {
+		--default-window-menu-item-hover-bg: hsl(var(--you-h), calc(var(--you-s) - 3%), calc(var(--you-l) - 1%));
+		--default-view-toolbar-buttons-bg: hsl(var(--you-h), calc(var(--you-s) - 2%), calc(var(--you-l) + 14%));
+		--default-window-menu-item-hover-bg: hsl(var(--you-h), calc(var(--you-s) - 2%), calc(var(--you-l) + 14%));
+		--default-thumbnail-border-color-normal: hsl(var(--you-h), var(--you-s), calc(var(--you-l) + 37%));
+		--default-thumbnail-border-color-hot: hsl(var(--you-h), calc(var(--you-s) - 2%), var(--you-l));
+		--default-thumbnail-disabled-color: hsl(var(--you-h), calc(var(--you-s) - 9%), calc(var(--you-l) + 34%));
+		--default-edit-bar-background-color-hot: hsl(var(--you-h), calc(var(--you-s) - 3%), calc(var(--you-l) - 1%));
+		--default-edit-bar-background-hot: linear-gradient(
+			to bottom,
+			hsl(var(--you-h), var(--you-s), calc(var(--you-l) + 9%)),
+			var(--edit-bar-background-color-hot)
+		);
+
+		@media (prefers-color-scheme: dark) {
+			--thumbnail-border-color-normal: color-mix(
+				in srgb,
+				color-mix(
+					in srgb,
+					hsl(var(--you-h), var(--you-s), calc(var(--you-l-dark) - 23%)) 45%,
+					white
+				) 70%,
+				black
+			);
+			--thumbnail-disabled-color: color-mix(
+				in srgb,
+				color-mix(
+					in srgb,
+					hsl(var(--you-h), var(--you-s), calc(var(--you-l-dark) - 23%)) 40%,
+					white
+				) 70%,
+				black
+			);
+			--default-edit-bar-background-hot: linear-gradient(
+				to bottom,
+				hsl(var(--you-h), var(--you-s), calc(var(--you-l-dark) - 23%)),
+				hsl(var(--you-h), var(--you-s), calc(var(--you-l-dark) - 32%))
+			);
+			--default-thumbnail-border-color-hot: hsl(var(--you-h), var(--you-s), calc(var(--you-l-dark) - 32%));
+		}
+	}
+
+	// Custom theme support
+	// lwtheme
+	&[gkthemed]:not([gkchrthemed]) {
+		--view-toolbar-buttons-bg: var(--toolbar-color, var(--lwt-text-color));
+		--window-menu-item-hover-bg: var(--toolbar-color, var(--lwt-text-color));
+
+		--thumbnail-border-color-normal: color-mix(in srgb, var(--edit-bar-background-color-hot) 50%, white);
+		--thumbnail-border-color-hot: var(--toolbar-bgcolor, var(--lwt-accent-color));
+		--thumbnail-container-color: var(--link-color, var(--default-thumbnail-container-color));
+		--thumbnail-disabled-color: var(--thumbnail-border-color-normal);
+
+		&[toolbar-bgcolor-transparent="true"] {
+			--thumbnail-border-color-hot: var(--gktoolbar-bgcolor, var(--lwt-accent-color));
+		}
+		
+		&:not([style*="--toolbar-color: white"]),
+		&:not([style*="--toolbar-color: rgb(255,255,255)"]),
+		&:not([style*="--toolbar-color: rgba(255,255,255,1)"]) {
+			--edit-bar-background-color-hot: var(--toolbar-bgcolor, var(--lwt-accent-color));
+			--edit-bar-background-hot: linear-gradient(
+				to bottom,
+				color-mix(in srgb, var(--edit-bar-background-color-hot) 70%, white),
+				var(--edit-bar-background-color-hot)
+			);
+
+			&[toolbar-bgcolor-transparent="true"] {
+				--edit-bar-background-color-hot: var(--gktoolbar-bgcolor, var(--lwt-accent-color));
+			}
+		}
+	}
+	// chrtheme
+	&[gkthemed][gkchrthemed] {
+		--manually-adapted-header: var(--chrtheme-ntp-section, var(--chrtheme-ntp-header));
+		--view-toolbar-buttons-bg: color-mix(
+			in srgb,
+			var(--manually-adapted-header) 70%,
+			white
+		);
+		
+		/*&[style*="--chrtheme-ntp-section"] {
+			--thumbnail-border-color-normal: color-mix(
+				in srgb,
+				var(--manually-adapted-header) 20%,
+				white
+			);
+			//--thumbnail-border-color-hot: var(--manually-adapted-header, var(--default-thumbnail-border-color-hot));
+		}*/
+		--thumbnail-border-color-normal: var(--chrtheme-ntp-section, var(--default-thumbnail-border-color-normal));
+		--thumbnail-border-color-hot: var(--chrtheme-ntp-header, var(--chrtheme-ntp-section, var(--default-thumbnail-border-color-hot)));
+		--thumbnail-container-color: var(--chrtheme-ntp-text, var(--default-thumbnail-container-color));
+		--window-menu-item-hover-bg: var(--view-toolbar-buttons-bg, var(--default-window-menu-item-hover-bg));
+		
+		--edit-bar-background-color-hot: var(--thumbnail-border-color-hot, var(--default-thumbnail-border-color-hot));
+		--edit-bar-background-hot: linear-gradient(
+			to bottom,
+			color-mix(
+				in srgb,
+				var(--edit-bar-background-color-hot) 70%,
+				white
+			),
+			var(--edit-bar-background-color-hot)
+		);
+	}
+	// GTK+
+	&[gksystheme="gtk"]:not([gkthemed], [gkchrthemed]) {
+		--view-toolbar-buttons-bg: -moz-dialog;
+		--window-menu-item-hover-bg: AccentColor;
+
+		--thumbnail-border-color-normal: -moz-dialog;
+		--thumbnail-border-color-hot: ActiveCaption;
+		--thumbnail-container-color: FieldText;
+		// --thumbnail-disabled-color: var(--thumbnail-border-color-normal); // not used in GTK+ - see https://www.ubuntufree.com/wp-content/uploads/2016/10/Chrome-Browser-Linux.png
+		
+		--edit-bar-background-color-hot: CaptionText;
+		--edit-bar-background-hot: linear-gradient(
+			to bottom,
+			color-mix(in srgb, ActiveCaption 70%, white),
+			ActiveCaption
+		);
+	}
+
+	&[geckium-choice="three"],
+	&[geckium-choice="four"],
+	&[geckium-choice="five"],
+	&[geckium-choice="six"] {
+		@media only screen and (max-width: 920px) {
+			.thumbnail-container {
+				.thumbnail {
+					width: 150px;
+					height: 93px;
+				}
+
+				.thumbnail-wrapper {
+					background-size: 150px 93px;
+				}
+			}
+		}
+	}
+}
+
+#view-toolbar {
+	margin-block-start: 35px;
+	margin-block-end: 18px;
+	justify-content: end;
+	gap: 5px;
+
+	> input,
+	> button {
+		all: unset;
+
+		position: relative;
+
+		border-radius: 4px;
+		background-color: var(--view-toolbar-buttons-bg);
+		box-sizing: border-box;
+		width: 19px;
+		height: 17px;
+
+		&#thumb-checkbox {
+			background-image: var(--newtab_thumb_off);
+
+			&:not([disabled]) {
+				&:hover {
+					background-image: var(--newtab_thumb_off_h);
+				}
+
+				&:active {
+					background-image: var(--newtab_thumb_off_p);
+				}
+
+				&:checked {
+					background-image: var(--newtab_thumb_on);
+	
+					&:not([disabled]) {
+						&:hover {
+							background-image: var(--newtab_thumb_on_h);
+						}
+	
+						&:active {
+							background-image: var(--newtab_thumb_on_p);
+						}
+					}
+				}
+			}
+		}
+
+		&#list-checkbox {
+			background-image: var(--newtab_list_off);
+
+			&:not([disabled]) {
+				&:hover {
+					background-image: var(--newtab_list_off_h);
+				}
+
+				&:active {
+					background-image: var(--newtab_list_off_p);
+				}
+
+				&:checked {
+					background-image: var(--newtab_list_on);
+	
+					&:not([disabled]) {
+						&:hover {
+							background-image: var(--newtab_list_on_h);
+						}
+					}
+				}
+			}
+		}
+
+		&#option-button {
+			background-image: var(--newtab_option);
+
+			&:not([disabled]) {
+				&:hover {
+					background-image: var(--newtab_option_h);
+				}
+
+				&:active,
+				&[open] {
+					background-image: var(--newtab_option_p);
+				}
+			}
+		}
+	}
+}
+
+.window-menu-button {
+	&:not([disabled]) {
+		&[open] {
+			.window-menu {
+				display: flex;
+			}
+		}
+	}
+
+	.window-menu {
+		display: none;
+		position: absolute;
+		top: 18px;
+		right: -1px;
+		min-width: 175px;
+		box-shadow: rgba(0, 0, 0, 0.296875) 2px 2px 3px;
+		background-color: white;
+		border: 1px solid #999;
+		color: black;
+		padding: 1px;
+	
+		> :not(separator) {
+			cursor: default;
+			padding: 3px 8px;
+			-moz-context-properties: fill, fill-opacity !important;
+			fill: currentColor !important;
+	
+			&:hover {
+				background-color: var(--window-menu-item-hover-bg);
+				color: white;
+				fill: currentColor !important;
+			}
+
+			&[checked="true"] {
+				list-style-image: url("chrome://userchrome/content/pages/newTabHome/assets/chrome-3/imgs/checkbox.svg");
+			}
+
+			.checkbox-check {
+				display: none;
+			}
+
+			.checkbox-label-box {
+				align-items: center;
+			}
+
+			.checkbox-icon {
+				width: 9px;
+				height: 8px;
+				margin-inline-end: 2px;
+			}
+		}
+	
+		.checkbox-check {
+			width: 12px;
+		}
+	}
+}
+
+#most-visited,
+#most-viewed-content,
+#most-visited-page .tile-grid,
+#mv-tiles {
+	display: grid;
+	grid-template-columns: repeat(4, minmax(0, 1fr));
+	gap: 0 20px;
+	margin-block-end: 34px;
+
+	&.collapsed {
+		display: none !important;
+	}
+
+	&.list {
+		display: block;
+		margin-top: 22px;
+
+		.thumbnail-container {
+			color: var(--link-color, --default-link-color);
+			font-size: 16pt;
+
+			.edit-mode-border {
+				display: none;
+			}
+
+			.title {
+				height: 46px;
+
+				> hbox {
+					align-items: center;
+				}
+			}
+		}
+	}
+}
+
+.thumbnail-container {
+	color: var(--thumbnail-container-color);
+	text-decoration: none;
+
+	@media (prefers-color-scheme: dark) {
+		color: white;
+	}
+	
+	&:not([disabled]) {
+		&:hover,
+		&:focus {
+			.edit-bar {
+				margin-block-start: 0px;
+				margin-block-end: 0px;
+				background-color: var(--edit-bar-background-color-hot);
+				background-image: var(--edit-bar-background-hot);
+				box-shadow: 0px 2px 2px hsla(0, 0%, 0%, .5);
+				
+				transition-delay: .5s, .5s, .5s;
+			}
+
+			.thumbnail {
+				border-color: var(--thumbnail-border-color-hot);
+				border-top-left-radius: 0;
+				border-top-right-radius: 0;
+				background-image: linear-gradient(
+					to bottom,
+					hsla(0, 0%, 0%, 0) 0%,
+					hsla(0, 0%, 47%, 0) 85%,
+					hsla(0, 0%, 47%, 0.2) 100%
+				);
+				box-shadow: 0px 2px 2px hsla(0, 0%, 0%, .5);
+
+				/* delay border radius transition as much as the edit bar slide delay */
+				transition-delay: 0s, 0s, .5s;
+			}
+		}
+	}
+	&[disabled] {
+		.thumbnail-wrapper {
+			border: solid var(--thumbnail-disabled-color);
+			background: rgb(243,243,243);
+		}
+
+		.thumbnail {
+			background-color: var(--thumbnail-disabled-color);
+			border: 1px solid white;
+			padding: 0;
+		}
+	}
+
+	.thumbnail-wrapper {
+		background-color: white;
+
+		@media (prefers-color-scheme: dark) {
+			background-color: black;
+		}
+
+		border-radius: 5px;
+		background-size: 209px 132px;
+		background-position: center;
+		background-repeat: no-repeat;
+
+		transition-property: background-size;
+		transition-duration: .15s;
+	}
+
+	.thumbnail {
+		width: 207px;
+		height: 129px;
+		border-width: 3px;
+		border-style: solid;
+		border-color: var(--thumbnail-border-color-normal);
+		border-radius: 5px;
+		padding: 1px;
+
+		transition: border-color .15s, box-shadow .15s, border-radius .15s, height .15s, width .15s;
+	}
+
+	.edit-mode-border {
+		border-radius: 4px;
+	}
+
+	.edit-bar {
+		box-sizing: unset;
+
+		background: hsl(213, 54%, 95%);
+		border-top-left-radius: 4px;
+		border-top-right-radius: 4px;
+		height: 17px;
+		margin-block-start: 21px;
+		margin-block-end: -21px;
+		padding-block-start: 3px;
+		padding-inline: 3px;
+		cursor: move;
+
+		@media (prefers-color-scheme: dark) {
+			background: #617796;
+		}
+
+		transition: margin .15s, background-color .15s, box-shadow .15s;
+
+		button {
+			all: unset;
+
+			cursor: pointer;
+			width: 16px;
+			height: 16px;
+
+			background-position: center;
+			background-repeat: no-repeat;
+
+			&.pin {
+				background-image: var(--newtab_pin_off);
+		
+				&:hover {
+					background-image: var(--newtab_pin_off_h);
+				}
+		
+				&:active {
+					background-image: var(--newtab_pin_off_p);
+				}
+			}
+		
+			&.remove {
+				background-image: var(--newtab_close);
+		
+				&:hover {
+					background-image: var(--newtab_close_h);
+				}
+		
+				&:active {
+					background-image: var(--newtab_close_p);
+				}
+			}
+		}
+	}
+
+	&[pinned="true"] {
+		.edit-bar {
+			button {
+				&.pin {
+					background-image: var(--newtab_pin_on);
+		
+					&:hover {
+						background-image: var(--newtab_pin_on_h);
+					}
+		
+					&:active {
+						background-image: var(--newtab_pin_on_p);
+					}
+				}
+			}
+		}
+	}
+
+	.title {
+		padding-block-start: 4px;
+		padding-inline-start: 3px;
+		padding-inline-end: 5px;
+		height: 16px;
+
+		label {
+			overflow: hidden;
+			text-overflow: ellipsis;
+			white-space: nowrap;
+		}
+	}
+
+	.favicon {
+		margin-inline-end: 4px;
+	}
+}

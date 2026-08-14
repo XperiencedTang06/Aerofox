@@ -1,0 +1,19 @@
+#view-toolbar {
+	margin-block: 15px;
+}
+
+#most-visited,
+#most-viewed-content,
+#most-visited-page .tile-grid,
+#mv-tiles {
+	&.list {
+		.thumbnail-container {
+			text-decoration: underline;
+			font-size: 12pt;
+
+			.title {
+				height: 34px;
+			}
+		}
+	}
+}

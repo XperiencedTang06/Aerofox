@@ -1,0 +1,93 @@
+& {
+	--default-sidebar-background-color: rgb(225, 236, 254);
+	--sidebar-panes-background-color: var(--default-sidebar-background-color);
+
+	@media (prefers-color-scheme: dark) {
+		--default-sidebar-background-color: #415470;
+		--default-section-title-color: white;
+	}
+
+	// Custom theme support
+	// lwtheme
+	&[gkthemed]:not([gkchrthemed]) {
+		--sidebar-panes-background-color: color-mix(
+			in srgb,
+			var(--arrowpanel-background, var(--lwt-accent-color)) 50%,
+			transparent
+		);
+	}
+	// chrtheme
+	&[gkthemed][gkchrthemed] {
+		--sidebar-panes-background-color: var(--chrtheme-ntp-section, var(--default-recently-closed-background));
+	}
+	// GTK+
+	&[gksystheme="gtk"]:not([gkthemed], [gkchrthemed]) {
+		--sidebar-panes-background-color: -moz-dialog;
+	}
+}
+
+#sidebar {
+	width: 230px;
+	gap: 10px;
+}
+
+.sidebar {
+	padding: 3px 10px 3px 9px;
+}
+
+#searches,
+#recentlyBookmarked {
+	border-radius: 5px;
+	background-color: var(--sidebar-panes-background-color);
+}
+
+#recentlyBookmarkedContainer .recent-bookmark {
+	color: var(--link-color);
+}
+
+#recentlyClosedContainer .recent-bookmark {
+	color: var(--default-link-color);
+}
+
+.recent-bookmark {
+	display: flex;
+	height: 21px;
+	-moz-context-properties: fill, fill-opacity;
+
+	@media (prefers-color-scheme: dark) {
+		color: #acc0da;
+		fill: white;
+	}
+
+	image {
+		width: 16px;
+		height: 16px;
+		margin-inline-end: 6px;
+	}
+
+	label {
+		white-space: nowrap;
+		text-overflow: ellipsis;
+		overflow: hidden;
+	}
+}
+
+.hint {
+	all: unset;
+
+	height: 28px;
+	background-color: white;
+	border: 1px solid rgb(127,157,185);
+	box-sizing: border-box;
+	width: 100%;
+	margin-block-end: 8px;
+	padding-left: 23px;
+	background-image: url("chrome://userchrome/content/assets/img/chrome-1/favicons/default_favicon.png");
+	background-position-x: 4px;
+	background-position-y: center;
+	background-repeat: no-repeat;
+
+	@media (prefers-color-scheme: dark) {
+		background-color: var(--ntp-background-color);
+	}
+}

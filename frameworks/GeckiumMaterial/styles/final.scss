@@ -1,0 +1,169 @@
+@font-face {
+	font-family: "Roboto";
+	font-style: normal;
+	font-weight: 400;
+	font-display: swap;
+	src: url("../fonts/Roboto-Regular.woff2") format("woff2");
+}
+  
+@font-face {
+	font-family: "Roboto";
+	font-style: normal;
+	font-weight: 500;
+	font-display: swap;
+	src: url("../fonts/Roboto-Medium.woff2") format("woff2");
+}
+  
+@font-face {
+	font-family: "Roboto";
+	font-style: normal;
+	font-weight: 600;
+	font-display: swap;
+	src: url("../fonts/Roboto-Bold.woff2") format("woff2");
+}
+
+:root {
+	--inner-padding: 16px;
+
+	@media all and (max-width: 640px) {
+		&[nav-drawer-auto-hide] .list-container > h4 {
+			padding-inline-start: 19px;
+			margin-block-end: -10px;
+		}
+	}
+
+	&,
+	body {
+		font-size: 10pt;
+		color: black;
+
+		@media (prefers-color-scheme: dark) {
+			color: white;
+		}
+	}
+
+	&[containertype="page"] {
+		--titlebar-height: 0px;
+
+		#window {
+			width: 100vw !important;
+			height: 100vh !important;
+			border-radius: 0;
+			box-shadow: none;
+		}
+	}
+}
+
+vbox,
+hbox,
+header {
+	display: flex;
+}
+
+vbox {
+	flex-direction: column;
+}
+
+hbox,
+header {
+	flex-direction: row;
+}
+
+grid {
+	display: grid;
+}
+
+label,
+p,
+span,
+a,
+h1,
+h2,
+h3,
+h4 {
+	margin: 0;
+	padding: 0;
+}
+
+label {
+	align-items: center;
+	display: flex;
+
+	.year {
+		display: inline-block;
+		margin-inline-end: 5px;
+		white-space: nowrap;
+	}
+}
+
+.year {
+	font-size: 10px;
+	padding-inline: 4px;
+	padding-block: 2px;
+	color: white;
+	font-weight: 500;
+	background: var(--secondary-color);
+	box-shadow: 0 1px 1px rgb(0, 0, 0, 40%);
+	border-radius: 2px;
+}
+
+h4 {
+	color: rgb(117,117,117);
+	font-size: 10pt;
+	height: 48px;
+	align-items: center;
+	flex-shrink: 0;
+}
+
+.headline-5 {
+	font-weight: normal;
+	font-size: 17pt;
+	letter-spacing: 0;
+	margin-block: 23.5px;
+}
+
+.body-2 {
+	font-size: 10pt;
+	letter-spacing: .25px;
+	margin-block: 6px;
+}
+
+spacer {
+	flex: 1;
+	min-width: 18px;
+}
+
+.show-mac {
+	display: none;
+}
+
+@media (-moz-platform: macos) {
+	.show-mac {
+		display: flex;
+	}
+	.hide-mac {
+		display: none;
+	}
+}
+
+@import "partials/icons";
+@import "partials/colors";
+@import "partials/elevations";
+@import "partials/anims";
+@import "partials/window";
+@import "partials/tabs";
+@import "partials/pages";
+@import "partials/footer";
+@import "partials/buttons";
+@import "partials/input";
+@import "partials/card";
+@import "partials/list";
+@import "partials/navigation-drawer";
+@import "partials/menu";
+@import "partials/steppers";
+@import "partials/dialog";
+@import "partials/preview";
+@import "partials/snackbars";
+@import "partials/ripple";
+@import "partials/spinner";
+@import "partials/table";

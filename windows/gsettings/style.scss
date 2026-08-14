@@ -1,0 +1,830 @@
+:root {
+	&[contentmode="wizard"] .disable-in-wizard,
+	[disabled="true"] {
+		pointer-events: none;
+		opacity: .5;
+
+		.appearance-container {
+			max-height: 100px;
+			mask-image: linear-gradient(to bottom, black, transparent);
+		}
+	}
+
+	&[contentmode="wizard"] {
+		.show-in-wizard {
+			display: flex;
+		}
+
+		.content:not([data-page-container]) {
+			padding-block-end: 91px !important;
+		}
+	}
+
+	&:not([contentmode="wizard"]) .show-in-wizard {
+		display: none;
+	}
+
+	&[geckium-one] {
+		[data-browser="chrome"] .theme-icons .theme-browser-icon {
+			background-image: url("chrome://userchrome/content/windows/gsettings/imgs/browsers/chrome-2008.svg")
+		}
+
+		[data-browser="firefox"] .theme-icons .theme-browser-icon {
+			background-image: url("chrome://userchrome/content/windows/gsettings/imgs/browsers/firefox-2008.png")
+		}
+	}
+
+	&[geckium-one][geckium-two] [data-browser="firefox"] .theme-icons .theme-browser-icon {
+		background-image: url("chrome://userchrome/content/windows/gsettings/imgs/browsers/firefox-2009.png")
+	}
+
+	&[geckium-one][geckium-two][geckium-eleven] [data-browser="chrome"] .theme-icons .theme-browser-icon {
+		background-image: url("chrome://userchrome/content/windows/gsettings/imgs/browsers/chrome-2011.png")
+	}
+
+	&[geckium-one][geckium-two][geckium-twentyfive] [data-browser="firefox"] .theme-icons .theme-browser-icon {
+		background-image: url("chrome://userchrome/content/windows/gsettings/imgs/browsers/firefox-2013.png")
+	}
+
+	&[geckium-one][geckium-two][geckium-twentyfive][geckium-fortyseven] [data-browser="chrome"] .theme-icons .theme-browser-icon {
+		background-image: url("chrome://userchrome/content/windows/gsettings/imgs/browsers/chrome-2015.png")
+	}
+
+	&[geckium-one][geckium-two][geckium-twentyfive][geckium-sixtyeight] [data-browser="firefox"] .theme-icons .theme-browser-icon {
+		background-image: url("chrome://userchrome/content/windows/gsettings/imgs/browsers/firefox-2017.png")
+	}
+
+	[data-browser="msedge"] .theme-icons .theme-browser-icon {
+		background-image: url("chrome://userchrome/content/windows/gsettings/imgs/browsers/msedge.svg")
+	}
+
+	&[is120Plus="true"] .is-below-120 {
+		display: none !important;
+	}
+
+	&[nav-drawer-auto-hide] {
+		@media all and (max-width: 640px) {
+			.banner image {
+				width: 148px;
+			}
+		}
+	}
+}
+
+.is-linux-only {
+	display: none !important;
+}
+@media (-moz-platform: linux) {
+	.is-linux-only {
+		display: flex !important;
+	}
+}
+
+#window {
+	width: 1160px;
+	height: 710px;
+}
+
+h4 .about-flag {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 28px;
+	width: 28px;
+	margin-inline-start: 4px;
+	cursor: pointer;
+	transition: all 150ms ease-in;
+	border-radius: 50%;
+	overflow: hidden;
+	
+	&::before {
+		content: "";
+		height: 18px;
+		width: 18px;
+		mask-image: url("chrome://userchrome/content/frameworks/GeckiumMaterial/icons/info_outline.svg");
+		mask-size: cover;
+		mask-position: center center;
+		background: rgb(126, 126, 126);
+	}
+
+	&:hover {
+		background: rgb(0, 0, 0, 6%);
+	}
+
+	.ripple {
+		background: rgb(0, 0, 0, 20%);
+	}
+}
+
+#overridevisualstyle,
+#ncphelper-maskwidthmode[NCPMaskWidthMode="custom"],
+#gkThemeFilterItem,
+#card-avatar > .item:nth-child(2) {
+	border-bottom: 0 !important;
+}
+
+#ncphelper-maskwidthmode {
+	&[NCPMaskWidthMode="custom"] ~ #ncphelper-custommaskwidth {
+		display: flex;
+	}
+	&:not([NCPMaskWidthMode="custom"]) ~ #ncphelper-custommaskwidth {
+		display: none;
+	}
+}
+
+.people-picture {
+	appearance: none;
+	display: flex;
+	position: relative;
+	width: 58px;
+	aspect-ratio: 1 / 1;
+	align-items: center;
+	justify-content: center;
+	border-radius: 50%;
+	margin: 4px 0px !important;
+
+	&:not([disabled]) {
+		cursor: pointer;
+	}
+
+	&.color.ripple-enabled .ripple {
+		background: color-mix(
+			in srgb,
+			var(--secondary-color, var(--primary-color)) 40%,
+			transparent
+		);
+	}
+
+	&:checked {
+		outline: 2px solid var(--secondary-color, var(--primary-color));
+		outline-offset: -2px;
+
+		&::before,
+		&::after {
+			content: "";
+			position: absolute;
+			inset: 0;
+			display: block;
+		}
+
+		&::before {
+			background-color: color-mix(
+				in srgb,
+				color-mix(
+					in srgb,
+					var(--secondary-color, var(--primary-color)),
+					transparent 60%
+				),
+				rgb(0, 0, 0, 20%)
+			);
+		}
+
+		&::after {
+			mask-image: url(chrome://userchrome/content/frameworks/GeckiumMaterial/icons/check.svg);
+			mask-size: 32px 32px;
+			mask-position: center center;
+			mask-repeat: no-repeat;
+			background: rgb(255, 255, 255);
+		}
+	}
+}
+
+.banner {
+	position: relative;
+	background: url("chrome://userchrome/content/windows/gsettings/imgs/banner.jpg");
+	background-position: center;
+	background-size: cover;
+	background-repeat: no-repeat;
+	color: black;
+	list-style-image: url("chrome://userchrome/content/windows/gsettings/imgs/logo.svg");
+	fill: AccentColor;
+	-moz-context-properties: fill, fill-opacity;
+	padding: var(--inner-padding);
+	align-items: center;
+	font-weight: 500;
+	gap: 32px;
+	
+	image {
+		width: 200px;
+		transition: fill 320ms, width 200ms;
+
+		&:hover {
+			fill: #209f43;
+		}
+	}
+
+	> image {
+		filter: drop-shadow(0px 1px 2px rgba(0, 0, 0, 0.5));
+	}
+}
+
+#ntp-visual-styles-grid .link.chrome-appearance {
+	height: 163px;
+}
+
+.chrome-appearance .radio-parent {
+	margin-inline-start: 0 !important;
+}
+
+.profile-mode-option {
+	display: none;
+}
+
+#card-avatar {
+	&:not([profile-pic-mode="none"],
+		  [profile-pic-mode="geckium"],
+		  [profile-pic-mode="firefox"]) {
+		padding-block-end: 19px;
+	}
+
+	> .item:nth-child(3) {
+		display: none;
+	}
+
+
+	&[profile-pic-mode="chromium"] {
+		> .item:nth-child(3) {
+			display: flex;
+		}
+
+		#profile-pictures-grid {
+			display: grid;
+		}
+	}
+
+	&[profile-pic-mode="custom"] {
+		> .item:nth-child(3) {
+			display: flex;
+		}
+
+		#profile-pictures-path {
+			display: flex;
+		}
+	}
+}
+
+#gk_version {
+	position: relative;
+	overflow: hidden;
+	padding-inline: 8px;
+	border-radius: 9999px;
+	width: fit-content;
+	transition: background-color 155ms;
+
+	&:not([disabled]) {
+		cursor: pointer;
+
+		&:hover,
+		&:focus-visible {
+			background: rgba(153, 153, 153, .2);
+		}
+
+		.ripple {
+			background: rgba(153, 153, 153, .4);
+		}
+	}
+}
+
+.item.app {
+	padding-block: 6px;
+
+	image {
+		width: 48px;
+		height: 48px;
+		margin-inline-start: -8px;
+	}
+
+	label {
+		display: flex;
+		margin-inline-start: 8px;
+	}
+}
+
+.thememode {
+	appearance: none;
+	display: flex;
+	position: relative;
+	width: 76px;
+	height: 76px;
+	border-radius: 50%;
+	-moz-context-properties: fill, fill-opacity;
+	background-position: center,center !important;
+	background-repeat: no-repeat,no-repeat !important;
+
+	&:not([disabled]) {
+		cursor: pointer;
+	}
+
+	&:checked {
+		outline: 2px solid var(--secondary-color, var(--primary-color));
+		outline-offset: 2px;
+	}
+}
+
+#thememode-auto {
+	background-image: url(chrome://mozapps/content/extensions/default-theme/icon.svg);
+	background-size: 76px 76px,auto !important;
+}
+#thememode-light {
+	background-image: url(resource://builtin-themes/light/icon.svg);
+	background-size: 76px 76px,auto !important;
+}
+#thememode-dark {
+	background-image: url(resource://builtin-themes/dark/icon.svg);
+	background-size: 76px 76px,auto !important;
+}
+#thememode-themed {
+	background-color: color-mix(in srgb, currentColor, transparent 92%);
+	fill: color-mix(in srgb, currentColor, transparent 46%);
+	background-image: url(chrome://mozapps/skin/extensions/category-themes.svg);
+	background-size: 40px 40px,auto !important;
+	&:not(:checked) {
+		display: none !important;
+	}
+}
+
+.link {
+	&.chrome-appearance {
+		-moz-context-properties: fill, fill-opacity;
+		fill: white;
+		background-repeat: no-repeat !important;
+
+		&.mozstore {
+			background-image: url(chrome://mozapps/skin/extensions/category-themes.svg), url(resource://builtin-themes/alpenglow/background-noodles-right-dark.svg), url(resource://builtin-themes/alpenglow/background-noodles-left-dark.svg), url(resource://builtin-themes/alpenglow/background-gradient-dark.svg) !important;
+			background-position: center,right top,left top,right top !important;
+			background-repeat: no-repeat,no-repeat,no-repeat,repeat-x !important;
+			background-size: 64px 64px,auto,auto,auto !important
+		}
+		&.chrstore {
+			background-image: url(chrome://userchrome/content/pages/newTabHome/assets/chrome-21/imgs/1.png) !important;
+			background-position: center !important;
+			background-repeat: no-repeat !important;
+			background-size: 76px 76px !important
+		}
+		&.edgestore {
+			background-image: url(chrome://userchrome/content/windows/gsettings/imgs/edgeaddons.svg), linear-gradient(90deg, #072139, #1a416c 90%) !important;
+			background-position: center,center !important;
+			background-repeat: no-repeat,no-repeat !important;
+			background-size: 76px 76px,auto !important
+		}
+	}
+
+	&.geckium-appearance {
+		position: relative;
+		display: block;
+		width: 100%;
+		height: 160px;
+		background-size: cover;
+		background-position: top center;
+		cursor: pointer;
+
+		&:hover {
+			background-size: cover !important;
+			background-position: top center !important;
+			box-shadow: var(--elevation-8);
+		}
+
+		/*&:not(
+			[data-browser="chrome"],
+			[data-browser="msedge"]
+		) {
+			#manage {
+				display: none !important;
+			}
+		}*/
+		&[data-browser="firefox"],
+		&[data-browser="chrome"],
+		&[data-browser="msedge"] {
+			&:not([disabled]):hover {
+				.year {
+					opacity: 0;
+				}
+				#manage {
+					opacity: 1;
+				}
+			}
+		}
+
+		.theme-icons {
+			top: 10px;
+			left: 10px;
+		}
+
+		.name, .description {
+			display: block;
+			text-overflow: ellipsis;
+			overflow: hidden;
+			white-space: nowrap;
+		}
+
+		.radio-parent {
+			margin-inline-start: 0 !important;
+		}
+
+		.ripple {
+			background: rgb(255, 255, 255, 25%);
+		}
+
+		.wrapper {
+			position: absolute;
+			inset: 0;
+			cursor: pointer;
+		}
+
+		.year,
+		#manage {
+			position: absolute;
+			transition: 155ms;
+		}
+
+		.year {
+			top: 10px;
+			right: 10px;
+		}
+
+		#manage {
+			top: 5px;
+			right: 5px;
+			opacity: 0;
+		}
+
+		.identifier {
+			position: absolute;
+			bottom: 0;
+			width: 100%;
+			height: 82px;
+			display: flex;
+			align-items: end;
+			padding-block-end: 12px;
+			padding-inline: 14px;
+			font-size: 22px;
+			color: rgb(255, 255, 255);
+			background: linear-gradient(to top, rgb(0, 0, 0, 60%), transparent);
+			box-sizing: border-box;
+
+			.radio {
+				min-width: 16px;
+				--radio-border-color: rgb(255, 255, 255, 50%);
+
+				&:checked {
+					&:not([disabled="true"]):hover + .gutter {
+						background: rgb(255, 255, 255, 10%);
+					}
+					&:not([disabled="true"]):active + .gutter {
+						background: rgb(255, 255, 255, 15%);
+					}
+				}
+
+				&:not([disabled="true"]):hover + .gutter {
+					background: rgba(255, 255, 255, 5%);
+				}
+				&:not([disabled="true"]):active + .gutter {
+					background: rgba(255, 255, 255, 12%);
+				}
+			}
+
+			.description {
+				font-size: 10pt;
+				font-weight: initial;
+				color: white !important;
+				margin-block-start: unset !important;
+				margin-block-end: unset !important;
+			}
+		}
+	}
+
+	&.chrome-appearance.systheme-gtk {
+		background-image: url(chrome://userchrome/content/windows/gsettings/imgs/themes/gtk.svg) !important;
+		fill: -moz-dialog;
+		background-color: ActiveCaption !important;
+	}
+}
+
+.theme-icons {
+	position: absolute;
+	top: 0;
+	left: 0;
+	transform: unset;
+	mask-image: unset;
+	mask-size: unset;
+	background: unset;
+	flex-shrink: unset;
+
+	.theme-type-icon,
+	.theme-browser-icon {
+		position: absolute;
+	}
+
+	.theme-type-icon {
+		width: inherit;
+		height: inherit;
+
+		&[src="chrome://userchrome/content/windows/gsettings/imgs/logo.svg"] {
+			filter: saturate(0);
+			fill: #209f43;
+			-moz-context-properties: fill, fill-opacity;
+			opacity: 0.5;
+		}
+	}
+
+	.theme-browser-icon {
+		bottom: 0;
+		right: 0;
+
+		width: 16px;
+		height: 16px;
+
+		background-repeat: no-repeat;
+		background-position: center;
+		background-size: contain;
+	}
+}
+
+// Grid filters
+:root {
+	&[gkthemefilter="chrthemes"],
+	&[gkthemefilter="lwthemes"] {
+		.link.chrome-appearance[data-systheme] {
+			display: none;
+		}
+	}
+	&[gkthemefilter="systhemes"],
+	&[gkthemefilter="lwthemes"] {
+		.link.geckium-appearance[data-chrtheme-name],
+		#gkwebstoretile,
+		.link.edgestore {
+			display: none;
+		}
+	}
+	&[gkthemefilter="systhemes"],
+	&[gkthemefilter="chrthemes"] {
+		.link.geckium-appearance[data-lwtheme-name],
+		.link.mozstore {
+			display: none;
+		}
+	}
+}
+// Themes with eras
+.systheme-classic {
+	background-image: url(chrome://userchrome/content/windows/gsettings/imgs/themes/classic-1.svg) !important;
+}
+.systheme-you {
+	background-image: url(chrome://userchrome/content/windows/gsettings/imgs/themes/you-1.svg) !important;
+}
+.systheme-macosx {
+	background-image: url(chrome://userchrome/content/windows/gsettings/imgs/themes/macosx-1.svg) !important;
+}
+.systheme-macos {
+	background-image: url(chrome://userchrome/content/windows/gsettings/imgs/themes/macos-1.svg) !important;
+}
+.systheme-chromiumos {
+	background-image: url(chrome://userchrome/content/windows/gsettings/imgs/themes/chros-1.svg) !important;
+}
+:root[geckium-six] {
+	.systheme-classic {
+		background-image: url(chrome://userchrome/content/windows/gsettings/imgs/themes/classic-6.svg) !important;
+	}
+	.systheme-you {
+		background-image: url(chrome://userchrome/content/windows/gsettings/imgs/themes/you-6.svg) !important;
+	}
+	.systheme-chromiumos {
+		background-image: url(chrome://userchrome/content/windows/gsettings/imgs/themes/chros-6.svg) !important;
+	}
+}
+:root[geckium-eleven] {
+	.systheme-macosx {
+		background-image: url(chrome://userchrome/content/windows/gsettings/imgs/themes/macosx-11.svg) !important;
+	}
+	.systheme-macos {
+		background-image: url(chrome://userchrome/content/windows/gsettings/imgs/themes/macos-11.svg) !important;
+	}
+}
+:root[geckium-twentyone] {
+	.systheme-chromiumos {
+		background-image: url(chrome://userchrome/content/windows/gsettings/imgs/themes/chros-21.svg) !important;
+	}
+}
+:root[geckium-sixtyeight] {
+	.systheme-classic,
+	.systheme-you,
+	.systheme-macosx,
+	.systheme-macos,
+	.systheme-chromiumos {
+		background-image: url(chrome://userchrome/content/windows/gsettings/imgs/themes/classic-68.svg) !important;
+	}
+}
+
+@media not (-moz-platform: windows) {
+	#os-ux-button,
+	#os-comp-button {
+		display: none;
+	}
+}
+
+.icon-picker {
+	position: relative;
+	height: fit-content;
+	align-items: center;
+
+	label:not([data-icon]) + .action-item.icon-delete {
+		display: none;
+	}
+
+	.button {
+		min-width: 0;
+		min-height: 0;
+		padding: 8px;
+		box-sizing: content-box;
+	}
+
+	image {
+		width: 100%;
+		height: 100%;
+	}
+
+	label {
+		white-space: nowrap;
+	}
+
+	&.favicon .button {
+		width: 16px;
+		height: 16px;
+	}
+
+	&.icon .button {
+		width: 128px;
+		height: 128px;
+	}
+
+	.action-item {
+		position: absolute;
+		top: 6px;
+		right: 3px;
+
+		&.icon-delete::before {
+			background-color: hsl(0, 0, 60%);
+		}
+	}
+}
+
+#app-name::before {
+	content: "\00a0";
+}
+
+.modal[data-modal="editApp_modal"] {
+	&[data-app="null"] {
+		#app_deleteBtn,
+		#app_OKBtn {
+			display: none;
+		}
+	}
+	&:not([data-app="null"]) #createBtn {
+		display: none;
+	}
+}
+
+#preview-geckium {
+	position: relative;
+	margin-inline: auto;
+	width: 512px;
+	height: 512px;
+	fill: var(--desired-gecko-color, #209f43);
+	-moz-context-properties: fill, fill-opacity;
+	transform: translateX(-15px);
+
+	&::before {
+		content: "";
+		background: url("chrome://userchrome/content/windows/gsettings/imgs/user.jpg");
+		background-size: cover;
+		position: absolute;
+		width: 420px;
+		height: 420px;
+		top: 49px;
+		left: 44px;
+		border-radius: 50%;
+	}
+
+	&::after {
+		content: url("chrome://userchrome/content/windows/gsettings/imgs/gecko.svg");
+		position: absolute;
+		top: 0;
+		left: 0;
+	}
+}
+
+#gecko-stuff > .item {
+	min-height: 80px;
+	justify-content: center;
+}
+
+#gecko-hue,
+#gecko-saturation,
+#gecko-lightness {
+	appearance: none;
+
+	&::-moz-range-track {
+		width: calc(100% - 10px);
+		height: 4px;
+		border-radius: 2px;
+	}
+
+	&::-moz-range-thumb {
+		position: relative;
+		border: 0;
+		border-radius: 50%;
+		width: 20px;
+		height: 20px;
+		background-color: var(--desired-gecko-color);
+		box-shadow: 0 0 0 0 color-mix(
+			in srgb, 
+			var(--desired-gecko-color) 0%, 
+			transparent
+		),
+		var(--elevation-1);
+		transition: box-shadow 100ms;
+	}
+
+	&:not([disabled]) {
+		&:hover {
+			&::-moz-range-thumb {
+				box-shadow: 0 0 0 15px color-mix(
+					in srgb, 
+					var(--desired-gecko-color) 5%, 
+					transparent
+				), var(--elevation-1);
+			}
+		}
+
+		&:active {
+			&::-moz-range-thumb {
+				box-shadow: 0 0 0 15px color-mix(
+					in srgb, 
+					var(--desired-gecko-color) 20%, 
+					transparent
+				), var(--elevation-1);
+			}
+		}
+	}
+}
+
+#gecko-hue {
+	&::-moz-range-track {
+		background-image: linear-gradient(
+			to right,
+			#ff0000 0%,
+			#ffff00 17%,
+			#00ff00 33%,
+			#00ffff 50%,
+			#0000ff 67%,
+			#ff00ff 83%,
+			#ff0000 100%
+		);
+	}
+}
+
+#gecko-saturation {
+	&::-moz-range-track {
+		background-image: linear-gradient(
+			to right,
+			rgb(128, 128, 128),
+			var(--desired-gecko-color)
+		);
+	}
+}
+
+#gecko-lightness {
+	&::-moz-range-track {
+		background-image: linear-gradient(
+			to right,
+			black,
+			var(--desired-gecko-color),
+			white
+		);
+	}
+}
+
+// OS restrictions
+.winonly {
+	@media not (-moz-platform: windows) {
+		display: none !important;
+	}
+}
+:root[isWindows10] .notwin10 {
+	display: none !important;
+}
+:root:not([isWindows10]) .win10 {
+	display: none !important;
+}
+:root:not([nativeControls]) .nativecontrols {
+	display: none !important;
+}
+.linuxonly {
+	@media not (-moz-platform: linux) {
+		display: none !important;
+	}
+}
+.notlinux {
+	@media (-moz-platform: linux) {
+		display: none !important;
+	}
+}

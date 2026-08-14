@@ -1,0 +1,140 @@
+.menu {
+	display: flex;
+	align-items: center;
+	align-self: center;
+	position: relative;
+	border-radius: 4px;
+	border: 1.5px solid var(--input-border-color);
+	padding-left: var(--input-padding);
+	transition: border-color 0.2s;
+	font-size: 16px;
+	min-width: 200px;
+	max-width: 296px;
+	min-height: 32px;
+	padding-block: 4px;
+	appearance: none;
+	box-sizing: border-box;
+
+	&:not([open]) .list {
+		pointer-events: none;
+		opacity: 0;
+
+		&[position="top"] {
+			transform: translateY(-8px);
+		}
+		&[position="bottom"] {
+			transform: translateY(8px);
+		}
+	}
+	&[open] {
+		outline: none;  
+		border-color: var(--secondary-color, var(--primary-color));
+		border-width: 2px;
+
+		padding-left: calc(var(--input-padding) - 1px);
+		
+		&::after {
+			transform: scaleY(-1);
+			margin-inline-end: 11px;
+
+			background: var(--secondary-color, var(--primary-color));
+		}
+
+		.placeholder {
+			color: var(--secondary-color, var(--primary-color));;
+			top: -9px;
+			left: -1px;
+		}
+	}
+
+	&.size-md {
+		height: 56px;
+	}
+
+	&::after {
+		content: "";
+		width: 20px;
+		aspect-ratio: 1 / 1;
+		background: black;
+		mask-image: url("chrome://userchrome/content/frameworks/GeckiumMaterial/icons/arrow-drop-down.svg");
+		mask-position: center;
+		mask-repeat: no-repeat;
+		mask-size: 20px;
+		margin-inline-start: auto;
+		margin-inline-end: 12px;
+		transition: transform 200ms;
+
+		@media (prefers-color-scheme: dark) {
+			background: white;
+		}
+	}
+
+	.placeholder {
+		position: absolute;
+		left: 0;
+		top: -8px;
+		font-size: 12px;
+		display: flex;
+		align-items: center;
+		width: max-content;
+		pointer-events: none;
+		color: var(--input-placeholder-color);
+		margin-left: calc(var(--input-padding) - 6px);
+		padding-inline: 6px;
+		background: rgb(245, 245, 245);
+		transition: color 0.2s;
+		z-index: 1;
+
+		@media (prefers-color-scheme: dark) {
+			background: #212121;
+		}
+	}
+
+	.list {
+		position: fixed;
+		left: 0;
+		top: 0;
+		background: white;
+		padding-block: 8px;
+		max-width: 296px;
+		border-radius: 2px;
+		z-index: 2;
+		box-shadow: var(--elevation-8);
+		transform: translateY(0);
+		transition-property: opacity, transform;
+		transition-duration: 80ms;
+		transition-timing-function: cubic-bezier(0.4, 0.0, 1, 1);
+
+		@media (prefers-color-scheme: dark) {
+			background: #212121;
+		}
+
+		.item {
+			position: relative;
+			display: flex;
+			align-items: center;
+			padding-inline: 16px;
+			max-width: 296px;
+			min-height: 48px;
+			padding-block: 14.5px;
+			overflow: hidden;
+			border: 0 !important;
+			transition: background-color 155ms;
+
+			&:not([disabled]) {	
+				&[selected] {
+					background-color: rgba(153, 153, 153, .1);
+				}
+
+				&:hover,
+				&:focus-visible {
+					background: rgba(153, 153, 153, .2);
+				}
+			}
+
+			.ripple {
+				background: rgba(153, 153, 153, .4);
+			}
+		}
+	}
+}

@@ -1,0 +1,15 @@
+body {
+	font-family: 'Segoe UI', Tahoma, sans-serif;
+	font-size: 9pt;
+	
+	@media (-moz-platform: linux) {
+		font: message-box;
+	}
+	@media (-moz-platform: macos) {
+		font: 'Lucida Grande', sans-serif;
+	}
+}
+
+.content {
+	margin-top: 66px;
+}

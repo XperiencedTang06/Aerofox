@@ -1,0 +1,115 @@
+& {
+	font-family: "Segoe UI", Arial, sans-serif;
+	
+	@media (-moz-platform: linux) {
+		font: message-box;
+	}
+	@media (-moz-platform: macos) {
+		font: 'Lucida Grande', sans-serif;
+	}
+}
+
+
+.tile-pos-grid,
+.tile-grid {
+	display: grid;
+	grid-template-columns: repeat(6, minmax(0, 1fr));
+	grid-template-rows: repeat(2, minmax(0, 1fr));
+	gap: 32px;
+}
+
+.tile-page-content.debug {
+	.tile-container {
+		outline-width: 2px;
+		outline-offset: -2px;
+		outline-style: solid;
+	}
+
+	.tile-pos-grid .tile-container {
+		outline-color: red;
+	}
+
+	.tile-grid .tile-container {
+		outline-color: blue;
+	}
+}
+
+#apps-page .tile-grid {
+	position: absolute;
+
+	.tile-container {
+		position: absolute;
+
+		&:not([dragging]) {
+			transition-property: left, top;
+			transition-duration: 150ms;
+		}
+
+		&[dragging] {
+			z-index: 1;
+		}
+	}
+}
+
+.tile-container {
+	all: unset;
+
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	font-size: 10.5pt;
+	width: 160px;
+	height: 147px;
+	user-select: none;
+	color: var(--thumbnail-container-color);
+
+	transition-property: transform, width, height;
+	transition-duration: 50ms, .15s;
+
+	&:not([disabled]) {
+		cursor: pointer;
+
+		&:active {
+			transform: scale(1.1);
+			transition: none;
+		}
+	}
+
+	.icon {
+		width: 128px;
+		height: 128px;
+
+		transition-property: width, height;
+		transition-duration: .15s;	
+	}
+
+	hbox {
+		flex-direction: column;
+	}
+}
+
+#other-sessions-menu-button {
+	display: none !important;
+}
+
+&:not([geckium-twentyone]) {
+    #vertical-separator,
+    #chrome-web-store-link {
+        display: none;
+    }
+}
+
+#attribution {
+	position: absolute;
+	bottom: 3px;
+	right: 13px;
+	align-items: start;
+	margin: 0;
+	width: unset;
+	font-size: 9pt;
+}
+
+@import "login";
+@import "card-slider-frame";
+@import "most-visited";
+@import "footer";

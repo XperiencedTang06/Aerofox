@@ -1,0 +1,12 @@
+@supports -moz-bool-pref("RinfoxEvolved.Aqua") {
+
+
+@supports -moz-bool-pref("RinfoxEvolved.AquaEnhanced") {
+                @supports not -moz-bool-pref("RinfoxEvolved.XP") {
+                    #TabsToolbar {
+                        background-color: #cee9f0 !important;
+                    }
+                }
+             }
+
+}

@@ -1,0 +1,4 @@
+<!ENTITY neterror.nointernet	"İnternet bağlantısı yok">
+<!ENTITY neterror.try			"Bunları deneyin:">
+<!ENTITY neterror.cable			"Ağ kablolarını, modemi ve yönlendiriciyi kontrol edin">
+<!ENTITY neterror.wifi			"Kablosuz ağa yeniden bağlanın">

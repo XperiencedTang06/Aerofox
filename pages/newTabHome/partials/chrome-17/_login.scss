@@ -1,0 +1,35 @@
+& {
+	--default-link-color: rgb(102,102,102);
+
+	@media (prefers-color-scheme: dark) {
+		--default-link-color: rgb(138, 138, 138);
+	}
+
+	// chrtheme
+	&[gkthemed][gkchrthemed] {
+		--link-color: var(--chrtheme-ntp-text, var(--default-link-color));
+	}
+}
+
+#login-container,
+#login-email {
+	all: unset;
+
+	color: var(--thumbnail-container-color);
+	cursor: pointer;
+	position: fixed;
+	right: 13px;
+	top: 5px;
+	z-index: 2;
+
+	.login-status-row,
+	#login-status-sub-header {
+		display: flex;
+		justify-content: end;
+	}
+}
+
+.link-span {
+	color: var(--link-color, --default-link-color);
+	text-decoration: underline;
+}

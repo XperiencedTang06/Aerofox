@@ -1,0 +1,82 @@
+& {
+	--default-recently-closed-background: #E5EFFE;
+	--recently-closed-background: var(--default-recently-closed-background);
+	--default-recently-closed-border-color: rgba(75, 140, 220, 0.3125);
+	--recently-closed-border-color: var(--default-recently-closed-border-color);
+	--default-recently-closed-color: black;
+	--recently-closed-color: var(--default-recently-closed-color);
+	--default-recently-closed-item-color: #063774;
+	--recently-closed-item-color: var(--default-recently-closed-item-color);
+
+	@media (prefers-color-scheme: dark) {
+		--recently-closed-background: #415470;
+		--recently-closed-border-color: rgba(206, 220, 236, 0.313);
+		--recently-closed-color: white;
+		--recently-closed-item-color: #acc0da;
+	}
+
+	// Geckium You
+	&[gksystheme="you"]:not([gkthemed], [gkchrthemed]) {
+		--default-recently-closed-background: hsl(var(--you-h), var(--you-s), calc(var(--you-l) + 37%));
+		--default-recently-closed-border-color: hsla(var(--you-h), calc(var(--you-s) - 2%), var(--you-l), 0.3125);
+		--default-recently-closed-item-color: hsl(var(--you-h), var(--you-s), calc(var(--you-l) - 34%));
+		@media (prefers-color-scheme: dark) {
+			--recently-closed-background: hsl(var(--you-h), calc(var(--you-s) - 42%), calc(var(--you-l-dark) - 23%));
+			--recently-closed-border-color: hsla(var(--you-h), calc(var(--you-s) - 25%), calc(var(--you-l-dark) + 29%), 0.313);
+			--recently-closed-item-color: hsl(var(--you-h), calc(var(--you-s) - 31%), calc(var(--you-l-dark) + 18%));
+		}
+	}
+
+	// Custom theme support
+	// lwtheme
+	&[gkthemed]:not([gkchrthemed]) {
+		--recently-closed-background: color-mix(
+			in srgb,
+			var(--arrowpanel-background, var(--lwt-accent-color)) 50%,
+			transparent
+		);
+		--recently-closed-border-color: color-mix(
+			in srgb,
+			var(--toolbarbutton-icon-color, var(--lwt-text-color)) 50%,
+			transparent
+		);
+		--recently-closed-color: var(--recently-closed-item-color);
+		--recently-closed-item-color: var(--toolbarbutton-icon-color, var(--lwt-text-color, var(--default-recently-closed-item-color)));
+
+		&[style*="--arrowpanel-background"] {
+			--recently-closed-item-color: var(--arrowpanel-color, var(--toolbarbutton-icon-color, var(--lwt-text-color)));
+		}
+	}
+
+	// chrtheme
+	&[gkthemed][gkchrthemed] {
+		--recently-closed-background: var(--chrtheme-ntp-section, var(--default-recently-closed-background));
+		
+		&[style*="--chrtheme-ntp-section"] {
+			--recently-closed-border-color: color-mix(
+				in srgb,
+				var(--recently-closed-background) 31%,
+				transparent
+			);
+		}
+
+		&[style*="--chrtheme-ntp-header"] {
+			--recently-closed-border-color: var(--chrtheme-ntp-header, var(--default-recently-closed-border-color));
+		}
+		
+		--recently-closed-color: var(--chrtheme-ntp-section-text, var(--default-recently-closed-color));
+		--recently-closed-item-color: var(--chrtheme-ntp-section-link, var(--default-recently-closed-item-color));
+	}
+
+	// GTK+
+	&[gksystheme="gtk"]:not([gkthemed], [gkchrthemed]) {
+		--recently-closed-background: -moz-dialog;
+		--recently-closed-border-color: color-mix(
+			in srgb,
+			-moz-dialogtext 20%,
+			transparent
+		);
+		--recently-closed-color: -moz-dialogtext;
+		--recently-closed-item-color: -moz-nativehyperlinktext;
+	}
+}

@@ -1,0 +1,71 @@
+:root {
+    --sidebarposbase: 63px
+}
+
+@supports -moz-bool-pref("RinFox.Option.HideInnerBorders") {
+    :root {
+        --sidebarposnoborders: 2px
+    }
+}
+
+@supports -moz-bool-pref("RinFox.Option.SmallerInnerBordersHack") {
+    :root {
+        --sidebarpossmallerborderswindow: 1px;
+        --sidebarpossmallerbordersmax: 30px;
+    }
+}
+
+
+/*default*/
+#sidebar-box[positionend="true"] {
+  min-width: 290px !important;
+  height: calc(100% - 75px - 62px) !important;
+  position: fixed !important;
+  left: 2px !important;
+  top: 63px !important;
+  z-index: 1 !important;
+  border: 1px solid #A0A0A0 !important;
+}
+
+/*hide inner borders*/
+@supports -moz-bool-pref("RinFox.Option.HideInnerBorders") {
+    #sidebar-box[positionend="true"] {
+        top: 61px !important;
+    }
+}
+
+/*smaller inner borders*/
+@supports -moz-bool-pref("RinFox.Option.SmallerInnerBordersHack") {
+    #sidebar-box[positionend="true"] {
+        top: 64px !important;
+    }
+
+    /*smaller inner borders maximized*/
+    html[sizemode="maximized"] #sidebar-box[positionend="true"] {
+        top: 94px !important;
+    }
+}
+
+/*smaller inner borders with hide inner borders*/
+@supports -moz-bool-pref("RinFox.Option.SmallerInnerBordersHack") {
+    @supports -moz-bool-pref("RinFox.Option.HideInnerBorders") {
+        #sidebar-box[positionend="true"] {
+            top: 62px !important;
+     }
+
+        /*smaller inner borders with hide inner borders maximized*/
+        html[sizemode="maximized"] #sidebar-box[positionend="true"] {
+            top: 92px !important;
+        }
+}
+}
+
+
+
+
+
+
+/*Maximized*/
+html[sizemode="maximized"] #sidebar-box[positionend="true"] {
+
+}

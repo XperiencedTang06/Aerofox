@@ -1,0 +1,37 @@
+$icon-data: (
+	menu: "menu",
+	edit: "edit",
+	chat: "chat",
+	click: "click",
+	smart-button: "smart-button",
+	info: "info",
+	auto-awesome: "auto-awesome",
+	palette: "palette",
+	dashboard: "dashboard",
+	add: "add",
+	tungsten: "tungsten",
+	layers: "layers",
+	arrow-forward: "arrow-forward",
+	arrow-drop-down: "arrow-drop-down",
+	home: "home",
+	person: "person",
+	science: "science",
+	tab: "tab",
+	web-asset: "web-asset",
+	pending: "pending",
+	settings: "settings",
+	help-center: "help-center",
+	brush: "brush",
+	arrow-back: "arrow-back",
+	public: "public",
+	data-object: "data-object",
+	account-circle: "account-circle",
+	save: "save",
+	delete: "delete"
+);
+
+@each $icon, $file in $icon-data {
+	.icon-#{$icon}::before {
+		mask-image: url("chrome://userchrome/content/frameworks/GeckiumMaterial/icons/#{$file}.svg");
+	}
+}

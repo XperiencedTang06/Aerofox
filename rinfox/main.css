@@ -1,0 +1,49 @@
+#PanelUI-menu-button
+{
+  padding-inline-end: 0 !important;
+  list-style-image: url('assets/settings.png') !important;
+}
+
+#unified-extensions-button {
+  list-style-image: url('assets/addons.png') !important;
+}
+
+#home-button {
+  list-style-image: url('assets/home.png') !important; 
+}
+
+#print-button {
+  list-style-image: url('assets/print.png') !important; 
+}
+
+#downloads-indicator-anchor {
+  list-style-image: url('assets/downloads.png') !important;
+}
+
+#email-link-button {
+  list-style-image: url('assets/email.png') !important;
+}
+
+#help-button {
+  list-style-image: url('assets/help.png') !important;
+}
+
+#bookmarksSidebarButton {
+  list-style-image: url('assets/favorites.png') !important;
+}
+
+#addToBookmarksBarButton {
+  list-style-image: url('assets/add-favorite.png') !important;
+}
+
+#_a9c2ad37-e940-4892-8dce-cd73c6cbbc0c_-BAP {
+  list-style-image: url('assets/rss.png') !important;
+}
+
+.geo-icon {
+  list-style-image: url('assets/map.png') !important;
+}
+
+menupopup {
+  appearance: unset !important;
+}

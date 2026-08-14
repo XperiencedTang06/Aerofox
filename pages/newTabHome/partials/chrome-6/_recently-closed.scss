@@ -1,0 +1,28 @@
+& {
+	// Custom theme support
+	// lwtheme
+	&[gkthemed]:not([gkchrthemed]) {
+		--recently-closed-border-color: var(--recently-closed-item-color, var(--default-recently-closed-border-color));
+		--recently-closed-item-color: var(--link-color, var(--default-recently-closed-item-color));
+	}
+}
+
+&[geckium-choice="six"] {
+	#recently-closed {
+		margin: 0;
+		border-radius: 0;
+		border-inline: 0;
+		background-color: transparent;
+		padding-block: 6px;
+		padding-inline: 0;
+
+		&.collapsed {
+			display: flex;
+			border-block-end-width: 0;
+
+			> *:not(h2) {
+				display: none;
+			}
+		}
+	}
+}

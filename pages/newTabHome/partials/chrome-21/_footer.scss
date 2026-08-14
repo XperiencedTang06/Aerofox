@@ -1,0 +1,27 @@
+& {
+	--default-dot-color-normal: #999;
+	--default-dot-color-hot: #7f7f7f;
+
+	@media (prefers-color-scheme: dark) {
+		--default-dot-color-normal: #666666;
+	}
+}
+
+#footer {
+	#footer-content {
+		padding-inline-end: 12px;
+	}
+
+	#logo-img {
+		padding-block-start: 2px;
+		padding-block-end: 0;
+	}
+
+	.dot .selection-bar {
+		margin-block-end: 5px;
+	}
+
+	.footer-menu {
+		bottom: 32px;
+	}
+}

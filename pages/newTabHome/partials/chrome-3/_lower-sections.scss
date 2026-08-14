@@ -1,0 +1,188 @@
+& {
+	--default-lower-sections-background: rgba(239, 246, 255, 0.796875);
+	--lower-sections-background: var(--default-lower-sections-background);
+	--default-lower-sections-h2-background: linear-gradient(
+		to bottom,
+		rgb(98, 164, 245),
+		rgb(73, 138, 218)
+	);
+	--lower-sections-h2-background: var(--default-lower-sections-h2-background);
+	--default-lower-sections-border-color: rgb(222, 234, 248);
+	--lower-sections-border-color: var(--default-lower-sections-border-color);
+
+	@media (prefers-color-scheme: dark) {
+		--default-lower-sections-background: rgba(239, 246, 255, 0.2);
+		--default-lower-sections-h2-background: linear-gradient(
+			to bottom,
+			rgb(14, 80, 159),
+			rgb(20, 62, 112)
+		);
+
+		--default-lower-sections-border-color: rgb(65, 94, 128);
+	}
+
+	// Geckium You
+	&[gksystheme="you"]:not([gkthemed], [gkchrthemed]) {
+		--default-lower-sections-background: hsla(var(--you-h), var(--you-s), calc(var(--you-l) + 39%), 0.796875);
+		--default-lower-sections-h2-background: linear-gradient(
+			to bottom,
+			hsl(var(--you-h), var(--you-s), calc(var(--you-l) + 9%)),
+			hsl(var(--you-h), var(--you-s), var(--you-l))
+		);
+		--default-lower-sections-border-color: hsl(var(--you-h), var(--you-s), calc(var(--you-l) + 34%));
+
+		@media (prefers-color-scheme: dark) {
+			--default-lower-sections-background: hsla(var(--you-h), var(--you-s), calc(var(--you-l-dark) + 39%), 0.2);
+			--default-lower-sections-h2-background: linear-gradient(
+				to bottom,
+				hsl(var(--you-h), var(--you-s), calc(var(--you-l-dark) - 23%)),
+				hsl(var(--you-h), var(--you-s), calc(var(--you-l-dark) - 32%))
+			);
+
+			--default-lower-sections-border-color: hsl(var(--you-h), calc(var(--you-s) - 36%), calc(var(--you-l-dark) - 20%));
+		}
+	}
+
+	// Custom theme support
+	// lwtheme
+	&[gkthemed]:not([gkchrthemed]) {
+		--lower-sections-border-color: color-mix(
+			in srgb,
+			var(--thumbnail-border-color-normal) 70%,
+			white
+		);
+		--lower-sections-h2-background: linear-gradient(
+			to bottom,
+			var(--thumbnail-border-color-normal),
+			var(--thumbnail-border-color-normal)
+		);
+	}
+	// chrtheme
+	&[gkthemed][gkchrthemed] {
+		--lower-sections-border-color: color-mix(
+			in srgb,
+			var(--thumbnail-border-color-normal) 70%,
+			white
+		);
+
+		--lower-sections-h2-background: 
+		linear-gradient(
+			to bottom,
+			color-mix(
+				in srgb,
+				var(--thumbnail-border-color-normal) 75%,
+				white
+			),
+			var(--thumbnail-border-color-normal)
+		),
+		grey
+	}
+	// GTK+
+	&[gksystheme="gtk"]:not([gkthemed], [gkchrthemed]) {
+		--lower-sections-border-color: color-mix(
+			in srgb,
+			ActiveCaption 70%,
+			white
+		);
+
+		--lower-sections-h2-background: 
+		linear-gradient(
+			to bottom,
+			color-mix(
+				in srgb,
+				ActiveCaption 75%,
+				white
+			),
+			ActiveCaption
+		),
+		grey
+	}
+}
+
+#lower-sections {
+	gap: 20px;
+
+	> .section {
+		flex: 1;
+		background: var(--lower-sections-background);
+		border: 1px solid var(--lower-sections-border-color);
+		border-radius: 4px;
+		padding-block-end: 5px;
+		overflow: hidden;
+		height: 198px;
+
+		&.collapsed {
+			display: none !important;
+		}
+
+		> hbox {
+			> vbox {
+				flex: 1;
+			}
+		}
+
+		h2 {
+			background: var(--lower-sections-h2-background);
+			padding: 4px 8px;
+			font-size: 10pt;
+			font-weight: bold;
+			color: white;
+		}
+
+		h3 {
+			margin-inline-start: 3px;
+			padding: 8px 5px;
+			padding-block-end: 0;
+			font-size: 8pt;
+		}
+
+		.item-container {
+			margin-inline-start: 5px;
+		}
+
+		.item {
+			all: unset;
+
+			display: flex;
+			font-size: 10pt;
+			margin-block: 2px;
+			padding-block: 2px;
+
+			image {
+				width: 16px;
+				height: 16px;
+			}
+
+			label {
+				margin-inline-start: 2px;
+				white-space: nowrap;
+				overflow: hidden;
+				text-overflow: ellipsis;
+			}
+
+			&.nav {
+				padding-inline-start: 18px;
+
+				&:after {
+					content: "\00bb";
+					margin-inline-start: 2px;
+				}
+			}
+		}
+
+		a,
+		button {
+			&.item {
+				cursor: pointer;
+				color: var(--link-color, --default-link-color);
+				text-decoration: underline;
+			}
+		}
+
+		.tips-title {
+			padding: 2px;
+			padding-block-start: 9px;
+			padding-inline-start: 18px;
+		}
+	}
+}

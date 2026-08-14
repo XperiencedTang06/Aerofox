@@ -1,0 +1,26 @@
+:root[sizemode="maximized"] #browser,
+:root[sizemode="fullscreen"] #browser {
+    margin: 0 !important;
+}
+
+:root[sizemode="maximized"] #TabsToolbar {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+}
+
+:root[sizemode="fullscreen"] #TabsToolbar {
+    margin: 0 !important;
+}
+
+:root[sizemode="maximized"] #configuration_toolbar ,
+:root[sizemode="fullscreen"] #configuration_toolbar  {
+    margin-inline: 0 !important;
+}
+
+:root[sizemode="fullscreen"] #TabsToolbar::after {
+    display: none !important;
+}
+
+:root[sizemode="fullscreen"] customization-container {
+    margin: 0 !important;
+}

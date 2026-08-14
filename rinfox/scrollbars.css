@@ -1,0 +1,5 @@
+html > scrollbar[orient="vertical"] thumb {
+    appearance: none !important;
+    background-image: url('assets/extras/scrollvertical/ScrollBar_ThumbButtonVertical_NormalImage.png') !important;
+}
+

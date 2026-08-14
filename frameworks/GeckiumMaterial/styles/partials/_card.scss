@@ -1,0 +1,130 @@
+:root[nav-drawer-auto-hide] {
+	@media all and (max-width: 640px) {
+		.card {
+			border-radius: 0;
+		}
+	}
+}
+
+.card {
+	min-width: 100px;
+	min-height: 100px;
+	border-radius: 2px;
+	transition: box-shadow 155ms;
+	background: white;
+	margin: 6px;
+
+	@media (prefers-color-scheme: dark) {
+		background: rgb(30,30,30);
+	}
+
+	&:not(.desktop, .outlined) {
+		box-shadow: var(--elevation-2);
+	}
+
+	&:not([disabled], .outlined) {
+		&:hover,
+		&:focus-visible {
+			box-shadow: var(--elevation-8);
+		}
+	}
+
+	&.outlined {
+		border-width: 1px;
+		border-style: solid;
+		border-color: #e0e0e0;
+
+		@media (prefers-color-scheme: dark) {
+			border-color: rgb(255,255,255,.15);
+		}
+	}
+
+	> label {
+		margin: var(--inner-padding);
+	}
+
+	> footer {
+		margin: 0;
+		padding: 0;
+		justify-content: start;
+
+		> * {
+			margin-block: 8px;
+			margin-inline: 8px;
+		}
+	}
+}
+
+.link {
+	&.chrome-appearance {
+		background-color: AccentColor;
+		position: relative;
+		display: block;
+		width: 100%;
+		height: 140px;
+		overflow: hidden;
+		background-size: cover;
+		cursor: pointer;
+
+		&:hover {
+			background-color: AccentColor !important;
+			background-size: cover !important;
+			box-shadow: var(--elevation-8);
+		}
+
+		.radio-parent {
+			margin-inline-start: 0 !important;
+		}
+
+		.ripple {
+			background: rgb(255, 255, 255, 25%);
+		}
+
+		.wrapper {
+			position: absolute;
+			inset: 0;
+			cursor: pointer;
+		}
+
+		.year {
+			position: absolute;
+			top: 10px;
+			right: 5px;
+		}
+
+		.identifier {
+			position: absolute;
+			left: 0;
+			right: 0;
+			bottom: 0;
+			height: 80px;
+			display: flex;
+			align-items: end;
+			padding-block-end: 12px;
+			padding-inline: 14px;
+			font-size: 22px;
+			color: rgb(255, 255, 255);
+			background: linear-gradient(to top, rgb(0, 0, 0, 60%), transparent);
+
+			.radio {
+				--radio-border-color: rgb(255, 255, 255, 50%);
+
+				&:checked {
+					&:not([disabled="true"]):hover + .gutter {
+						background: rgb(255, 255, 255, 10%);
+					}
+					&:not([disabled="true"]):active + .gutter {
+						background: rgb(255, 255, 255, 15%);
+					}
+				}
+
+				&:not([disabled="true"]):hover + .gutter {
+					background: rgba(255, 255, 255, 5%);
+				}
+				&:not([disabled="true"]):active + .gutter {
+					background: rgba(255, 255, 255, 12%);
+				}
+			}
+		}
+	}
+}

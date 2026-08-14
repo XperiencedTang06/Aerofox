@@ -1,0 +1,84 @@
+#flagsExperimentTemplate {
+	margin-block-start: 24px;
+
+	> vbox {
+		margin-block-end: 10px;
+	}
+}
+
+.section-header {
+	box-sizing: border-box;
+	align-items: center;
+	background: #EBEFF9;
+	border-top: 1px solid #B5C7DE;
+	padding-block-start: 3px;
+	padding-block-end: 2px;
+	padding-inline-start: 5px;
+	margin-block-end: 5px;
+	font-size: 10pt;
+	font-weight: bold;
+	height: 22px;
+
+	@media (prefers-color-scheme: dark) {
+		background: hsl(223, 54%, 5%);
+		border-top: 1px solid hsl(214, 38%, 29%);
+	}
+}
+
+.experiment {
+	color: black;
+	border-bottom: 1px solid #CDCDCD;
+	padding-block-start: 4px;
+	padding-block-end: 5px;
+	padding-inline-start: 5px;
+	align-items: start;
+
+	@media (prefers-color-scheme: dark) {
+		color: white;
+		border-bottom-color: hsl(0, 0%, 10%);
+	}
+
+	.experiment-text {
+		margin-block-end: 2px;
+	}
+
+	.experiment-header {
+		gap: 9px;
+	}
+
+	.experiment-name {
+		color: black;
+		font-weight: bold;
+
+		@media (prefers-color-scheme: dark) {
+			color: white;
+		}
+	}
+
+	.experiment-platforms {
+		color: #A0A0A0;
+
+		@media (prefers-color-scheme: dark) {
+			color: hsl(0, 0%, 43%);
+		}
+	}
+
+	.permalink {
+		margin-inline-start: 3px;
+	}
+
+	button {
+		all: unset;
+		color: var(--default-link-color);
+		text-decoration: underline;
+		cursor: pointer;
+	}
+}
+
+.permalink {
+	color: #A0A0A0;
+
+	@media (prefers-color-scheme: dark) {
+		color: hsl(0, 0%, 43%);
+	}
+}

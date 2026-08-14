@@ -1,0 +1,9 @@
+@-moz-document url-prefix(https://ftp.mozilla.org/pub/thunderbird/) {
+body h1::before {
+    background-image: url('assets/logos/WLMail-10.png');
+}
+
+body h1::after {
+    content: "Windows Live Mail Releases";
+}
+}

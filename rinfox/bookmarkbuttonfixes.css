@@ -1,0 +1,11 @@
+#TabsToolbar-customization-target #addToBookmarksBarButton {
+    order: -3 !important;
+    width: 30px !important;
+margin-right: 1px !important;
+}
+
+#TabsToolbar-customization-target #bookmarksSidebarButton {
+    order: -4 !important;
+    width: 30px !important;
+padding: 0 !important;
+}

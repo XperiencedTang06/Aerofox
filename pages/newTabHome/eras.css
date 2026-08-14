@@ -1,0 +1,3835 @@
+@charset "UTF-8";
+:root {
+  --default-ntp-background-color: white;
+  --ntp-background-color: var(--default-ntp-background-color);
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --default-ntp-background-color: rgb(32, 32, 32);
+  }
+}
+:root[data-url*="about:apps"] #page-list {
+  transform: unset !important;
+}
+:root[data-url*="about:apps"] #most-visited-page,
+:root[data-url*="about:apps"] [id*=page-switcher],
+:root[data-url*="about:apps"] .dot,
+:root[data-url*="about:apps"] #recently-closed-menu-button,
+:root[data-url*="about:apps"] #recently-closed-menu-button + #vertical-separator {
+  display: none !important;
+}
+:root body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--ntp-background-color);
+}
+:root #main-container {
+  flex: 1;
+  height: 100vh;
+}
+:root .favicon,
+:root .mv-favicon {
+  width: 16px;
+  height: 16px;
+}
+:root:not([geckium-one]) body > * {
+  visibility: hidden;
+}
+:root[geckium-one] {
+  --default-section-title-color: black;
+  --section-title-color: var(--default-section-title-color);
+  --chrtheme-ntp-background-alignment: 50% 100%;
+  --chrtheme-ntp-background-repeat: no-repeat;
+}
+@media (prefers-color-scheme: dark) {
+  :root[geckium-one] {
+    --default-section-title-color: white;
+  }
+}
+:root[geckium-one]:not([geckium-three])[gkbranding=chromium] #logo {
+  background-image: url("chrome://userchrome/content/pages/newTabHome/assets/chrome-1/chromium/product_logo.png");
+}
+:root[geckium-one]:not([geckium-three])[gkbranding=chromium][geckium-choice=one][geckium-chrflag-ntp-wide-chromium=true] #logo {
+  background-image: url("chrome://userchrome/content/pages/newTabHome/assets/chrome-1/chromium/product_logo_wide.png");
+}
+:root[geckium-one]:not([geckium-three])[gkbranding=chrome] #logo {
+  background-image: url("chrome://userchrome/content/pages/newTabHome/assets/chrome-1/google-chrome/product_logo.png");
+}
+@media only screen and (max-width: 882px) {
+  :root[geckium-one]:not([geckium-three]) #main {
+    width: 729px;
+  }
+}
+:root[geckium-one][gkthemed]:not([gkchrthemed]) {
+  --ntp-background-color: var(--newtab-background-color);
+  --section-title-color: var(--toolbarbutton-icon-color, var(--lwt-text-color, var(--default-recently-closed-item-color)));
+}
+:root[geckium-one][gkthemed]:not([gkchrthemed])[style*="--arrowpanel-background"] {
+  --section-title-color: var(--arrowpanel-color, var(--toolbarbutton-icon-color, var(--lwt-text-color)));
+}
+:root[geckium-one][gkthemed]:not([gkchrthemed]) body {
+  background-image: var(--lwt-gknewtab-background-image, var(--lwt-gknewtab-image));
+}
+@media (prefers-color-scheme: dark) {
+  :root[geckium-one][gkthemed]:not([gkchrthemed]) body {
+    background-image: var(--lwt-gknewtab-background-image-dark, var(--lwt-gknewtab-background-image, var(--lwt-gknewtab-image)));
+  }
+}
+:root[geckium-one][gkthemed]:not([gkchrthemed]) body {
+  background-attachment: fixed;
+  image-rendering: var(--lwt-gknewtab-image-rendering);
+  background-size: var(--lwt-gknewtab-background-size);
+  background-position: var(--lwt-gknewtab-background-position);
+}
+:root[geckium-one][gkthemed]:not([gkchrthemed]) body[style*="--lwt-gknewtab-background-position-y"] {
+  background-position-x: var(--lwt-gknewtab-background-position-x);
+}
+:root[geckium-one][gkthemed]:not([gkchrthemed]) body[style*="--lwt-gknewtab-background-position-y"] {
+  background-position-x: var(--lwt-gknewtab-background-position-y);
+}
+:root[geckium-one][gkthemed]:not([gkchrthemed]) body {
+  background-repeat: var(--lwt-gknewtab-background-repeat);
+}
+:root[geckium-one][gkthemed][gkchrthemed] {
+  --ntp-background-color: var(--chrtheme-ntp-background);
+  --section-title-color: var(--chrtheme-ntp-section-link, var(--default-recently-closed-item-color));
+}
+:root[geckium-one][gkthemed][gkchrthemed] body {
+  background-image: var(--chrtheme-theme-ntp-background);
+  background-attachment: fixed;
+}
+:root[geckium-one][gksystheme=gtk]:not([gkthemed], [gkchrthemed]) {
+  --ntp-background-color: Field;
+}
+:root[geckium-one][gksystheme=gtk]:not([gkthemed], [gkchrthemed]) body {
+  color: FieldText;
+}
+:root[geckium-one] {
+  font-family: Arial, sans-serif;
+  font-size: 10pt;
+}
+:root[geckium-one] body {
+  background-size: unset;
+  background-repeat: var(--chrtheme-ntp-background-repeat);
+  background-position: var(--chrtheme-ntp-background-alignment);
+}
+:root[geckium-one] #main {
+  margin-block-start: 10px;
+  margin-inline: auto;
+  width: 864px;
+  gap: 10px;
+  transition-property: height, width;
+  transition-duration: 0.12s;
+}
+:root[geckium-one] #logo {
+  height: 52px;
+  background-repeat: no-repeat;
+  background-position: center right;
+}
+:root[geckium-one] .section-title {
+  color: var(--section-title-color);
+  font-size: 11pt;
+  font-weight: bold;
+  min-height: 25px;
+  line-height: 25px;
+  margin-block-end: 4px;
+}
+@media (prefers-color-scheme: dark) {
+  :root[geckium-one] .section-title {
+    color: white;
+  }
+}
+:root[geckium-one][gksystheme=you]:not([gkthemed], [gkchrthemed]) {
+  --you-h: 0;
+  --you-s: 0%;
+  --you-l: 58%;
+  --you-l-dark: 58%;
+}
+:root[geckium-one] {
+  --default-link-color: rgb(0, 0, 204);
+  --link-color: var(--default-link-color);
+}
+@media (prefers-color-scheme: dark) {
+  :root[geckium-one] {
+    --default-link-color: #acc0da;
+  }
+}
+:root[geckium-one][gksystheme=you]:not([gkthemed], [gkchrthemed]) {
+  link-color: hsl(var(--you-h), var(--you-s), calc(var(--you-l) - 18%));
+}
+@media (prefers-color-scheme: dark) {
+  :root[geckium-one][gksystheme=you]:not([gkthemed], [gkchrthemed]) {
+    link-color: hsl(var(--you-h), calc(var(--you-s) - 31%), calc(var(--you-l-dark) + 18%));
+  }
+}
+:root[geckium-one][gkthemed]:not([gkchrthemed]) {
+  --link-color: var(--newtab-text-primary-color);
+}
+@media only screen and (max-width: 882px) {
+  :root[geckium-one][geckium-choice=one] #mostvisitedtiles .thumbnail {
+    height: 113px;
+    width: 150px;
+  }
+}
+:root[geckium-one][gkthemed][gkchrthemed] {
+  --link-color: var(--chrtheme-ntp-section-link, var(--default-link-color));
+}
+:root[geckium-one][gksystheme=gtk]:not([gkthemed], [gkchrthemed]) {
+  --link-color: FieldText;
+}
+:root[geckium-one] #mostvisited {
+  padding-block-end: 12px;
+}
+:root[geckium-one] #mostvisitedintro {
+  position: relative;
+}
+:root[geckium-one] .most-visited-text {
+  position: absolute;
+  margin: 15px;
+  padding: 20px;
+  background-color: white;
+  box-shadow: 5px 5px 10px rgb(204, 204, 204);
+}
+:root[geckium-one] #mostvisitedtiles {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px;
+}
+:root[geckium-one] #mostvisitedtiles .thumbnail-title {
+  margin-block-start: 6px;
+  padding: 1px 0px 4px 0;
+  color: var(--link-color);
+}
+:root[geckium-one] #mostvisitedtiles .thumbnail-title image {
+  width: 16px;
+  height: 16px;
+  margin-inline-end: 6px;
+}
+:root[geckium-one] #mostvisitedtiles .thumbnail-title label {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+:root[geckium-one] #mostvisitedtiles .thumbnail {
+  background-position: top center;
+  background-size: cover;
+  background-color: rgb(238, 238, 238);
+  border: 1px solid rgb(204, 204, 204);
+  height: 136px;
+  width: 195px;
+  transition-property: height, width;
+  transition-duration: 0.12s;
+}
+:root[geckium-one] .manage {
+  all: unset;
+  color: rgb(119, 119, 204);
+  line-height: 19pt;
+  margin-left: 5px;
+  margin-right: 5px;
+  text-decoration: underline;
+  cursor: pointer;
+}
+:root[geckium-one] {
+  --default-sidebar-background-color: rgb(225, 236, 254);
+  --sidebar-panes-background-color: var(--default-sidebar-background-color);
+}
+@media (prefers-color-scheme: dark) {
+  :root[geckium-one] {
+    --default-sidebar-background-color: #415470;
+    --default-section-title-color: white;
+  }
+}
+:root[geckium-one][gkthemed]:not([gkchrthemed]) {
+  --sidebar-panes-background-color: color-mix(
+  	in srgb,
+  	var(--arrowpanel-background, var(--lwt-accent-color)) 50%,
+  	transparent
+  );
+}
+:root[geckium-one][gkthemed][gkchrthemed] {
+  --sidebar-panes-background-color: var(--chrtheme-ntp-section, var(--default-recently-closed-background));
+}
+:root[geckium-one][gksystheme=gtk]:not([gkthemed], [gkchrthemed]) {
+  --sidebar-panes-background-color: -moz-dialog;
+}
+:root[geckium-one] #sidebar {
+  width: 230px;
+  gap: 10px;
+}
+:root[geckium-one] .sidebar {
+  padding: 3px 10px 3px 9px;
+}
+:root[geckium-one] #searches,
+:root[geckium-one] #recentlyBookmarked {
+  border-radius: 5px;
+  background-color: var(--sidebar-panes-background-color);
+}
+:root[geckium-one] #recentlyBookmarkedContainer .recent-bookmark {
+  color: var(--link-color);
+}
+:root[geckium-one] #recentlyClosedContainer .recent-bookmark {
+  color: var(--default-link-color);
+}
+:root[geckium-one] .recent-bookmark {
+  display: flex;
+  height: 21px;
+  -moz-context-properties: fill, fill-opacity;
+}
+@media (prefers-color-scheme: dark) {
+  :root[geckium-one] .recent-bookmark {
+    color: #acc0da;
+    fill: white;
+  }
+}
+:root[geckium-one] .recent-bookmark image {
+  width: 16px;
+  height: 16px;
+  margin-inline-end: 6px;
+}
+:root[geckium-one] .recent-bookmark label {
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+:root[geckium-one] .hint {
+  all: unset;
+  height: 28px;
+  background-color: white;
+  border: 1px solid rgb(127, 157, 185);
+  box-sizing: border-box;
+  width: 100%;
+  margin-block-end: 8px;
+  padding-left: 23px;
+  background-image: url("chrome://userchrome/content/assets/img/chrome-1/favicons/default_favicon.png");
+  background-position-x: 4px;
+  background-position-y: center;
+  background-repeat: no-repeat;
+}
+@media (prefers-color-scheme: dark) {
+  :root[geckium-one] .hint {
+    background-color: var(--ntp-background-color);
+  }
+}
+:root[geckium-two] #main .edit-visible {
+  display: none;
+}
+:root[geckium-two] #main .non-edit-visible {
+  display: flex;
+}
+:root[geckium-two] #main.edit-mode .edit-visible {
+  display: flex;
+}
+:root[geckium-two] #main.edit-mode .non-edit-visible {
+  display: none;
+}
+:root[geckium-two] #main.edit-mode .disabled-on-edit {
+  pointer-events: none;
+  opacity: 0.5;
+}
+:root[geckium-two] button#done, :root[geckium-two] button#cancel {
+  margin: 2px;
+}
+:root[geckium-two][pinineveryera=false] .edit-pin {
+  display: none !important;
+}
+:root[geckium-two] .most-visited-container {
+  position: relative;
+}
+:root[geckium-two] .most-visited-container[pinned=true] .edit-pin {
+  background-image: url("chrome://userchrome/content/pages/newTabHome/assets/chrome-2/newtab_pin_thumbnail_p.svg");
+}
+:root[geckium-two] .edit-container {
+  position: absolute;
+  height: 136px;
+  width: 195px;
+  bottom: 0;
+  justify-content: center;
+  align-items: center;
+}
+:root[geckium-two] .edit-pin,
+:root[geckium-two] .edit-cross {
+  width: 81px;
+  height: 81px;
+}
+:root[geckium-two] .edit-pin {
+  background-image: url("chrome://userchrome/content/pages/newTabHome/assets/chrome-2/newtab_pin_thumbnail.svg");
+}
+:root[geckium-two] .edit-pin:hover {
+  background-image: url("chrome://userchrome/content/pages/newTabHome/assets/chrome-2/newtab_pin_thumbnail_h.svg");
+}
+:root[geckium-two] .edit-pin:active {
+  background-image: url("chrome://userchrome/content/pages/newTabHome/assets/chrome-2/newtab_pin_thumbnail_p.svg");
+}
+:root[geckium-two] .edit-cross {
+  background-image: url("chrome://userchrome/content/pages/newTabHome/assets/chrome-2/newtab_remove_thumbnail.svg");
+}
+:root[geckium-two] .edit-cross:hover {
+  background-image: url("chrome://userchrome/content/pages/newTabHome/assets/chrome-2/newtab_remove_thumbnail_h.svg");
+}
+:root[geckium-two] .edit-cross:active {
+  background-image: url("chrome://userchrome/content/pages/newTabHome/assets/chrome-2/newtab_remove_thumbnail_p.svg");
+}
+:root[geckium-three] {
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: 9pt !important;
+}
+@media (-moz-platform: linux) {
+  :root[geckium-three] {
+    font: message-box;
+  }
+}
+:root[geckium-three][gkthemed]:not([gkchrthemed])[style*="--lwt-gknewtab-attribution-image"] #attribution {
+  display: flex;
+}
+:root[geckium-three][gkthemed]:not([gkchrthemed])[style*="--lwt-gknewtab-attribution-image"] #attribution-img {
+  background-image: var(--lwt-gknewtab-attribution-image);
+  width: var(--lwt-gknewtab-attribution-width);
+  height: var(--lwt-gknewtab-attribution-height);
+}
+:root[geckium-three][gkthemed][gkchrthemed] #attribution-img {
+  background-image: var(--chrtheme-theme-ntp-attribution);
+  width: var(--chrtheme-theme-ntp-attribution-width);
+  height: var(--chrtheme-theme-ntp-attribution-height);
+}
+:root[geckium-three][gkthemed][gkchrthemed][style*="--chrtheme-theme-ntp-attribution"] #attribution {
+  display: flex;
+}
+@media only screen and (max-width: 920px) {
+  :root[geckium-three][geckium-choice=three] #main, :root[geckium-three][geckium-choice=four] #main, :root[geckium-three][geckium-choice=five] #main, :root[geckium-three][geckium-choice=six] #main {
+    width: 692px;
+  }
+}
+:root[geckium-three][geckium-choice=three][gkbranding=chromium] #main, :root[geckium-three][geckium-choice=four][gkbranding=chromium] #main, :root[geckium-three][geckium-choice=five][gkbranding=chromium] #main, :root[geckium-three][geckium-choice=six][gkbranding=chromium] #main {
+  background: url(chrome://userchrome/content/pages/newTabHome/assets/chrome-3/chromium/product_logo.png) no-repeat 0px 8px;
+}
+:root[geckium-three][geckium-choice=three][gkbranding=chrome] #main, :root[geckium-three][geckium-choice=four][gkbranding=chrome] #main, :root[geckium-three][geckium-choice=five][gkbranding=chrome] #main, :root[geckium-three][geckium-choice=six][gkbranding=chrome] #main {
+  background: url(chrome://userchrome/content/pages/newTabHome/assets/chrome-3/google-chrome/product_logo.png) no-repeat 0px 8px;
+}
+@media (prefers-color-scheme: dark) {
+  :root[geckium-three][geckium-choice=three][gkbranding=chrome] #main, :root[geckium-three][geckium-choice=four][gkbranding=chrome] #main, :root[geckium-three][geckium-choice=five][gkbranding=chrome] #main, :root[geckium-three][geckium-choice=six][gkbranding=chrome] #main {
+    background: url(chrome://userchrome/content/pages/newTabHome/assets/chrome-3/google-chrome/product_logo_alternate.png) no-repeat 0px 8px;
+  }
+}
+:root[geckium-three][geckium-choice=three][gkbranding=chrome][style*="--chrtheme-ntp-logo-alternate: 1"] #main, :root[geckium-three][geckium-choice=three][gkbranding=chrome][style*="--lwt-gkntp-logo-alternate: 1"] #main, :root[geckium-three][geckium-choice=four][gkbranding=chrome][style*="--chrtheme-ntp-logo-alternate: 1"] #main, :root[geckium-three][geckium-choice=four][gkbranding=chrome][style*="--lwt-gkntp-logo-alternate: 1"] #main, :root[geckium-three][geckium-choice=five][gkbranding=chrome][style*="--chrtheme-ntp-logo-alternate: 1"] #main, :root[geckium-three][geckium-choice=five][gkbranding=chrome][style*="--lwt-gkntp-logo-alternate: 1"] #main, :root[geckium-three][geckium-choice=six][gkbranding=chrome][style*="--chrtheme-ntp-logo-alternate: 1"] #main, :root[geckium-three][geckium-choice=six][gkbranding=chrome][style*="--lwt-gkntp-logo-alternate: 1"] #main {
+  background: url(chrome://userchrome/content/pages/newTabHome/assets/chrome-3/google-chrome/product_logo_alternate.png) no-repeat 0px 8px;
+}
+:root[geckium-three] #main {
+  margin-inline: auto;
+  width: 920px;
+  gap: 0px;
+  transition-property: height, width;
+  transition-duration: 0.15s;
+}
+:root[geckium-three] #attribution-img {
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+:root[geckium-three] {
+  --newtab_thumb_off: url("chrome://userchrome/content/pages/newTabHome/assets/chrome-3/imgs/newtab_thumb_off.png");
+  --newtab_thumb_off_h: url("chrome://userchrome/content/pages/newTabHome/assets/chrome-3/imgs/newtab_thumb_off_h.png");
+  --newtab_thumb_off_p: url("chrome://userchrome/content/pages/newTabHome/assets/chrome-3/imgs/newtab_thumb_off_p.png");
+  --newtab_thumb_on: url("chrome://userchrome/content/pages/newTabHome/assets/chrome-3/imgs/newtab_thumb_on.png");
+  --newtab_thumb_on_h: url("chrome://userchrome/content/pages/newTabHome/assets/chrome-3/imgs/newtab_thumb_on_h.png");
+  --newtab_thumb_on_p: url("chrome://userchrome/content/pages/newTabHome/assets/chrome-3/imgs/newtab_thumb_on_p.png");
+  --newtab_list_off: url("chrome://userchrome/content/pages/newTabHome/assets/chrome-3/imgs/newtab_list_off.png");
+  --newtab_list_off_h: url("chrome://userchrome/content/pages/newTabHome/assets/chrome-3/imgs/newtab_list_off_h.png");
+  --newtab_list_off_p: url("chrome://userchrome/content/pages/newTabHome/assets/chrome-3/imgs/newtab_list_off_p.png");
+  --newtab_list_on: url("chrome://userchrome/content/pages/newTabHome/assets/chrome-3/imgs/newtab_list_on.png");
+  --newtab_list_on_h: url("chrome://userchrome/content/pages/newTabHome/assets/chrome-3/imgs/newtab_list_on_h.png");
+  --newtab_option: url("chrome://userchrome/content/pages/newTabHome/assets/chrome-3/imgs/newtab_option.png");
+  --newtab_option_h: url("chrome://userchrome/content/pages/newTabHome/assets/chrome-3/imgs/newtab_option_h.png");
+  --newtab_option_p: url("chrome://userchrome/content/pages/newTabHome/assets/chrome-3/imgs/newtab_option_p.png");
+  --newtab_pin_off: url("chrome://userchrome/content/pages/newTabHome/assets/chrome-3/imgs/newtab_pin_off.png");
+  --newtab_pin_off_h: url("chrome://userchrome/content/pages/newTabHome/assets/chrome-3/imgs/newtab_pin_off_h.png");
+  --newtab_pin_off_p: url("chrome://userchrome/content/pages/newTabHome/assets/chrome-3/imgs/newtab_pin_off_p.png");
+  --newtab_close: url("chrome://userchrome/content/pages/newTabHome/assets/chrome-3/imgs/newtab_close.png");
+  --newtab_close_h: url("chrome://userchrome/content/pages/newTabHome/assets/chrome-3/imgs/newtab_close_h.png");
+  --newtab_close_p: url("chrome://userchrome/content/pages/newTabHome/assets/chrome-3/imgs/newtab_close_p.png");
+  --newtab_pin_on: url("chrome://userchrome/content/pages/newTabHome/assets/chrome-3/imgs/newtab_pin_on.png");
+  --newtab_pin_on_h: url("chrome://userchrome/content/pages/newTabHome/assets/chrome-3/imgs/newtab_pin_on_h.png");
+  --newtab_pin_on_p: url("chrome://userchrome/content/pages/newTabHome/assets/chrome-3/imgs/newtab_pin_on_p.png");
+}
+@media not (resolution: 96dpi) {
+  :root[geckium-three] {
+    --newtab_thumb_off: url("chrome://userchrome/content/pages/newTabHome/assets/chrome-3/imgs/newtab_thumb_off.svg");
+    --newtab_thumb_off_h: url("chrome://userchrome/content/pages/newTabHome/assets/chrome-3/imgs/newtab_thumb_off_h.svg");
+    --newtab_thumb_off_p: url("chrome://userchrome/content/pages/newTabHome/assets/chrome-3/imgs/newtab_thumb_off_p.svg");
+    --newtab_thumb_on: url("chrome://userchrome/content/pages/newTabHome/assets/chrome-3/imgs/newtab_thumb_on.svg");
+    --newtab_thumb_on_h: url("chrome://userchrome/content/pages/newTabHome/assets/chrome-3/imgs/newtab_thumb_on_h.svg");
+    --newtab_thumb_on_p: url("chrome://userchrome/content/pages/newTabHome/assets/chrome-3/imgs/newtab_thumb_on_p.svg");
+    --newtab_list_off: url("chrome://userchrome/content/pages/newTabHome/assets/chrome-3/imgs/newtab_list_off.svg");
+    --newtab_list_off_h: url("chrome://userchrome/content/pages/newTabHome/assets/chrome-3/imgs/newtab_list_off_h.svg");
+    --newtab_list_off_p: url("chrome://userchrome/content/pages/newTabHome/assets/chrome-3/imgs/newtab_list_off_p.svg");
+    --newtab_list_on: url("chrome://userchrome/content/pages/newTabHome/assets/chrome-3/imgs/newtab_list_on.svg");
+    --newtab_list_on_h: url("chrome://userchrome/content/pages/newTabHome/assets/chrome-3/imgs/newtab_list_on_h.svg");
+    --newtab_option: url("chrome://userchrome/content/pages/newTabHome/assets/chrome-3/imgs/newtab_option.svg");
+    --newtab_option_h: url("chrome://userchrome/content/pages/newTabHome/assets/chrome-3/imgs/newtab_option_h.svg");
+    --newtab_option_p: url("chrome://userchrome/content/pages/newTabHome/assets/chrome-3/imgs/newtab_option_p.svg");
+    --newtab_pin_off: url("chrome://userchrome/content/pages/newTabHome/assets/chrome-3/imgs/newtab_pin_off.svg");
+    --newtab_pin_off_h: url("chrome://userchrome/content/pages/newTabHome/assets/chrome-3/imgs/newtab_pin_off_h.svg");
+    --newtab_pin_off_p: url("chrome://userchrome/content/pages/newTabHome/assets/chrome-3/imgs/newtab_pin_off_p.svg");
+    --newtab_close: url("chrome://userchrome/content/pages/newTabHome/assets/chrome-3/imgs/newtab_close.svg");
+    --newtab_close_h: url("chrome://userchrome/content/pages/newTabHome/assets/chrome-3/imgs/newtab_close_h.svg");
+    --newtab_close_p: url("chrome://userchrome/content/pages/newTabHome/assets/chrome-3/imgs/newtab_close_p.svg");
+    --newtab_pin_on: url("chrome://userchrome/content/pages/newTabHome/assets/chrome-3/imgs/newtab_pin_on.svg");
+    --newtab_pin_on_h: url("chrome://userchrome/content/pages/newTabHome/assets/chrome-3/imgs/newtab_pin_on_h.svg");
+    --newtab_pin_on_p: url("chrome://userchrome/content/pages/newTabHome/assets/chrome-3/imgs/newtab_pin_on_p.svg");
+  }
+}
+:root[geckium-three] {
+  --default-window-menu-item-hover-bg: hsl(213, 66%, 57%);
+  --window-menu-item-hover-bg: var(--default-window-menu-item-hover-bg);
+  --default-view-toolbar-buttons-bg: rgb(134,177,231);
+  --view-toolbar-buttons-bg: var(--default-view-toolbar-buttons-bg);
+  --default-window-menu-item-hover-bg: rgb(134,177,231);
+  --default-thumbnail-border-color-normal: #E5EFFE;
+  --thumbnail-border-color-normal: var(--default-thumbnail-border-color-normal);
+  --default-thumbnail-border-color-hot: rgb(75,140,220);
+  --thumbnail-border-color-hot: var(--default-thumbnail-border-color-hot);
+  --default-thumbnail-container-color: black;
+  --thumbnail-container-color: var(--default-thumbnail-container-color);
+  --default-thumbnail-disabled-color: #DFEAF7;
+  --thumbnail-disabled-color: var(--default-thumbnail-disabled-color);
+  --default-edit-bar-background-color-hot: hsl(213, 66%, 57%);
+  --edit-bar-background-color-hot: var(--default-edit-bar-background-color-hot);
+  --default-edit-bar-background-hot: linear-gradient(
+  	to bottom,
+  	hsl(213, 87%, 67%),
+  	var(--edit-bar-background-color-hot)
+  );
+  --edit-bar-background-hot: var(--default-edit-bar-background-hot);
+  --default-link-color: #06C;
+}
+@media (prefers-color-scheme: dark) {
+  :root[geckium-three] {
+    --thumbnail-border-color-normal: color-mix(
+    	in srgb,
+    	color-mix(
+    		in srgb,
+    		rgb(14, 80, 159) 45%,
+    		white
+    	) 70%,
+    	black
+    );
+    --thumbnail-container-color: white;
+    --thumbnail-disabled-color: color-mix(
+    	in srgb,
+    	color-mix(
+    		in srgb,
+    		rgb(14, 80, 159) 40%,
+    		white
+    	) 70%,
+    	black
+    );
+    --default-edit-bar-background-hot: linear-gradient(
+    	to bottom,
+    	rgb(14, 80, 159),
+    	rgb(20, 62, 112)
+    );
+    --default-thumbnail-border-color-hot: rgb(20, 62, 112);
+  }
+}
+:root[geckium-three][gksystheme=you]:not([gkthemed], [gkchrthemed]) {
+  --default-window-menu-item-hover-bg: hsl(var(--you-h), calc(var(--you-s) - 3%), calc(var(--you-l) - 1%));
+  --default-view-toolbar-buttons-bg: hsl(var(--you-h), calc(var(--you-s) - 2%), calc(var(--you-l) + 14%));
+  --default-window-menu-item-hover-bg: hsl(var(--you-h), calc(var(--you-s) - 2%), calc(var(--you-l) + 14%));
+  --default-thumbnail-border-color-normal: hsl(var(--you-h), var(--you-s), calc(var(--you-l) + 37%));
+  --default-thumbnail-border-color-hot: hsl(var(--you-h), calc(var(--you-s) - 2%), var(--you-l));
+  --default-thumbnail-disabled-color: hsl(var(--you-h), calc(var(--you-s) - 9%), calc(var(--you-l) + 34%));
+  --default-edit-bar-background-color-hot: hsl(var(--you-h), calc(var(--you-s) - 3%), calc(var(--you-l) - 1%));
+  --default-edit-bar-background-hot: linear-gradient(
+  	to bottom,
+  	hsl(var(--you-h), var(--you-s), calc(var(--you-l) + 9%)),
+  	var(--edit-bar-background-color-hot)
+  );
+}
+@media (prefers-color-scheme: dark) {
+  :root[geckium-three][gksystheme=you]:not([gkthemed], [gkchrthemed]) {
+    --thumbnail-border-color-normal: color-mix(
+    	in srgb,
+    	color-mix(
+    		in srgb,
+    		hsl(var(--you-h), var(--you-s), calc(var(--you-l-dark) - 23%)) 45%,
+    		white
+    	) 70%,
+    	black
+    );
+    --thumbnail-disabled-color: color-mix(
+    	in srgb,
+    	color-mix(
+    		in srgb,
+    		hsl(var(--you-h), var(--you-s), calc(var(--you-l-dark) - 23%)) 40%,
+    		white
+    	) 70%,
+    	black
+    );
+    --default-edit-bar-background-hot: linear-gradient(
+    	to bottom,
+    	hsl(var(--you-h), var(--you-s), calc(var(--you-l-dark) - 23%)),
+    	hsl(var(--you-h), var(--you-s), calc(var(--you-l-dark) - 32%))
+    );
+    --default-thumbnail-border-color-hot: hsl(var(--you-h), var(--you-s), calc(var(--you-l-dark) - 32%));
+  }
+}
+:root[geckium-three][gkthemed]:not([gkchrthemed]) {
+  --view-toolbar-buttons-bg: var(--toolbar-color, var(--lwt-text-color));
+  --window-menu-item-hover-bg: var(--toolbar-color, var(--lwt-text-color));
+  --thumbnail-border-color-normal: color-mix(in srgb, var(--edit-bar-background-color-hot) 50%, white);
+  --thumbnail-border-color-hot: var(--toolbar-bgcolor, var(--lwt-accent-color));
+  --thumbnail-container-color: var(--link-color, var(--default-thumbnail-container-color));
+  --thumbnail-disabled-color: var(--thumbnail-border-color-normal);
+}
+:root[geckium-three][gkthemed]:not([gkchrthemed])[toolbar-bgcolor-transparent=true] {
+  --thumbnail-border-color-hot: var(--gktoolbar-bgcolor, var(--lwt-accent-color));
+}
+:root[geckium-three][gkthemed]:not([gkchrthemed]):not([style*="--toolbar-color: white"]), :root[geckium-three][gkthemed]:not([gkchrthemed]):not([style*="--toolbar-color: rgb(255,255,255)"]), :root[geckium-three][gkthemed]:not([gkchrthemed]):not([style*="--toolbar-color: rgba(255,255,255,1)"]) {
+  --edit-bar-background-color-hot: var(--toolbar-bgcolor, var(--lwt-accent-color));
+  --edit-bar-background-hot: linear-gradient(
+  	to bottom,
+  	color-mix(in srgb, var(--edit-bar-background-color-hot) 70%, white),
+  	var(--edit-bar-background-color-hot)
+  );
+}
+:root[geckium-three][gkthemed]:not([gkchrthemed]):not([style*="--toolbar-color: white"])[toolbar-bgcolor-transparent=true], :root[geckium-three][gkthemed]:not([gkchrthemed]):not([style*="--toolbar-color: rgb(255,255,255)"])[toolbar-bgcolor-transparent=true], :root[geckium-three][gkthemed]:not([gkchrthemed]):not([style*="--toolbar-color: rgba(255,255,255,1)"])[toolbar-bgcolor-transparent=true] {
+  --edit-bar-background-color-hot: var(--gktoolbar-bgcolor, var(--lwt-accent-color));
+}
+:root[geckium-three][gkthemed][gkchrthemed] {
+  --manually-adapted-header: var(--chrtheme-ntp-section, var(--chrtheme-ntp-header));
+  --view-toolbar-buttons-bg: color-mix(
+  	in srgb,
+  	var(--manually-adapted-header) 70%,
+  	white
+  );
+  /*&[style*="--chrtheme-ntp-section"] {
+  	--thumbnail-border-color-normal: color-mix(
+  		in srgb,
+  		var(--manually-adapted-header) 20%,
+  		white
+  	);
+  	//--thumbnail-border-color-hot: var(--manually-adapted-header, var(--default-thumbnail-border-color-hot));
+  }*/
+  --thumbnail-border-color-normal: var(--chrtheme-ntp-section, var(--default-thumbnail-border-color-normal));
+  --thumbnail-border-color-hot: var(--chrtheme-ntp-header, var(--chrtheme-ntp-section, var(--default-thumbnail-border-color-hot)));
+  --thumbnail-container-color: var(--chrtheme-ntp-text, var(--default-thumbnail-container-color));
+  --window-menu-item-hover-bg: var(--view-toolbar-buttons-bg, var(--default-window-menu-item-hover-bg));
+  --edit-bar-background-color-hot: var(--thumbnail-border-color-hot, var(--default-thumbnail-border-color-hot));
+  --edit-bar-background-hot: linear-gradient(
+  	to bottom,
+  	color-mix(
+  		in srgb,
+  		var(--edit-bar-background-color-hot) 70%,
+  		white
+  	),
+  	var(--edit-bar-background-color-hot)
+  );
+}
+:root[geckium-three][gksystheme=gtk]:not([gkthemed], [gkchrthemed]) {
+  --view-toolbar-buttons-bg: -moz-dialog;
+  --window-menu-item-hover-bg: AccentColor;
+  --thumbnail-border-color-normal: -moz-dialog;
+  --thumbnail-border-color-hot: ActiveCaption;
+  --thumbnail-container-color: FieldText;
+  --edit-bar-background-color-hot: CaptionText;
+  --edit-bar-background-hot: linear-gradient(
+  	to bottom,
+  	color-mix(in srgb, ActiveCaption 70%, white),
+  	ActiveCaption
+  );
+}
+@media only screen and (max-width: 920px) {
+  :root[geckium-three][geckium-choice=three] .thumbnail-container .thumbnail, :root[geckium-three][geckium-choice=four] .thumbnail-container .thumbnail, :root[geckium-three][geckium-choice=five] .thumbnail-container .thumbnail, :root[geckium-three][geckium-choice=six] .thumbnail-container .thumbnail {
+    width: 150px;
+    height: 93px;
+  }
+  :root[geckium-three][geckium-choice=three] .thumbnail-container .thumbnail-wrapper, :root[geckium-three][geckium-choice=four] .thumbnail-container .thumbnail-wrapper, :root[geckium-three][geckium-choice=five] .thumbnail-container .thumbnail-wrapper, :root[geckium-three][geckium-choice=six] .thumbnail-container .thumbnail-wrapper {
+    background-size: 150px 93px;
+  }
+}
+:root[geckium-three] #view-toolbar {
+  margin-block-start: 35px;
+  margin-block-end: 18px;
+  justify-content: end;
+  gap: 5px;
+}
+:root[geckium-three] #view-toolbar > input,
+:root[geckium-three] #view-toolbar > button {
+  all: unset;
+  position: relative;
+  border-radius: 4px;
+  background-color: var(--view-toolbar-buttons-bg);
+  box-sizing: border-box;
+  width: 19px;
+  height: 17px;
+}
+:root[geckium-three] #view-toolbar > input#thumb-checkbox,
+:root[geckium-three] #view-toolbar > button#thumb-checkbox {
+  background-image: var(--newtab_thumb_off);
+}
+:root[geckium-three] #view-toolbar > input#thumb-checkbox:not([disabled]):hover,
+:root[geckium-three] #view-toolbar > button#thumb-checkbox:not([disabled]):hover {
+  background-image: var(--newtab_thumb_off_h);
+}
+:root[geckium-three] #view-toolbar > input#thumb-checkbox:not([disabled]):active,
+:root[geckium-three] #view-toolbar > button#thumb-checkbox:not([disabled]):active {
+  background-image: var(--newtab_thumb_off_p);
+}
+:root[geckium-three] #view-toolbar > input#thumb-checkbox:not([disabled]):checked,
+:root[geckium-three] #view-toolbar > button#thumb-checkbox:not([disabled]):checked {
+  background-image: var(--newtab_thumb_on);
+}
+:root[geckium-three] #view-toolbar > input#thumb-checkbox:not([disabled]):checked:not([disabled]):hover,
+:root[geckium-three] #view-toolbar > button#thumb-checkbox:not([disabled]):checked:not([disabled]):hover {
+  background-image: var(--newtab_thumb_on_h);
+}
+:root[geckium-three] #view-toolbar > input#thumb-checkbox:not([disabled]):checked:not([disabled]):active,
+:root[geckium-three] #view-toolbar > button#thumb-checkbox:not([disabled]):checked:not([disabled]):active {
+  background-image: var(--newtab_thumb_on_p);
+}
+:root[geckium-three] #view-toolbar > input#list-checkbox,
+:root[geckium-three] #view-toolbar > button#list-checkbox {
+  background-image: var(--newtab_list_off);
+}
+:root[geckium-three] #view-toolbar > input#list-checkbox:not([disabled]):hover,
+:root[geckium-three] #view-toolbar > button#list-checkbox:not([disabled]):hover {
+  background-image: var(--newtab_list_off_h);
+}
+:root[geckium-three] #view-toolbar > input#list-checkbox:not([disabled]):active,
+:root[geckium-three] #view-toolbar > button#list-checkbox:not([disabled]):active {
+  background-image: var(--newtab_list_off_p);
+}
+:root[geckium-three] #view-toolbar > input#list-checkbox:not([disabled]):checked,
+:root[geckium-three] #view-toolbar > button#list-checkbox:not([disabled]):checked {
+  background-image: var(--newtab_list_on);
+}
+:root[geckium-three] #view-toolbar > input#list-checkbox:not([disabled]):checked:not([disabled]):hover,
+:root[geckium-three] #view-toolbar > button#list-checkbox:not([disabled]):checked:not([disabled]):hover {
+  background-image: var(--newtab_list_on_h);
+}
+:root[geckium-three] #view-toolbar > input#option-button,
+:root[geckium-three] #view-toolbar > button#option-button {
+  background-image: var(--newtab_option);
+}
+:root[geckium-three] #view-toolbar > input#option-button:not([disabled]):hover,
+:root[geckium-three] #view-toolbar > button#option-button:not([disabled]):hover {
+  background-image: var(--newtab_option_h);
+}
+:root[geckium-three] #view-toolbar > input#option-button:not([disabled]):active, :root[geckium-three] #view-toolbar > input#option-button:not([disabled])[open],
+:root[geckium-three] #view-toolbar > button#option-button:not([disabled]):active,
+:root[geckium-three] #view-toolbar > button#option-button:not([disabled])[open] {
+  background-image: var(--newtab_option_p);
+}
+:root[geckium-three] .window-menu-button:not([disabled])[open] .window-menu {
+  display: flex;
+}
+:root[geckium-three] .window-menu-button .window-menu {
+  display: none;
+  position: absolute;
+  top: 18px;
+  right: -1px;
+  min-width: 175px;
+  box-shadow: rgba(0, 0, 0, 0.296875) 2px 2px 3px;
+  background-color: white;
+  border: 1px solid #999;
+  color: black;
+  padding: 1px;
+}
+:root[geckium-three] .window-menu-button .window-menu > :not(separator) {
+  cursor: default;
+  padding: 3px 8px;
+  -moz-context-properties: fill, fill-opacity !important;
+  fill: currentColor !important;
+}
+:root[geckium-three] .window-menu-button .window-menu > :not(separator):hover {
+  background-color: var(--window-menu-item-hover-bg);
+  color: white;
+  fill: currentColor !important;
+}
+:root[geckium-three] .window-menu-button .window-menu > :not(separator)[checked=true] {
+  list-style-image: url("chrome://userchrome/content/pages/newTabHome/assets/chrome-3/imgs/checkbox.svg");
+}
+:root[geckium-three] .window-menu-button .window-menu > :not(separator) .checkbox-check {
+  display: none;
+}
+:root[geckium-three] .window-menu-button .window-menu > :not(separator) .checkbox-label-box {
+  align-items: center;
+}
+:root[geckium-three] .window-menu-button .window-menu > :not(separator) .checkbox-icon {
+  width: 9px;
+  height: 8px;
+  margin-inline-end: 2px;
+}
+:root[geckium-three] .window-menu-button .window-menu .checkbox-check {
+  width: 12px;
+}
+:root[geckium-three] #most-visited,
+:root[geckium-three] #most-viewed-content,
+:root[geckium-three] #most-visited-page .tile-grid,
+:root[geckium-three] #mv-tiles {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 0 20px;
+  margin-block-end: 34px;
+}
+:root[geckium-three] #most-visited.collapsed,
+:root[geckium-three] #most-viewed-content.collapsed,
+:root[geckium-three] #most-visited-page .tile-grid.collapsed,
+:root[geckium-three] #mv-tiles.collapsed {
+  display: none !important;
+}
+:root[geckium-three] #most-visited.list,
+:root[geckium-three] #most-viewed-content.list,
+:root[geckium-three] #most-visited-page .tile-grid.list,
+:root[geckium-three] #mv-tiles.list {
+  display: block;
+  margin-top: 22px;
+}
+:root[geckium-three] #most-visited.list .thumbnail-container,
+:root[geckium-three] #most-viewed-content.list .thumbnail-container,
+:root[geckium-three] #most-visited-page .tile-grid.list .thumbnail-container,
+:root[geckium-three] #mv-tiles.list .thumbnail-container {
+  color: var(--link-color, --default-link-color);
+  font-size: 16pt;
+}
+:root[geckium-three] #most-visited.list .thumbnail-container .edit-mode-border,
+:root[geckium-three] #most-viewed-content.list .thumbnail-container .edit-mode-border,
+:root[geckium-three] #most-visited-page .tile-grid.list .thumbnail-container .edit-mode-border,
+:root[geckium-three] #mv-tiles.list .thumbnail-container .edit-mode-border {
+  display: none;
+}
+:root[geckium-three] #most-visited.list .thumbnail-container .title,
+:root[geckium-three] #most-viewed-content.list .thumbnail-container .title,
+:root[geckium-three] #most-visited-page .tile-grid.list .thumbnail-container .title,
+:root[geckium-three] #mv-tiles.list .thumbnail-container .title {
+  height: 46px;
+}
+:root[geckium-three] #most-visited.list .thumbnail-container .title > hbox,
+:root[geckium-three] #most-viewed-content.list .thumbnail-container .title > hbox,
+:root[geckium-three] #most-visited-page .tile-grid.list .thumbnail-container .title > hbox,
+:root[geckium-three] #mv-tiles.list .thumbnail-container .title > hbox {
+  align-items: center;
+}
+:root[geckium-three] .thumbnail-container {
+  color: var(--thumbnail-container-color);
+  text-decoration: none;
+}
+@media (prefers-color-scheme: dark) {
+  :root[geckium-three] .thumbnail-container {
+    color: white;
+  }
+}
+:root[geckium-three] .thumbnail-container:not([disabled]):hover .edit-bar, :root[geckium-three] .thumbnail-container:not([disabled]):focus .edit-bar {
+  margin-block-start: 0px;
+  margin-block-end: 0px;
+  background-color: var(--edit-bar-background-color-hot);
+  background-image: var(--edit-bar-background-hot);
+  box-shadow: 0px 2px 2px hsla(0, 0%, 0%, 0.5);
+  transition-delay: 0.5s, 0.5s, 0.5s;
+}
+:root[geckium-three] .thumbnail-container:not([disabled]):hover .thumbnail, :root[geckium-three] .thumbnail-container:not([disabled]):focus .thumbnail {
+  border-color: var(--thumbnail-border-color-hot);
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+  background-image: linear-gradient(to bottom, hsla(0, 0%, 0%, 0) 0%, hsla(0, 0%, 47%, 0) 85%, hsla(0, 0%, 47%, 0.2) 100%);
+  box-shadow: 0px 2px 2px hsla(0, 0%, 0%, 0.5);
+  /* delay border radius transition as much as the edit bar slide delay */
+  transition-delay: 0s, 0s, 0.5s;
+}
+:root[geckium-three] .thumbnail-container[disabled] .thumbnail-wrapper {
+  border: solid var(--thumbnail-disabled-color);
+  background: rgb(243, 243, 243);
+}
+:root[geckium-three] .thumbnail-container[disabled] .thumbnail {
+  background-color: var(--thumbnail-disabled-color);
+  border: 1px solid white;
+  padding: 0;
+}
+:root[geckium-three] .thumbnail-container .thumbnail-wrapper {
+  background-color: white;
+}
+@media (prefers-color-scheme: dark) {
+  :root[geckium-three] .thumbnail-container .thumbnail-wrapper {
+    background-color: black;
+  }
+}
+:root[geckium-three] .thumbnail-container .thumbnail-wrapper {
+  border-radius: 5px;
+  background-size: 209px 132px;
+  background-position: center;
+  background-repeat: no-repeat;
+  transition-property: background-size;
+  transition-duration: 0.15s;
+}
+:root[geckium-three] .thumbnail-container .thumbnail {
+  width: 207px;
+  height: 129px;
+  border-width: 3px;
+  border-style: solid;
+  border-color: var(--thumbnail-border-color-normal);
+  border-radius: 5px;
+  padding: 1px;
+  transition: border-color 0.15s, box-shadow 0.15s, border-radius 0.15s, height 0.15s, width 0.15s;
+}
+:root[geckium-three] .thumbnail-container .edit-mode-border {
+  border-radius: 4px;
+}
+:root[geckium-three] .thumbnail-container .edit-bar {
+  box-sizing: unset;
+  background: hsl(213, 54%, 95%);
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
+  height: 17px;
+  margin-block-start: 21px;
+  margin-block-end: -21px;
+  padding-block-start: 3px;
+  padding-inline: 3px;
+  cursor: move;
+}
+@media (prefers-color-scheme: dark) {
+  :root[geckium-three] .thumbnail-container .edit-bar {
+    background: #617796;
+  }
+}
+:root[geckium-three] .thumbnail-container .edit-bar {
+  transition: margin 0.15s, background-color 0.15s, box-shadow 0.15s;
+}
+:root[geckium-three] .thumbnail-container .edit-bar button {
+  all: unset;
+  cursor: pointer;
+  width: 16px;
+  height: 16px;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+:root[geckium-three] .thumbnail-container .edit-bar button.pin {
+  background-image: var(--newtab_pin_off);
+}
+:root[geckium-three] .thumbnail-container .edit-bar button.pin:hover {
+  background-image: var(--newtab_pin_off_h);
+}
+:root[geckium-three] .thumbnail-container .edit-bar button.pin:active {
+  background-image: var(--newtab_pin_off_p);
+}
+:root[geckium-three] .thumbnail-container .edit-bar button.remove {
+  background-image: var(--newtab_close);
+}
+:root[geckium-three] .thumbnail-container .edit-bar button.remove:hover {
+  background-image: var(--newtab_close_h);
+}
+:root[geckium-three] .thumbnail-container .edit-bar button.remove:active {
+  background-image: var(--newtab_close_p);
+}
+:root[geckium-three] .thumbnail-container[pinned=true] .edit-bar button.pin {
+  background-image: var(--newtab_pin_on);
+}
+:root[geckium-three] .thumbnail-container[pinned=true] .edit-bar button.pin:hover {
+  background-image: var(--newtab_pin_on_h);
+}
+:root[geckium-three] .thumbnail-container[pinned=true] .edit-bar button.pin:active {
+  background-image: var(--newtab_pin_on_p);
+}
+:root[geckium-three] .thumbnail-container .title {
+  padding-block-start: 4px;
+  padding-inline-start: 3px;
+  padding-inline-end: 5px;
+  height: 16px;
+}
+:root[geckium-three] .thumbnail-container .title label {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+:root[geckium-three] .thumbnail-container .favicon {
+  margin-inline-end: 4px;
+}
+:root[geckium-three] {
+  --default-recently-closed-background: #E5EFFE;
+  --recently-closed-background: var(--default-recently-closed-background);
+  --default-recently-closed-border-color: rgba(75, 140, 220, 0.3125);
+  --recently-closed-border-color: var(--default-recently-closed-border-color);
+  --default-recently-closed-color: black;
+  --recently-closed-color: var(--default-recently-closed-color);
+  --default-recently-closed-item-color: #063774;
+  --recently-closed-item-color: var(--default-recently-closed-item-color);
+}
+@media (prefers-color-scheme: dark) {
+  :root[geckium-three] {
+    --recently-closed-background: #415470;
+    --recently-closed-border-color: rgba(206, 220, 236, 0.313);
+    --recently-closed-color: white;
+    --recently-closed-item-color: #acc0da;
+  }
+}
+:root[geckium-three][gksystheme=you]:not([gkthemed], [gkchrthemed]) {
+  --default-recently-closed-background: hsl(var(--you-h), var(--you-s), calc(var(--you-l) + 37%));
+  --default-recently-closed-border-color: hsla(var(--you-h), calc(var(--you-s) - 2%), var(--you-l), 0.3125);
+  --default-recently-closed-item-color: hsl(var(--you-h), var(--you-s), calc(var(--you-l) - 34%));
+}
+@media (prefers-color-scheme: dark) {
+  :root[geckium-three][gksystheme=you]:not([gkthemed], [gkchrthemed]) {
+    --recently-closed-background: hsl(var(--you-h), calc(var(--you-s) - 42%), calc(var(--you-l-dark) - 23%));
+    --recently-closed-border-color: hsla(var(--you-h), calc(var(--you-s) - 25%), calc(var(--you-l-dark) + 29%), 0.313);
+    --recently-closed-item-color: hsl(var(--you-h), calc(var(--you-s) - 31%), calc(var(--you-l-dark) + 18%));
+  }
+}
+:root[geckium-three][gkthemed]:not([gkchrthemed]) {
+  --recently-closed-background: color-mix(
+  	in srgb,
+  	var(--arrowpanel-background, var(--lwt-accent-color)) 50%,
+  	transparent
+  );
+  --recently-closed-border-color: color-mix(
+  	in srgb,
+  	var(--toolbarbutton-icon-color, var(--lwt-text-color)) 50%,
+  	transparent
+  );
+  --recently-closed-color: var(--recently-closed-item-color);
+  --recently-closed-item-color: var(--toolbarbutton-icon-color, var(--lwt-text-color, var(--default-recently-closed-item-color)));
+}
+:root[geckium-three][gkthemed]:not([gkchrthemed])[style*="--arrowpanel-background"] {
+  --recently-closed-item-color: var(--arrowpanel-color, var(--toolbarbutton-icon-color, var(--lwt-text-color)));
+}
+:root[geckium-three][gkthemed][gkchrthemed] {
+  --recently-closed-background: var(--chrtheme-ntp-section, var(--default-recently-closed-background));
+}
+:root[geckium-three][gkthemed][gkchrthemed][style*="--chrtheme-ntp-section"] {
+  --recently-closed-border-color: color-mix(
+  	in srgb,
+  	var(--recently-closed-background) 31%,
+  	transparent
+  );
+}
+:root[geckium-three][gkthemed][gkchrthemed][style*="--chrtheme-ntp-header"] {
+  --recently-closed-border-color: var(--chrtheme-ntp-header, var(--default-recently-closed-border-color));
+}
+:root[geckium-three][gkthemed][gkchrthemed] {
+  --recently-closed-color: var(--chrtheme-ntp-section-text, var(--default-recently-closed-color));
+  --recently-closed-item-color: var(--chrtheme-ntp-section-link, var(--default-recently-closed-item-color));
+}
+:root[geckium-three][gksystheme=gtk]:not([gkthemed], [gkchrthemed]) {
+  --recently-closed-background: -moz-dialog;
+  --recently-closed-border-color: color-mix(
+  	in srgb,
+  	-moz-dialogtext 20%,
+  	transparent
+  );
+  --recently-closed-color: -moz-dialogtext;
+  --recently-closed-item-color: -moz-nativehyperlinktext;
+}
+:root[geckium-three] {
+  --default-lower-sections-background: rgba(239, 246, 255, 0.796875);
+  --lower-sections-background: var(--default-lower-sections-background);
+  --default-lower-sections-h2-background: linear-gradient(
+  	to bottom,
+  	rgb(98, 164, 245),
+  	rgb(73, 138, 218)
+  );
+  --lower-sections-h2-background: var(--default-lower-sections-h2-background);
+  --default-lower-sections-border-color: rgb(222, 234, 248);
+  --lower-sections-border-color: var(--default-lower-sections-border-color);
+}
+@media (prefers-color-scheme: dark) {
+  :root[geckium-three] {
+    --default-lower-sections-background: rgba(239, 246, 255, 0.2);
+    --default-lower-sections-h2-background: linear-gradient(
+    	to bottom,
+    	rgb(14, 80, 159),
+    	rgb(20, 62, 112)
+    );
+    --default-lower-sections-border-color: rgb(65, 94, 128);
+  }
+}
+:root[geckium-three][gksystheme=you]:not([gkthemed], [gkchrthemed]) {
+  --default-lower-sections-background: hsla(var(--you-h), var(--you-s), calc(var(--you-l) + 39%), 0.796875);
+  --default-lower-sections-h2-background: linear-gradient(
+  	to bottom,
+  	hsl(var(--you-h), var(--you-s), calc(var(--you-l) + 9%)),
+  	hsl(var(--you-h), var(--you-s), var(--you-l))
+  );
+  --default-lower-sections-border-color: hsl(var(--you-h), var(--you-s), calc(var(--you-l) + 34%));
+}
+@media (prefers-color-scheme: dark) {
+  :root[geckium-three][gksystheme=you]:not([gkthemed], [gkchrthemed]) {
+    --default-lower-sections-background: hsla(var(--you-h), var(--you-s), calc(var(--you-l-dark) + 39%), 0.2);
+    --default-lower-sections-h2-background: linear-gradient(
+    	to bottom,
+    	hsl(var(--you-h), var(--you-s), calc(var(--you-l-dark) - 23%)),
+    	hsl(var(--you-h), var(--you-s), calc(var(--you-l-dark) - 32%))
+    );
+    --default-lower-sections-border-color: hsl(var(--you-h), calc(var(--you-s) - 36%), calc(var(--you-l-dark) - 20%));
+  }
+}
+:root[geckium-three][gkthemed]:not([gkchrthemed]) {
+  --lower-sections-border-color: color-mix(
+  	in srgb,
+  	var(--thumbnail-border-color-normal) 70%,
+  	white
+  );
+  --lower-sections-h2-background: linear-gradient(
+  	to bottom,
+  	var(--thumbnail-border-color-normal),
+  	var(--thumbnail-border-color-normal)
+  );
+}
+:root[geckium-three][gkthemed][gkchrthemed] {
+  --lower-sections-border-color: color-mix(
+  	in srgb,
+  	var(--thumbnail-border-color-normal) 70%,
+  	white
+  );
+  --lower-sections-h2-background:
+  linear-gradient(
+  	to bottom,
+  	color-mix(
+  		in srgb,
+  		var(--thumbnail-border-color-normal) 75%,
+  		white
+  	),
+  	var(--thumbnail-border-color-normal)
+  ),
+  grey ;
+}
+:root[geckium-three][gksystheme=gtk]:not([gkthemed], [gkchrthemed]) {
+  --lower-sections-border-color: color-mix(
+  	in srgb,
+  	ActiveCaption 70%,
+  	white
+  );
+  --lower-sections-h2-background:
+  linear-gradient(
+  	to bottom,
+  	color-mix(
+  		in srgb,
+  		ActiveCaption 75%,
+  		white
+  	),
+  	ActiveCaption
+  ),
+  grey ;
+}
+:root[geckium-three] #lower-sections {
+  gap: 20px;
+}
+:root[geckium-three] #lower-sections > .section {
+  flex: 1;
+  background: var(--lower-sections-background);
+  border: 1px solid var(--lower-sections-border-color);
+  border-radius: 4px;
+  padding-block-end: 5px;
+  overflow: hidden;
+  height: 198px;
+}
+:root[geckium-three] #lower-sections > .section.collapsed {
+  display: none !important;
+}
+:root[geckium-three] #lower-sections > .section > hbox > vbox {
+  flex: 1;
+}
+:root[geckium-three] #lower-sections > .section h2 {
+  background: var(--lower-sections-h2-background);
+  padding: 4px 8px;
+  font-size: 10pt;
+  font-weight: bold;
+  color: white;
+}
+:root[geckium-three] #lower-sections > .section h3 {
+  margin-inline-start: 3px;
+  padding: 8px 5px;
+  padding-block-end: 0;
+  font-size: 8pt;
+}
+:root[geckium-three] #lower-sections > .section .item-container {
+  margin-inline-start: 5px;
+}
+:root[geckium-three] #lower-sections > .section .item {
+  all: unset;
+  display: flex;
+  font-size: 10pt;
+  margin-block: 2px;
+  padding-block: 2px;
+}
+:root[geckium-three] #lower-sections > .section .item image {
+  width: 16px;
+  height: 16px;
+}
+:root[geckium-three] #lower-sections > .section .item label {
+  margin-inline-start: 2px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+:root[geckium-three] #lower-sections > .section .item.nav {
+  padding-inline-start: 18px;
+}
+:root[geckium-three] #lower-sections > .section .item.nav:after {
+  content: "»";
+  margin-inline-start: 2px;
+}
+:root[geckium-three] #lower-sections > .section a.item,
+:root[geckium-three] #lower-sections > .section button.item {
+  cursor: pointer;
+  color: var(--link-color, --default-link-color);
+  text-decoration: underline;
+}
+:root[geckium-three] #lower-sections > .section .tips-title {
+  padding: 2px;
+  padding-block-start: 9px;
+  padding-inline-start: 18px;
+}
+:root[geckium-three] #footer {
+  margin-top: auto;
+}
+:root[geckium-three][geckium-choice=four] #footer, :root[geckium-three][geckium-choice=five] #footer, :root[geckium-three][geckium-choice=six] #footer {
+  align-items: end;
+}
+:root[geckium-three] #extensions-link > img {
+  display: block;
+}
+:root[geckium-four] #attribution {
+  display: none;
+  align-items: end;
+  margin-block: 10px;
+  color: var(--link-color, --default-link-color);
+  font-size: 10pt;
+}
+:root[geckium-four] #view-toolbar {
+  margin-block: 15px;
+}
+:root[geckium-four] #most-visited.list .thumbnail-container,
+:root[geckium-four] #most-viewed-content.list .thumbnail-container,
+:root[geckium-four] #most-visited-page .tile-grid.list .thumbnail-container,
+:root[geckium-four] #mv-tiles.list .thumbnail-container {
+  text-decoration: underline;
+  font-size: 12pt;
+}
+:root[geckium-four] #most-visited.list .thumbnail-container .title,
+:root[geckium-four] #most-viewed-content.list .thumbnail-container .title,
+:root[geckium-four] #most-visited-page .tile-grid.list .thumbnail-container .title,
+:root[geckium-four] #mv-tiles.list .thumbnail-container .title {
+  height: 34px;
+}
+:root[geckium-four][geckium-choice=four] #recently-closed, :root[geckium-four][geckium-choice=five] #recently-closed, :root[geckium-four][geckium-choice=six] #recently-closed {
+  box-sizing: unset;
+  background-color: var(--recently-closed-background);
+  border: 1px solid var(--recently-closed-border-color);
+  border-radius: 5px;
+  margin-block-start: 34px;
+  padding-block: 3px;
+  padding-inline: 10px;
+  align-items: center;
+  font-size: 10pt;
+  color: var(--recently-closed-color);
+  height: 24px;
+  gap: 20px;
+}
+:root[geckium-four][geckium-choice=four] #recently-closed.collapsed, :root[geckium-four][geckium-choice=five] #recently-closed.collapsed, :root[geckium-four][geckium-choice=six] #recently-closed.collapsed {
+  display: none;
+}
+:root[geckium-four][geckium-choice=four] #recently-closed > label:first-child, :root[geckium-four][geckium-choice=five] #recently-closed > label:first-child, :root[geckium-four][geckium-choice=six] #recently-closed > label:first-child {
+  font-weight: bold;
+}
+:root[geckium-four][geckium-choice=four] #recently-closed .items, :root[geckium-four][geckium-choice=five] #recently-closed .items, :root[geckium-four][geckium-choice=six] #recently-closed .items {
+  gap: 20px;
+}
+:root[geckium-four][geckium-choice=four] #recently-closed .item, :root[geckium-four][geckium-choice=five] #recently-closed .item, :root[geckium-four][geckium-choice=six] #recently-closed .item {
+  all: unset;
+  display: flex;
+  max-width: 114px;
+  align-items: center;
+  -moz-context-properties: fill, fill-opacity;
+  fill: var(--recently-closed-item-color);
+  color: var(--recently-closed-item-color);
+  text-decoration: underline;
+  cursor: pointer;
+}
+:root[geckium-four][geckium-choice=four] #recently-closed .item#nav image, :root[geckium-four][geckium-choice=five] #recently-closed .item#nav image, :root[geckium-four][geckium-choice=six] #recently-closed .item#nav image {
+  display: none;
+}
+:root[geckium-four][geckium-choice=four] #recently-closed .item#nav label::after, :root[geckium-four][geckium-choice=five] #recently-closed .item#nav label::after, :root[geckium-four][geckium-choice=six] #recently-closed .item#nav label::after {
+  content: "»";
+  margin-inline-start: 2px;
+}
+:root[geckium-four][geckium-choice=four] #recently-closed .item image, :root[geckium-four][geckium-choice=five] #recently-closed .item image, :root[geckium-four][geckium-choice=six] #recently-closed .item image {
+  width: 16px;
+  height: 16px;
+  margin-right: 2px;
+}
+:root[geckium-four][geckium-choice=four] #recently-closed .item label, :root[geckium-four][geckium-choice=five] #recently-closed .item label, :root[geckium-four][geckium-choice=six] #recently-closed .item label {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+:root[geckium-five] .window-menu-button .window-menu {
+  border-radius: 4px;
+}
+:root[geckium-five] {
+  --default-recently-closed-background: #E5EFFE;
+  --recently-closed-background: var(--default-recently-closed-background);
+  --default-recently-closed-border-color: rgba(75, 140, 220, 0.3125);
+  --recently-closed-border-color: var(--default-recently-closed-border-color);
+  --default-recently-closed-color: black;
+  --recently-closed-color: var(--default-recently-closed-color);
+  --default-recently-closed-item-color: #063774;
+  --recently-closed-item-color: var(--default-recently-closed-item-color);
+}
+@media (prefers-color-scheme: dark) {
+  :root[geckium-five] {
+    --recently-closed-background: #415470;
+    --recently-closed-border-color: rgba(206, 220, 236, 0.313);
+    --recently-closed-color: white;
+    --recently-closed-item-color: #acc0da;
+  }
+}
+:root[geckium-five][gksystheme=you]:not([gkthemed], [gkchrthemed]) {
+  --default-recently-closed-background: hsl(var(--you-h), var(--you-s), calc(var(--you-l) + 37%));
+  --default-recently-closed-border-color: hsla(var(--you-h), calc(var(--you-s) - 2%), var(--you-l), 0.3125);
+  --default-recently-closed-item-color: hsl(var(--you-h), var(--you-s), calc(var(--you-l) - 34%));
+}
+@media (prefers-color-scheme: dark) {
+  :root[geckium-five][gksystheme=you]:not([gkthemed], [gkchrthemed]) {
+    --recently-closed-background: hsl(var(--you-h), calc(var(--you-s) - 42%), calc(var(--you-l) - 23%));
+    --recently-closed-border-color: hsla(var(--you-h), calc(var(--you-s) - 25%), calc(var(--you-l-dark) + 29%), 0.313);
+    --recently-closed-item-color: hsl(var(--you-h), calc(var(--you-s) - 31%), calc(var(--you-l-dark) + 18%));
+  }
+}
+:root[geckium-five][gkthemed]:not([gkchrthemed]) {
+  --recently-closed-background: color-mix(
+  	in srgb,
+  	var(--arrowpanel-background, var(--lwt-accent-color)) 50%,
+  	transparent
+  );
+  --recently-closed-border-color: color-mix(
+  	in srgb,
+  	var(--toolbarbutton-icon-color, var(--lwt-text-color)) 50%,
+  	transparent
+  );
+  --recently-closed-color: var(--recently-closed-item-color);
+  --recently-closed-item-color: var(--toolbarbutton-icon-color, var(--lwt-text-color));
+}
+:root[geckium-five][gkthemed]:not([gkchrthemed])[style*="--arrowpanel-background"] {
+  --recently-closed-item-color: var(--arrowpanel-color, var(--toolbarbutton-icon-color, var(--lwt-text-color)));
+}
+:root[geckium-five][gkthemed][gkchrthemed] {
+  --recently-closed-background: var(--chrtheme-ntp-section, var(--default-recently-closed-background));
+}
+:root[geckium-five][gkthemed][gkchrthemed][style*="--chrtheme-ntp-section"] {
+  --recently-closed-border-color: color-mix(
+  	in srgb,
+  	var(--recently-closed-background) 31%,
+  	transparent
+  );
+}
+:root[geckium-five][gkthemed][gkchrthemed][style*="--chrtheme-ntp-header"] {
+  --recently-closed-border-color: var(--chrtheme-ntp-header, var(--default-recently-closed-border-color));
+}
+:root[geckium-five][gkthemed][gkchrthemed] {
+  --recently-closed-color: var(--chrtheme-ntp-section-text, var(--default-recently-closed-color));
+  --recently-closed-item-color: var(--chrtheme-ntp-section-link, var(--default-recently-closed-item-color));
+  --link-color: var(--chrtheme-ntp-section-link, var(--default-link-color));
+}
+:root[geckium-five][gksystheme=gtk]:not([gkthemed], [gkchrthemed]) {
+  --recently-closed-background: -moz-dialog;
+  --recently-closed-border-color: color-mix(
+  	in srgb,
+  	-moz-dialogtext 20%,
+  	transparent
+  );
+  --recently-closed-color: -moz-dialogtext;
+  --recently-closed-item-color: -moz-nativehyperlinktext;
+}
+:root[geckium-five][geckium-choice=five] #recently-closed {
+  padding-block: 5px;
+}
+:root[geckium-six] #main {
+  margin-block-start: 0;
+}
+:root[geckium-six] #view-toolbar {
+  padding-block-start: 4px;
+  margin-block-end: 20px;
+}
+:root[geckium-six] .window-menu-button .window-menu {
+  padding-inline: 0;
+  padding-block: 6px;
+  border: 1px solid rgb(126, 126, 126);
+  background: linear-gradient(to bottom, white, rgb(238, 238, 238));
+  font-size: 10pt;
+}
+:root[geckium-six] .window-menu-button .window-menu checkbox {
+  padding-block: 0;
+  padding-inline-start: 5px;
+  padding-inline-end: 19px;
+}
+:root[geckium-six] .window-menu-button .window-menu checkbox:not([disabled]):hover {
+  color: black;
+  background-color: #DCE5FA;
+}
+:root[geckium-six] .window-menu-button .window-menu checkbox:not([disabled]):active {
+  color: white;
+  background-color: #426dc9;
+}
+:root[geckium-six] .window-menu-button .window-menu checkbox .checkbox-check {
+  width: 19px;
+  height: 19px;
+}
+:root[geckium-six] .window-menu-button .window-menu checkbox label {
+  align-self: center;
+}
+:root[geckium-six] .section > h2:first-child {
+  margin-block-start: 10px;
+  margin-inline-end: 5px;
+  font-weight: bold;
+  font-size: 10pt;
+  color: var(--recently-closed-color);
+}
+:root[geckium-six] .section > h2:first-child:hover {
+  cursor: pointer;
+  text-decoration: underline;
+}
+:root[geckium-six] #most-visited-section {
+  border-block-start: 1px solid var(--recently-closed-border-color);
+}
+:root[geckium-six] #most-visited.collapsed {
+  display: flex !important;
+  padding-block-end: 5px;
+  margin-block-end: 0;
+}
+:root[geckium-six] #most-visited.collapsed > a {
+  display: none !important;
+}
+:root[geckium-six][gkthemed]:not([gkchrthemed]) {
+  --recently-closed-border-color: var(--recently-closed-item-color, var(--default-recently-closed-border-color));
+  --recently-closed-item-color: var(--link-color, var(--default-recently-closed-item-color));
+}
+:root[geckium-six][geckium-choice=six] #recently-closed {
+  margin: 0;
+  border-radius: 0;
+  border-inline: 0;
+  background-color: transparent;
+  padding-block: 6px;
+  padding-inline: 0;
+}
+:root[geckium-six][geckium-choice=six] #recently-closed.collapsed {
+  display: flex;
+  border-block-end-width: 0;
+}
+:root[geckium-six][geckium-choice=six] #recently-closed.collapsed > *:not(h2) {
+  display: none;
+}
+@media only screen and (max-width: 940px) {
+  :root[geckium-eleven][geckium-choice=eleven] #main {
+    width: 692px;
+  }
+  :root[geckium-eleven][geckium-choice=eleven] #login-container {
+    width: 688px !important;
+  }
+}
+:root[geckium-eleven][geckium-choice=eleven] #main-container {
+  padding-block-start: 25px;
+}
+:root[geckium-eleven] #attribution {
+  align-items: start;
+  margin-block-start: auto;
+  margin-block-end: 5px;
+  margin-inline-start: 8px;
+  align-items: end;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+:root[geckium-eleven] {
+  --default-section-color: black;
+  --section-color: var(--default-section-color);
+  --default-spacer-background-color: rgb(229, 229, 229);
+  --spacer-background-color: var(--default-spacer-background-color);
+  --default-closed-section-button-color-normal: rgb(76, 76, 76);
+  --closed-section-button-color-normal: var(--default-closed-section-button-color-normal);
+  --default-closed-section-button-color-hot: black;
+  --closed-section-button-color-hot: var(--default-closed-section-button-color-hot);
+  --default-app-item-background-color-hot: rgb(229, 229, 229);
+  --app-item-background-color-hot: var(--default-app-item-background-color-hot);
+}
+@media (prefers-color-scheme: dark) {
+  :root[geckium-eleven] {
+    --section-color: white;
+    --spacer-background-color: rgb(61, 61, 61);
+  }
+}
+:root[geckium-eleven][gkthemed]:not([gkchrthemed]) {
+  --section-color: var(--newtab-text-primary-color, currentColor);
+  --spacer-background-color: color-mix(in srgb, var(--lwt-accent-color) 70%, transparent);
+  --closed-section-button-color-normal: var(--section-color);
+  --closed-section-button-color-hot: var(--closed-section-button-color-normal);
+  --app-item-background-color-hot: var(--spacer-background-color);
+}
+:root[geckium-eleven][gkthemed][gkchrthemed] {
+  --section-color: var(--chrtheme-ntp-text, var(--default-section-color));
+  --spacer-background-color: var(--chrtheme-ntp-section, var(--default-spacer-background-color));
+  --closed-section-button-color-normal: var(--section-color);
+  --closed-section-button-color-hot: var(--closed-section-button-color-normal);
+  --app-item-background-color-hot: var(--chrtheme-ntp-section);
+}
+:root[geckium-eleven][gksystheme=gtk]:not([gkthemed], [gkchrthemed]) {
+  --section-color: FieldText;
+  --spacer-background-color: color-mix(in srgb, FieldText 20%, transparent);
+  --recently-closed-item-color: -moz-dialogtext;
+  --closed-section-button-color-normal: var(--section-color);
+  --closed-section-button-color-hot: var(--closed-section-button-color-normal);
+  --app-item-background-color-hot: var(--spacer-background-color);
+}
+:root[geckium-eleven] .sections .section {
+  cursor: pointer;
+  margin-inline-start: -14px;
+  margin-inline-end: -21px;
+  align-items: center;
+  font-size: 12pt;
+  color: var(--section-color);
+}
+:root[geckium-eleven] .sections .section:hover > .section-close-button {
+  opacity: 1;
+}
+:root[geckium-eleven] .sections .section.collapsed + div {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+}
+:root[geckium-eleven] .sections .section.collapsed + div .item {
+  align-items: center;
+  max-width: 114px;
+  -moz-context-properties: fill, fill-opacity;
+  fill: var(--recently-closed-item-color);
+}
+:root[geckium-eleven] .sections .section.collapsed + div .item .icon {
+  display: none;
+}
+:root[geckium-eleven] .sections .section.collapsed + div .item label {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+:root[geckium-eleven] .sections .section.collapsed + div .thumbnail-container {
+  color: var(--link-color, --default-link-color);
+}
+:root[geckium-eleven] .sections .section:not(.collapsed) + div {
+  display: grid;
+  gap: 0px;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+}
+:root[geckium-eleven] .sections .section:not(.collapsed) + div .item {
+  border-radius: 10px;
+  flex-direction: column;
+  margin: 5px 3px;
+  padding: 10px;
+  height: 136px;
+  width: 124px;
+  text-decoration: none;
+  transition: background-color 0.5s;
+  color: var(--thumbnail-container-color);
+}
+:root[geckium-eleven] .sections .section:not(.collapsed) + div .item:hover {
+  background-color: var(--app-item-background-color-hot);
+}
+:root[geckium-eleven] .sections .section:not(.collapsed) + div .item > .favicon {
+  display: none;
+}
+:root[geckium-eleven] .sections .section:not(.collapsed) + div .item > label {
+  font-size: 10pt;
+  text-align: center;
+}
+:root[geckium-eleven] .sections .section:not(.collapsed) .disclosure {
+  transform: rotate(90deg);
+}
+:root[geckium-eleven] .sections .section.closed {
+  display: none;
+}
+:root[geckium-eleven] .sections .section.closed + div {
+  display: none !important;
+}
+:root[geckium-eleven] .sections .section + div .item {
+  display: flex;
+  color: var(--link-color, --default-link-color);
+}
+:root[geckium-eleven] .sections .section + div .item > .favicon {
+  width: 16px;
+  height: 16px;
+  margin-inline-end: 3px;
+}
+:root[geckium-eleven] .sections .section + div .item > .icon {
+  margin: auto;
+  width: 96px;
+  height: 96px;
+}
+:root[geckium-eleven] .sections .section .disclosure {
+  width: 9px;
+  height: 9px;
+  margin-inline-end: 5px;
+  background-image: url("chrome://userchrome/content/pages/newTabHome/assets/chrome-11/imgs/accordion-chevron.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  transition: transform 0.15s;
+}
+:root[geckium-eleven] .sections .section spacer {
+  height: 1px;
+  background-color: var(--spacer-background-color);
+  margin-inline: 4px;
+}
+:root[geckium-eleven] .sections .section button {
+  all: unset;
+}
+:root[geckium-eleven] .sections .section .section-close-button {
+  width: 21px;
+  height: 21px;
+  opacity: 0;
+  background-image: url("chrome://userchrome/content/assets/img/chrome-1/infobar/infobar_close_off.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  transition: opacity 0.15s;
+}
+:root[geckium-eleven] .sections .section .section-close-button:hover, :root[geckium-eleven] .sections .section .section-close-button:focus {
+  background-image: url("chrome://userchrome/content/assets/img/chrome-1/infobar/infobar_close_off_h.svg");
+}
+:root[geckium-eleven] .sections .section .section-close-button:active {
+  background-image: url("chrome://userchrome/content/assets/img/chrome-1/infobar/infobar_close_off_p.svg");
+}
+:root[geckium-eleven] #apps-content,
+:root[geckium-eleven] #most-viewed-content,
+:root[geckium-eleven] #recently-closed-content {
+  padding-block-start: 9px;
+  margin-block-end: 30px;
+}
+:root[geckium-eleven] #closed-sections-bar {
+  width: 920px;
+  position: fixed;
+  justify-content: end;
+  bottom: 14px;
+}
+:root[geckium-eleven] #closed-sections-bar > [id*=-button] {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  position: relative;
+  border: 0;
+  background: transparent;
+  padding-block-start: 2px;
+  margin-inline-start: 1.5em;
+  font-size: 12pt;
+  color: var(--closed-section-button-color-normal);
+}
+:root[geckium-eleven] #closed-sections-bar > [id*=-button]:hover {
+  color: var(--closed-section-button-color-hot);
+}
+:root[geckium-eleven] #closed-sections-bar > [id*=-button] .close {
+  display: flex;
+}
+:root[geckium-eleven] #closed-sections-bar > [id*=-button]:not(.closed) {
+  display: none;
+}
+:root[geckium-eleven] #closed-sections-bar > [id*=-button][open] > [id*=-menu] {
+  display: flex;
+}
+:root[geckium-eleven] #closed-sections-bar > [id*=-button] > * {
+  display: inline-block;
+}
+:root[geckium-eleven] #closed-sections-bar > [id*=-button] > span {
+  margin-inline-end: 6px;
+}
+:root[geckium-eleven] #closed-sections-bar > [id*=-button] > img {
+  transform: rotate(90deg);
+  position: relative;
+  top: -2px;
+  margin-inline-start: 1px;
+}
+:root[geckium-eleven] #closed-sections-bar > [id*=-button] > [id*=-menu] {
+  display: none;
+  position: absolute;
+  border: 1px solid rgba(0, 0, 0, 0.5);
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.5);
+  background: linear-gradient(to bottom, white, #EEE);
+  padding-block: 8px;
+  border-radius: 3px;
+  bottom: 26px;
+  right: 0;
+  font-size: 10pt;
+}
+:root[geckium-eleven] #closed-sections-bar > [id*=-button] > [id*=-menu] > .item {
+  display: flex;
+  align-items: center;
+  gap: 3px;
+  min-width: -moz-max-content;
+  min-width: max-content;
+  color: #063874;
+  text-align: start;
+  padding-inline: 19px;
+  height: 24px;
+  text-decoration: underline;
+  cursor: pointer;
+}
+:root[geckium-eleven] #closed-sections-bar > [id*=-button] > [id*=-menu] > hr {
+  border: 0;
+  width: 100%;
+  height: 1px;
+  background: linear-gradient(to right, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.02) 96%);
+  margin-block: 8px;
+}
+@media only screen and (max-width: 940px) {
+  :root[geckium-eleven][geckium-choice=eleven] #closed-sections-bar {
+    width: 692px;
+  }
+}
+:root[geckium-eleven] {
+  --default-thumbnail-border-color-normal: rgb(229, 229, 229);
+  --default-thumbnail-border-color-hot: rgb(150,150,150);
+  --default-thumbnail-disabled-color: rgba(229, 229, 229, 1);
+  --default-edit-bar-background-color-hot: rgb(150,150,150);
+  --default-edit-bar-background-hot: linear-gradient(
+  	to bottom,
+  	rgba(185,185,185),
+  	var(--edit-bar-background-color-hot)
+  );
+}
+@media (prefers-color-scheme: dark) {
+  :root[geckium-eleven] {
+    --thumbnail-border-color-normal: rgb(88, 88, 88);
+    --thumbnail-container-color: white;
+  }
+}
+:root[geckium-eleven][gkthemed][gkchrthemed] {
+  --thumbnail-disabled-color: var(--chrtheme-ntp-section, var(--default-thumbnail-disabled-color));
+}
+@media only screen and (max-width: 940px) {
+  :root[geckium-eleven][geckium-choice=eleven] .thumbnail-container .thumbnail {
+    width: 150px;
+    height: 93px;
+  }
+  :root[geckium-eleven][geckium-choice=eleven] .thumbnail-container .thumbnail-wrapper {
+    background-size: 150px 93px;
+  }
+}
+:root[geckium-eleven][geckium-choice=eleven] #main-container {
+  padding-block-start: 0;
+}
+:root[geckium-eleven][geckium-choice=eleven] .sections {
+  margin-block-start: 25px;
+}
+:root[geckium-eleven][geckium-choice=eleven] #login-container {
+  margin-block-start: 5px;
+  position: fixed;
+  text-align: end;
+  color: var(--thumbnail-container-color);
+  font-size: 10pt;
+  width: 916px;
+}
+:root[geckium-eleven] .section:not(.closed).collapsed + div#most-viewed-content {
+  display: flex !important;
+}
+:root[geckium-eleven] .section:not(.closed).collapsed + div#most-viewed-content > .thumbnail-container {
+  max-width: 114px;
+}
+:root[geckium-eleven] .section:not(.closed).collapsed + div#most-viewed-content > .thumbnail-container:nth-child(8) {
+  display: none;
+}
+:root[geckium-eleven] .section:not(.closed).collapsed + div#most-viewed-content > .thumbnail-container > .title {
+  padding: 0;
+}
+:root[geckium-eleven] .section:not(.closed).collapsed + div#most-viewed-content > .thumbnail-container > .title label {
+  text-decoration: underline;
+}
+:root[geckium-eleven] .section:not(.closed).collapsed + div#most-viewed-content > .thumbnail-container > .edit-mode-border {
+  display: none;
+}
+:root[geckium-eleven] {
+  --default-logo-wordmark-color: rgb(119, 120, 123);
+  --logo-wordmark-color: var(--default-logo-wordmark-color);
+}
+:root[geckium-eleven][geckium-choice=eleven][style*="--lwt-gknewtab-attribution-image"] #footer, :root[geckium-eleven][geckium-choice=eleven][style*="--chrtheme-theme-ntp-attribution"] #footer {
+  display: none;
+}
+:root[geckium-eleven][gkthemed]:not([gkchrthemed])[footer-themable=true] {
+  --logo-wordmark-color: var(--newtab-text-primary-color, currentColor);
+}
+:root[geckium-eleven][gkthemed]:not([gkchrthemed])[footer-themable=true] #logo-icon {
+  fill: var(--logo-wordmark-color);
+}
+:root[geckium-eleven][gkthemed][gkchrthemed][footer-themable=true] #logo-icon {
+  fill: var(--section-color, currentColor);
+}
+:root[geckium-eleven][gksystheme=gtk]:not([gkthemed], [gkchrthemed])[footer-themable=true] {
+  --logo-wordmark-color: FieldText;
+}
+:root[geckium-eleven][gksystheme=gtk]:not([gkthemed], [gkchrthemed])[footer-themable=true] #logo-icon {
+  fill: var(--logo-wordmark-color);
+}
+:root[geckium-eleven][gkbranding=geckium] #logo-icon {
+  background-image: url("chrome://userchrome/content/windows/gsettings/imgs/logo.svg");
+  fill: #209f43;
+  -moz-context-properties: fill, fill-opacity;
+}
+:root[geckium-eleven][gkbranding=geckium] #logo-wordmark {
+  -webkit-mask-image: url("chrome://userchrome/content/pages/newTabHome/assets/chrome-11/imgs/geckium/product_name.svg");
+          mask-image: url("chrome://userchrome/content/pages/newTabHome/assets/chrome-11/imgs/geckium/product_name.svg");
+  margin-inline-start: 2px;
+}
+:root[geckium-eleven][gkbranding=chromium] #logo-icon {
+  background-image: url("chrome://userchrome/content/pages/newTabHome/assets/chrome-11/imgs/chromium/product_icon.png");
+}
+:root[geckium-eleven][gkbranding=chromium] #logo-wordmark {
+  -webkit-mask-image: url("chrome://userchrome/content/pages/newTabHome/assets/chrome-11/imgs/chromium/product_name.png");
+          mask-image: url("chrome://userchrome/content/pages/newTabHome/assets/chrome-11/imgs/chromium/product_name.png");
+}
+:root[geckium-eleven][gkbranding=chrome] #logo-icon {
+  background-image: url("chrome://userchrome/content/pages/newTabHome/assets/chrome-11/imgs/chrome/product_icon.png");
+}
+:root[geckium-eleven][gkbranding=chrome] #logo-wordmark {
+  -webkit-mask-image: url("chrome://userchrome/content/pages/newTabHome/assets/chrome-11/imgs/chrome/product_name.png");
+          mask-image: url("chrome://userchrome/content/pages/newTabHome/assets/chrome-11/imgs/chrome/product_name.png");
+}
+:root[geckium-eleven][gkbranding=firefox] #logo-icon {
+  background-image: url("chrome://userchrome/content/pages/newTabHome/assets/chrome-11/imgs/firefox/product_icon.png");
+}
+:root[geckium-eleven][gkbranding=firefox] #logo-wordmark {
+  -webkit-mask-image: url("chrome://userchrome/content/pages/newTabHome/assets/chrome-11/imgs/firefox/product_name.png");
+          mask-image: url("chrome://userchrome/content/pages/newTabHome/assets/chrome-11/imgs/firefox/product_name.png");
+}
+:root[geckium-eleven] #footer #logo-img {
+  align-items: center;
+  height: 100%;
+  padding-block: 5px;
+  padding-inline: 8px;
+}
+:root[geckium-eleven] #footer #logo-img #logo-icon {
+  width: 32px;
+  height: 32px;
+}
+:root[geckium-eleven] #footer #logo-img #logo-wordmark {
+  width: 139px;
+  height: 32px;
+  -webkit-mask-size: contain;
+          mask-size: contain;
+  background: var(--logo-wordmark-color);
+}
+:root[geckium-seventeen] {
+  font-family: "Segoe UI", Arial, sans-serif;
+}
+@media (-moz-platform: linux) {
+  :root[geckium-seventeen] {
+    font: message-box;
+  }
+}
+@media (-moz-platform: macos) {
+  :root[geckium-seventeen] {
+    font: "Lucida Grande", sans-serif;
+  }
+}
+:root[geckium-seventeen] .tile-pos-grid,
+:root[geckium-seventeen] .tile-grid {
+  display: grid;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  grid-template-rows: repeat(2, minmax(0, 1fr));
+  gap: 32px;
+}
+:root[geckium-seventeen] .tile-page-content.debug .tile-container {
+  outline-width: 2px;
+  outline-offset: -2px;
+  outline-style: solid;
+}
+:root[geckium-seventeen] .tile-page-content.debug .tile-pos-grid .tile-container {
+  outline-color: red;
+}
+:root[geckium-seventeen] .tile-page-content.debug .tile-grid .tile-container {
+  outline-color: blue;
+}
+:root[geckium-seventeen] #apps-page .tile-grid {
+  position: absolute;
+}
+:root[geckium-seventeen] #apps-page .tile-grid .tile-container {
+  position: absolute;
+}
+:root[geckium-seventeen] #apps-page .tile-grid .tile-container:not([dragging]) {
+  transition-property: left, top;
+  transition-duration: 150ms;
+}
+:root[geckium-seventeen] #apps-page .tile-grid .tile-container[dragging] {
+  z-index: 1;
+}
+:root[geckium-seventeen] .tile-container {
+  all: unset;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 10.5pt;
+  width: 160px;
+  height: 147px;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+  color: var(--thumbnail-container-color);
+  transition-property: transform, width, height;
+  transition-duration: 50ms, 0.15s;
+}
+:root[geckium-seventeen] .tile-container:not([disabled]) {
+  cursor: pointer;
+}
+:root[geckium-seventeen] .tile-container:not([disabled]):active {
+  transform: scale(1.1);
+  transition: none;
+}
+:root[geckium-seventeen] .tile-container .icon {
+  width: 128px;
+  height: 128px;
+  transition-property: width, height;
+  transition-duration: 0.15s;
+}
+:root[geckium-seventeen] .tile-container hbox {
+  flex-direction: column;
+}
+:root[geckium-seventeen] #other-sessions-menu-button {
+  display: none !important;
+}
+:root[geckium-seventeen]:not([geckium-twentyone]) #vertical-separator,
+:root[geckium-seventeen]:not([geckium-twentyone]) #chrome-web-store-link {
+  display: none;
+}
+:root[geckium-seventeen] #attribution {
+  position: absolute;
+  bottom: 3px;
+  right: 13px;
+  align-items: start;
+  margin: 0;
+  width: unset;
+  font-size: 9pt;
+}
+:root[geckium-seventeen] {
+  --default-link-color: rgb(102,102,102);
+}
+@media (prefers-color-scheme: dark) {
+  :root[geckium-seventeen] {
+    --default-link-color: rgb(138, 138, 138);
+  }
+}
+:root[geckium-seventeen][gkthemed][gkchrthemed] {
+  --link-color: var(--chrtheme-ntp-text, var(--default-link-color));
+}
+:root[geckium-seventeen] #login-container,
+:root[geckium-seventeen] #login-email {
+  all: unset;
+  color: var(--thumbnail-container-color);
+  cursor: pointer;
+  position: fixed;
+  right: 13px;
+  top: 5px;
+  z-index: 2;
+}
+:root[geckium-seventeen] #login-container .login-status-row,
+:root[geckium-seventeen] #login-container #login-status-sub-header,
+:root[geckium-seventeen] #login-email .login-status-row,
+:root[geckium-seventeen] #login-email #login-status-sub-header {
+  display: flex;
+  justify-content: end;
+}
+:root[geckium-seventeen] .link-span {
+  color: var(--link-color, --default-link-color);
+  text-decoration: underline;
+}
+:root[geckium-seventeen] {
+  --page-switcher-color: color-mix(in srgb, var(--thumbnail-container-color) 50%, transparent);
+  --page-switcher-width: 150px;
+}
+@media only screen and (max-width: 1460px) {
+  :root[geckium-seventeen] {
+    --page-switcher-width: 120px;
+  }
+}
+@media only screen and (max-width: 1400px) {
+  :root[geckium-seventeen] {
+    --page-switcher-width: 90px;
+  }
+}
+:root[geckium-seventeen] #card-slider-frame {
+  overflow: hidden;
+  position: relative;
+  flex: 1;
+  overflow-y: auto;
+}
+:root[geckium-seventeen] #page-list {
+  max-width: var(--page-width);
+  transition-property: transform;
+  transition-duration: 200ms;
+  transition-timing-function: ease-in-out;
+}
+:root[geckium-seventeen] #page-list:not([animating]) {
+  transition-duration: 0s;
+}
+:root[geckium-seventeen] .page-switcher {
+  all: unset;
+  display: flex;
+  position: absolute;
+  width: var(--page-switcher-width);
+  font-family: Arial, sans-serif;
+  font-size: 40px;
+  color: var(--page-switcher-color);
+  z-index: 1;
+  transition-property: width, background-color;
+  transition-duration: 150ms;
+}
+:root[geckium-seventeen] .page-switcher:not([disabled]):hover, :root[geckium-seventeen] .page-switcher:not([disabled]):focus {
+  background-color: color-mix(in srgb, var(--thumbnail-container-color) 6%, transparent);
+}
+@media (prefers-color-scheme: dark) {
+  :root[geckium-seventeen] .page-switcher:not([disabled]):hover, :root[geckium-seventeen] .page-switcher:not([disabled]):focus {
+    background-color: rgba(255, 255, 255, 0.06);
+  }
+}
+:root[geckium-seventeen] .page-switcher[disabled] {
+  display: none;
+}
+:root[geckium-seventeen] .page-switcher[id*=start] {
+  left: 0;
+  height: 100%;
+}
+:root[geckium-seventeen] .page-switcher[id*=end] {
+  right: 0;
+  height: 100%;
+}
+:root[geckium-seventeen] .tile-page {
+  padding-inline: var(--page-switcher-width);
+  min-width: var(--page-width);
+  justify-content: center;
+  align-items: center;
+  transition: padding-inline 150ms;
+}
+:root[geckium-seventeen] .tile-page .tile-page-content {
+  width: -moz-fit-content;
+  width: fit-content;
+}
+:root[geckium-seventeen] {
+  --default-thumbnail-border-color: rgba(150, 150, 150, .3137254901960784);
+  --thumbnail-border-color: var(--default-thumbnail-border-color);
+  --default-thumbnail-inner-border-color: white;
+  --thumbnail-inner-border-color: var(--default-thumbnail-inner-border-color);
+  --default-thumbnail-wrapper-background-color-hot: rgba(150,150,150,1);
+  --thumbnail-wrapper-background-color-hot: var(--default-thumbnail-wrapper-background-color-hot);
+}
+@media (prefers-color-scheme: dark) {
+  :root[geckium-seventeen] {
+    --default-thumbnail-inner-border-color: rgb(36, 36, 36);
+    --default-thumbnail-background-color: #505050;
+  }
+}
+:root[geckium-seventeen][gkthemed]:not([gkchrthemed]) {
+  --thumbnail-border-color: color-mix(
+  	in srgb,
+  	var(--gktoolbar-bgcolor, var(--toolbar-bgcolor, var(--lwt-accent-color))) 31.37254901960784%,
+  	transparent
+  );
+  --thumbnail-border-color-hot: var(--gktoolbar-bgcolor, var(--toolbar-bgcolor, var(--lwt-accent-color)));
+  --thumbnail-inner-border-color: color-mix(
+  	in srgb,
+  	var(--gktoolbar-bgcolor, var(--toolbar-bgcolor, var(--lwt-accent-color))) 50%,
+  	white
+  );
+  --thumbnail-wrapper-background-color-hot: var(--toolbar-bgcolor, var(--lwt-accent-color));
+}
+:root[geckium-seventeen][gkthemed][gkchrthemed] {
+  --thumbnail-border-color: color-mix(
+  	in srgb,
+  	var(--chrtheme-ntp-header, var(--default-thumbnail-border-color)) 31.37254901960784%,
+  	transparent
+  );
+  --thumbnail-border-color-hot: var(--chrtheme-ntp-header, var(--default-thumbnail-border-color));
+  --thumbnail-inner-border-color: var(--chrtheme-ntp-background, var(--default-thumbnail-inner-border-color));
+  --thumbnail-wrapper-background-color-hot: var(--chrtheme-ntp-header, var(--default-thumbnail-border-color));
+}
+:root[geckium-seventeen][gksystheme=gtk]:not([gkthemed], [gkchrthemed]) {
+  --thumbnail-inner-border-color: -moz-dialog;
+}
+@media only screen and (max-width: 1113px) {
+  :root[geckium-seventeen][geckium-choice=twentyone] #most-visited-page .tile-pos-grid,
+  :root[geckium-seventeen][geckium-choice=twentyone] #most-visited-page .tile-grid, :root[geckium-seventeen][geckium-choice=twentyfive] #most-visited-page .tile-pos-grid,
+  :root[geckium-seventeen][geckium-choice=twentyfive] #most-visited-page .tile-grid {
+    gap: 26px;
+  }
+  :root[geckium-seventeen][geckium-choice=twentyone] #most-visited-page .tile .most-visited, :root[geckium-seventeen][geckium-choice=twentyfive] #most-visited-page .tile .most-visited {
+    width: 204px;
+    height: 159px;
+  }
+  :root[geckium-seventeen][geckium-choice=twentyone] #most-visited-page .tile .thumbnail, :root[geckium-seventeen][geckium-choice=twentyfive] #most-visited-page .tile .thumbnail {
+    width: 202px;
+    height: 126px;
+  }
+}
+@media only screen and (max-width: 1073px) {
+  :root[geckium-seventeen][geckium-choice=twentyone] #most-visited-page .tile-pos-grid,
+  :root[geckium-seventeen][geckium-choice=twentyone] #most-visited-page .tile-grid, :root[geckium-seventeen][geckium-choice=twentyfive] #most-visited-page .tile-pos-grid,
+  :root[geckium-seventeen][geckium-choice=twentyfive] #most-visited-page .tile-grid {
+    gap: 24px;
+  }
+  :root[geckium-seventeen][geckium-choice=twentyone] #most-visited-page .tile .most-visited, :root[geckium-seventeen][geckium-choice=twentyfive] #most-visited-page .tile .most-visited {
+    width: 195px;
+    height: 153px;
+  }
+  :root[geckium-seventeen][geckium-choice=twentyone] #most-visited-page .tile .thumbnail, :root[geckium-seventeen][geckium-choice=twentyfive] #most-visited-page .tile .thumbnail {
+    width: 193px;
+    height: 120px;
+  }
+}
+@media only screen and (max-width: 1031px) {
+  :root[geckium-seventeen][geckium-choice=twentyone] #most-visited-page .tile-pos-grid,
+  :root[geckium-seventeen][geckium-choice=twentyone] #most-visited-page .tile-grid, :root[geckium-seventeen][geckium-choice=twentyfive] #most-visited-page .tile-pos-grid,
+  :root[geckium-seventeen][geckium-choice=twentyfive] #most-visited-page .tile-grid {
+    gap: 23px;
+  }
+  :root[geckium-seventeen][geckium-choice=twentyone] #most-visited-page .tile .most-visited, :root[geckium-seventeen][geckium-choice=twentyfive] #most-visited-page .tile .most-visited {
+    width: 185px;
+    height: 147px;
+  }
+  :root[geckium-seventeen][geckium-choice=twentyone] #most-visited-page .tile .thumbnail, :root[geckium-seventeen][geckium-choice=twentyfive] #most-visited-page .tile .thumbnail {
+    width: 183px;
+    height: 114px;
+  }
+}
+@media only screen and (max-width: 1020px) {
+  :root[geckium-seventeen][geckium-choice=twentyone] #apps-page .tile-container, :root[geckium-seventeen][geckium-choice=twentyfive] #apps-page .tile-container {
+    width: 120px;
+    height: 120px;
+  }
+  :root[geckium-seventeen][geckium-choice=twentyone] #apps-page .tile-container .icon, :root[geckium-seventeen][geckium-choice=twentyfive] #apps-page .tile-container .icon {
+    width: 96px;
+    height: 96px;
+  }
+}
+@media only screen and (max-width: 991px) {
+  :root[geckium-seventeen][geckium-choice=twentyone] #most-visited-page .tile-pos-grid,
+  :root[geckium-seventeen][geckium-choice=twentyone] #most-visited-page .tile-grid, :root[geckium-seventeen][geckium-choice=twentyfive] #most-visited-page .tile-pos-grid,
+  :root[geckium-seventeen][geckium-choice=twentyfive] #most-visited-page .tile-grid {
+    gap: 21px;
+  }
+  :root[geckium-seventeen][geckium-choice=twentyone] #most-visited-page .tile .most-visited, :root[geckium-seventeen][geckium-choice=twentyfive] #most-visited-page .tile .most-visited {
+    width: 185px;
+    height: 147px;
+  }
+  :root[geckium-seventeen][geckium-choice=twentyone] #most-visited-page .tile .thumbnail, :root[geckium-seventeen][geckium-choice=twentyfive] #most-visited-page .tile .thumbnail {
+    width: 183px;
+    height: 114px;
+  }
+}
+@media only screen and (max-width: 982px) {
+  :root[geckium-seventeen][geckium-choice=twentyone] #most-visited-page .tile-pos-grid,
+  :root[geckium-seventeen][geckium-choice=twentyone] #most-visited-page .tile-grid, :root[geckium-seventeen][geckium-choice=twentyfive] #most-visited-page .tile-pos-grid,
+  :root[geckium-seventeen][geckium-choice=twentyfive] #most-visited-page .tile-grid {
+    gap: 21px;
+  }
+  :root[geckium-seventeen][geckium-choice=twentyone] #most-visited-page .tile .most-visited, :root[geckium-seventeen][geckium-choice=twentyfive] #most-visited-page .tile .most-visited {
+    width: 174px;
+    height: 140px;
+  }
+  :root[geckium-seventeen][geckium-choice=twentyone] #most-visited-page .tile .thumbnail, :root[geckium-seventeen][geckium-choice=twentyfive] #most-visited-page .tile .thumbnail {
+    width: 172px;
+    height: 107px;
+  }
+}
+@media only screen and (max-width: 938px) {
+  :root[geckium-seventeen][geckium-choice=twentyone] #most-visited-page .tile-pos-grid,
+  :root[geckium-seventeen][geckium-choice=twentyone] #most-visited-page .tile-grid, :root[geckium-seventeen][geckium-choice=twentyfive] #most-visited-page .tile-pos-grid,
+  :root[geckium-seventeen][geckium-choice=twentyfive] #most-visited-page .tile-grid {
+    gap: 20px;
+  }
+  :root[geckium-seventeen][geckium-choice=twentyone] #most-visited-page .tile .most-visited, :root[geckium-seventeen][geckium-choice=twentyfive] #most-visited-page .tile .most-visited {
+    width: 164px;
+    height: 134px;
+  }
+  :root[geckium-seventeen][geckium-choice=twentyone] #most-visited-page .tile .thumbnail, :root[geckium-seventeen][geckium-choice=twentyfive] #most-visited-page .tile .thumbnail {
+    width: 162px;
+    height: 101px;
+  }
+}
+@media only screen and (max-width: 898px) {
+  :root[geckium-seventeen][geckium-choice=twentyone] #most-visited-page .tile-pos-grid,
+  :root[geckium-seventeen][geckium-choice=twentyone] #most-visited-page .tile-grid, :root[geckium-seventeen][geckium-choice=twentyfive] #most-visited-page .tile-pos-grid,
+  :root[geckium-seventeen][geckium-choice=twentyfive] #most-visited-page .tile-grid {
+    gap: 19px;
+  }
+  :root[geckium-seventeen][geckium-choice=twentyone] #most-visited-page .tile .most-visited, :root[geckium-seventeen][geckium-choice=twentyfive] #most-visited-page .tile .most-visited {
+    width: 155px;
+    height: 128px;
+  }
+  :root[geckium-seventeen][geckium-choice=twentyone] #most-visited-page .tile .thumbnail, :root[geckium-seventeen][geckium-choice=twentyfive] #most-visited-page .tile .thumbnail {
+    width: 153px;
+    height: 95px;
+  }
+}
+@media only screen and (max-width: 856px) {
+  :root[geckium-seventeen][geckium-choice=twentyone] #most-visited-page .tile-pos-grid,
+  :root[geckium-seventeen][geckium-choice=twentyone] #most-visited-page .tile-grid, :root[geckium-seventeen][geckium-choice=twentyfive] #most-visited-page .tile-pos-grid,
+  :root[geckium-seventeen][geckium-choice=twentyfive] #most-visited-page .tile-grid {
+    gap: 18px;
+  }
+  :root[geckium-seventeen][geckium-choice=twentyone] #most-visited-page .tile .most-visited, :root[geckium-seventeen][geckium-choice=twentyfive] #most-visited-page .tile .most-visited {
+    width: 145px;
+    height: 122px;
+  }
+  :root[geckium-seventeen][geckium-choice=twentyone] #most-visited-page .tile .thumbnail, :root[geckium-seventeen][geckium-choice=twentyfive] #most-visited-page .tile .thumbnail {
+    width: 143px;
+    height: 89px;
+  }
+}
+@media only screen and (max-width: 813px) {
+  :root[geckium-seventeen][geckium-choice=twentyone] #most-visited-page .tile-pos-grid,
+  :root[geckium-seventeen][geckium-choice=twentyone] #most-visited-page .tile-grid, :root[geckium-seventeen][geckium-choice=twentyfive] #most-visited-page .tile-pos-grid,
+  :root[geckium-seventeen][geckium-choice=twentyfive] #most-visited-page .tile-grid {
+    gap: 17px;
+  }
+  :root[geckium-seventeen][geckium-choice=twentyone] #most-visited-page .tile .most-visited, :root[geckium-seventeen][geckium-choice=twentyfive] #most-visited-page .tile .most-visited {
+    width: 135px;
+    height: 116px;
+  }
+  :root[geckium-seventeen][geckium-choice=twentyone] #most-visited-page .tile .thumbnail, :root[geckium-seventeen][geckium-choice=twentyfive] #most-visited-page .tile .thumbnail {
+    width: 133px;
+    height: 83px;
+  }
+}
+@media only screen and (max-width: 770px) {
+  :root[geckium-seventeen][geckium-choice=twentyone] #most-visited-page .tile-pos-grid,
+  :root[geckium-seventeen][geckium-choice=twentyone] #most-visited-page .tile-grid, :root[geckium-seventeen][geckium-choice=twentyfive] #most-visited-page .tile-pos-grid,
+  :root[geckium-seventeen][geckium-choice=twentyfive] #most-visited-page .tile-grid {
+    gap: 16px;
+  }
+  :root[geckium-seventeen][geckium-choice=twentyone] #most-visited-page .tile .most-visited, :root[geckium-seventeen][geckium-choice=twentyfive] #most-visited-page .tile .most-visited {
+    width: 125px;
+    height: 110px;
+  }
+  :root[geckium-seventeen][geckium-choice=twentyone] #most-visited-page .tile .thumbnail, :root[geckium-seventeen][geckium-choice=twentyfive] #most-visited-page .tile .thumbnail {
+    width: 123px;
+    height: 77px;
+  }
+}
+@media only screen and (max-width: 754px) {
+  :root[geckium-seventeen][geckium-choice=twentyone] #most-visited-page .tile-pos-grid,
+  :root[geckium-seventeen][geckium-choice=twentyone] #most-visited-page .tile-grid, :root[geckium-seventeen][geckium-choice=twentyfive] #most-visited-page .tile-pos-grid,
+  :root[geckium-seventeen][geckium-choice=twentyfive] #most-visited-page .tile-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-rows: repeat(4, minmax(0, 1fr));
+    gap: 16px;
+  }
+  :root[geckium-seventeen][geckium-choice=twentyone] #most-visited-page .tile .most-visited, :root[geckium-seventeen][geckium-choice=twentyfive] #most-visited-page .tile .most-visited {
+    width: 122px;
+    height: 108px;
+  }
+  :root[geckium-seventeen][geckium-choice=twentyone] #most-visited-page .tile .thumbnail, :root[geckium-seventeen][geckium-choice=twentyfive] #most-visited-page .tile .thumbnail {
+    width: 120px;
+    height: 75px;
+  }
+}
+@media only screen and (max-width: 751px) {
+  :root[geckium-seventeen][geckium-choice=twentyone] #apps-page .tile-pos-grid,
+  :root[geckium-seventeen][geckium-choice=twentyone] #apps-page .tile-grid, :root[geckium-seventeen][geckium-choice=twentyfive] #apps-page .tile-pos-grid,
+  :root[geckium-seventeen][geckium-choice=twentyfive] #apps-page .tile-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-template-rows: repeat(3, minmax(0, 1fr));
+  }
+  :root[geckium-seventeen][geckium-choice=twentyone] #apps-page .tile-container, :root[geckium-seventeen][geckium-choice=twentyfive] #apps-page .tile-container {
+    width: 80px;
+    height: 80px;
+  }
+  :root[geckium-seventeen][geckium-choice=twentyone] #apps-page .tile-container .icon, :root[geckium-seventeen][geckium-choice=twentyfive] #apps-page .tile-container .icon {
+    width: 64px;
+    height: 64px;
+  }
+  :root[geckium-seventeen][geckium-choice=twentyone] #apps-page .tile-container label, :root[geckium-seventeen][geckium-choice=twentyfive] #apps-page .tile-container label {
+    text-align: center;
+  }
+}
+:root[geckium-seventeen][pinineveryera=false] .pin-button {
+  display: none !important;
+}
+:root[geckium-seventeen] #most-visited-page .tile-pos-grid,
+:root[geckium-seventeen] #most-visited-page .tile-grid {
+  gap: 26px;
+  transition-property: grid-template-columns, grid-template-rows, gap;
+  transition-duration: 0.15s;
+}
+:root[geckium-seventeen] #most-visited-page .tile {
+  font-size: 10.5pt;
+  text-align: center;
+}
+:root[geckium-seventeen] #most-visited-page .tile .most-visited {
+  display: block;
+  position: relative;
+  color: var(--thumbnail-container-color);
+  width: 214px;
+  height: 165px;
+  text-decoration: none;
+  transition-property: width, height;
+  transition-duration: 0.15s;
+}
+:root[geckium-seventeen] #most-visited-page .tile .most-visited:not([disabled]):hover .thumbnail-shield, :root[geckium-seventeen] #most-visited-page .tile .most-visited:not([disabled]):focus .thumbnail-shield, :root[geckium-seventeen] #most-visited-page .tile .most-visited:not([disabled]):active .thumbnail-shield {
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0) 80%, rgba(255, 255, 255, 0.9));
+}
+@media (prefers-color-scheme: dark) {
+  :root[geckium-seventeen] #most-visited-page .tile .most-visited:not([disabled]):hover .thumbnail-shield, :root[geckium-seventeen] #most-visited-page .tile .most-visited:not([disabled]):focus .thumbnail-shield, :root[geckium-seventeen] #most-visited-page .tile .most-visited:not([disabled]):active .thumbnail-shield {
+    background: linear-gradient(to bottom, rgba(114, 114, 114, 0), rgba(114, 114, 114, 0) 80%, rgba(114, 114, 114, 0.9));
+  }
+}
+:root[geckium-seventeen] #most-visited-page .tile .most-visited:not([disabled]):hover .thumbnail-wrapper, :root[geckium-seventeen] #most-visited-page .tile .most-visited:not([disabled]):focus .thumbnail-wrapper {
+  background-color: var(--thumbnail-wrapper-background-color-hot);
+}
+:root[geckium-seventeen] #most-visited-page .tile .most-visited:not([disabled]):hover .pin-button,
+:root[geckium-seventeen] #most-visited-page .tile .most-visited:not([disabled]):hover .close-button, :root[geckium-seventeen] #most-visited-page .tile .most-visited:not([disabled]):focus .pin-button,
+:root[geckium-seventeen] #most-visited-page .tile .most-visited:not([disabled]):focus .close-button {
+  opacity: 1;
+  transition-delay: 500ms;
+}
+:root[geckium-seventeen] #most-visited-page .tile .most-visited:not([disabled]):hover .thumbnail, :root[geckium-seventeen] #most-visited-page .tile .most-visited:not([disabled]):focus .thumbnail {
+  opacity: 0.95;
+}
+:root[geckium-seventeen] #most-visited-page .tile .most-visited:not([disabled]):active .pin-button:not(:active) + .thumbnail,
+:root[geckium-seventeen] #most-visited-page .tile .most-visited:not([disabled]):active .close-button:not(:active) + .thumbnail {
+  opacity: 0.9;
+}
+:root[geckium-seventeen] #most-visited-page .tile .most-visited:not([disabled]):active .pin-button:not(:active) + .thumbnail .thumbnail-shield,
+:root[geckium-seventeen] #most-visited-page .tile .most-visited:not([disabled]):active .close-button:not(:active) + .thumbnail .thumbnail-shield {
+  box-shadow: inset 0 1px 10px rgba(0, 0, 0, 0.2);
+}
+:root[geckium-seventeen] #most-visited-page .tile .most-visited[disabled] {
+  pointer-events: none;
+}
+:root[geckium-seventeen] #most-visited-page .tile .most-visited[disabled] *:not(.thumbnail-wrapper, .thumbnail) {
+  visibility: hidden;
+}
+:root[geckium-seventeen] #most-visited-page .tile .most-visited[disabled] .thumbnail {
+  border-width: 1px;
+  border-style: solid;
+  border-color: var(--thumbnail-inner-border-color);
+}
+:root[geckium-seventeen] #most-visited-page .tile .thumbnail-wrapper {
+  position: relative;
+  background-color: var(--thumbnail-border-color);
+  border: 1px solid transparent;
+  border-radius: 3px;
+  transition-property: background-color;
+  transition-duration: 150ms;
+}
+:root[geckium-seventeen] #most-visited-page .tile .pin-button,
+:root[geckium-seventeen] #most-visited-page .tile .close-button {
+  all: unset;
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  cursor: default;
+  opacity: 0;
+  z-index: 1;
+  transition-property: opacity;
+  transition-duration: 150ms;
+}
+:root[geckium-seventeen] #most-visited-page .tile .pin-button:hover, :root[geckium-seventeen] #most-visited-page .tile .pin-button:focus,
+:root[geckium-seventeen] #most-visited-page .tile .close-button:hover,
+:root[geckium-seventeen] #most-visited-page .tile .close-button:focus {
+  transition: none;
+}
+:root[geckium-seventeen] #most-visited-page .tile .pin-button {
+  left: 0;
+  background-image: url("chrome://userchrome/content/pages/newTabHome/assets/chrome-21/imgs/newtab_pin_off.svg");
+}
+:root[geckium-seventeen] #most-visited-page .tile .pin-button:hover, :root[geckium-seventeen] #most-visited-page .tile .pin-button:focus {
+  background-image: url("chrome://userchrome/content/pages/newTabHome/assets/chrome-21/imgs/newtab_pin_off_h.svg");
+}
+:root[geckium-seventeen] #most-visited-page .tile .pin-button:active {
+  background-image: url("chrome://userchrome/content/pages/newTabHome/assets/chrome-21/imgs/newtab_pin_off_p.svg");
+}
+:root[geckium-seventeen] #most-visited-page .tile[pinned=true] .pin-button {
+  background-image: url("chrome://userchrome/content/pages/newTabHome/assets/chrome-21/imgs/newtab_pin_off_p.svg");
+}
+:root[geckium-seventeen] #most-visited-page .tile .close-button {
+  right: 0;
+  background-image: url("chrome://userchrome/content/assets/img/chrome-1/infobar/infobar_close_off.svg");
+}
+:root[geckium-seventeen] #most-visited-page .tile .close-button:hover, :root[geckium-seventeen] #most-visited-page .tile .close-button:focus {
+  background-image: url("chrome://userchrome/content/assets/img/chrome-1/infobar/infobar_close_off_h.svg");
+}
+:root[geckium-seventeen] #most-visited-page .tile .close-button:active {
+  background-image: url("chrome://userchrome/content/assets/img/chrome-1/infobar/infobar_close_off_p.svg");
+}
+:root[geckium-seventeen] #most-visited-page .tile .thumbnail {
+  position: relative;
+  box-sizing: border-box;
+  background: no-repeat;
+  background-size: cover;
+  background-position: top center;
+  border-radius: 3px;
+  height: 132px;
+  width: 212px;
+  transition-property: width, height;
+  transition-duration: 0.15s;
+}
+:root[geckium-seventeen] #most-visited-page .tile .thumbnail-shield {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0) 50%, rgba(255, 255, 255, 0.9));
+}
+@media (prefers-color-scheme: dark) {
+  :root[geckium-seventeen] #most-visited-page .tile .thumbnail-shield {
+    background: linear-gradient(to bottom, rgba(114, 114, 114, 0), rgba(114, 114, 114, 0) 50%, rgba(114, 114, 114, 0.9));
+  }
+}
+:root[geckium-seventeen] #most-visited-page .tile .thumbnail-shield {
+  border-radius: 3px;
+}
+:root[geckium-seventeen] #most-visited-page .tile .favicon {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  left: 5px;
+  bottom: 7px;
+}
+:root[geckium-seventeen] #most-visited-page .tile .color-stripe {
+  border-bottom-left-radius: 3px 3px;
+  border-bottom-right-radius: 3px 3px;
+  bottom: 23px;
+  height: 3px;
+  margin-bottom: 8px;
+  position: absolute;
+  width: 100%;
+  z-index: 10;
+}
+:root[geckium-seventeen] #most-visited-page .tile .title {
+  margin: 0;
+  margin-block-start: 8px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+:root[geckium-seventeen] {
+  --default-footer-border: linear-gradient(
+  	to left,
+  	rgba(150, 150, 150, 0.2),
+  	/* COLOR_NTP_SECTION_BORDER */ rgba(150, 150, 150, 0.3) 20%,
+  	/* COLOR_NTP_SECTION_BORDER */ rgba(150, 150, 150, 0.3) 80%,
+  	/* COLOR_NTP_SECTION_BORDER */ rgba(150, 150, 150, 0.2)
+  );
+  --footer-border: var(--default-footer-border);
+  --default-footer-background: linear-gradient(
+  	to bottom,
+  	rgba(242, 242, 242, 0.9),
+  	rgba(222, 222, 222, 0.9)
+  );
+  --footer-background: var(--default-footer-background);
+  --default-footer-color: #7f7f7f;
+  --footer-color: var(--default-footer-color);
+  --default-dot-color-normal: rgb(118,118,118);
+  --dot-color-normal: var(--default-dot-color-normal);
+  --default-dot-color-hot: rgb(84,84,84);
+  --dot-color-hot: var(--default-dot-color-hot);
+  --default-selection-bar-background-color-normal: rgba(0, 0, 0, 0.1);
+  --selection-bar-background-color-normal: var(--default-selection-bar-background-color-normal);
+  --default-selection-bar-background-color-hot: #b2b2b2;
+  --selection-bar-background-color-hot: var(--default-selection-bar-background-color-hot);
+  --default-selection-bar-background-color-active: #7f7f7f;
+  --selection-bar-background-color-active: var(--default-selection-bar-background-color-active);
+  --default-footer-item-color-hot: #666666;
+  --footer-item-color-hot: var(--default-footer-item-color-hot);
+  --default-footer-menu-button-glyph-background-color-normal: #7f7f7f;
+  --footer-menu-button-glyph-background-color-normal: var(--default-footer-menu-button-glyph-background-color-normal);
+  --default-footer-menu-background-color: white;
+  --footer-menu-background-color: var(--default-footer-menu-background-color);
+  --default-footer-menu-outline-color: rgba(0, 0, 0, 0.2);
+  --footer-menu-outline-color: var(--default-footer-menu-outline-color);
+  --default-footer-menu-item-link-color: #063874;
+  --footer-menu-item-link-color: var(--default-footer-menu-item-link-color);
+  --default-footer-vertical-separator-background-color: rgb(178, 178, 178);
+  --footer-vertical-separator-background-color: var(--default-footer-vertical-separator-background-color);
+}
+:root[geckium-seventeen][gksystheme=you]:not([gkthemed], [gkchrthemed]) {
+  --footer-menu-item-link-color: hsl(var(--you-h), var(--you-s), calc(var(--you-l) - 34%));
+}
+@media (prefers-color-scheme: dark) {
+  :root[geckium-seventeen][footer-themable=true] {
+    --default-footer-border: linear-gradient(
+    	to left,
+    	rgba(105, 105, 105, 0.2),
+    	/* COLOR_NTP_SECTION_BORDER */ rgba(105, 105, 105, 0.3) 20%,
+    	/* COLOR_NTP_SECTION_BORDER */ rgba(105, 105, 105, 0.3) 80%,
+    	/* COLOR_NTP_SECTION_BORDER */ rgba(105, 105, 105, 0.2)
+    );
+    --default-footer-background: linear-gradient(
+    	to bottom,
+    	rgba(33, 33, 33, 0.9),
+    	rgba(13, 13, 13, 0.9)
+    );
+    --default-dot-color-normal: rgb(138, 138, 138);
+    --default-dot-color-hot: rgb(171, 171, 171);
+    --default-selection-bar-background-color-normal: rgba(255, 255, 255, 0.1);
+    --default-selection-bar-background-color-hot: rgb(77, 77, 77);
+    --default-footer-item-color-hot: rgb(153, 153, 153);
+    --default-footer-menu-background-color: black;
+    --default-footer-menu-outline-color: rgba(255, 255, 255, 0.2);
+    --default-footer-menu-item-link-color: rgb(139, 188, 249);
+    --default-footer-vertical-separator-background-color: rgb(77, 77, 77);
+  }
+}
+:root[geckium-seventeen][gkthemed]:not([gkchrthemed]) {
+  --footer-border: linear-gradient(
+  	to left,
+  	color-mix(
+  		in srgb,
+  		color-mix(in srgb, var(--toolbar-bgcolor, var(--lwt-accent-color)) 10%, black)
+  			20%,
+  		transparent
+  	),
+  	/* COLOR_NTP_SECTION_BORDER */
+  	color-mix(
+  		in srgb,
+  		color-mix(
+  				in srgb,
+  				var(--toolbar-bgcolor, var(--lwt-accent-color)) 10%,
+  				black
+  			)
+  			30%,
+  		transparent
+  	)
+  	20%,
+  	/* COLOR_NTP_SECTION_BORDER */
+  	color-mix(
+  		in srgb,
+  		color-mix(
+  				in srgb,
+  				var(--toolbar-bgcolor, var(--lwt-accent-color)) 10%,
+  				black
+  			)
+  			30%,
+  		transparent
+  	)
+  	80%,
+  	/* COLOR_NTP_SECTION_BORDER */
+  	color-mix(
+  		in srgb,
+  		color-mix(
+  				in srgb,
+  				var(--toolbar-bgcolor, var(--lwt-accent-color)) 10%,
+  				black
+  			)
+  			20%,
+  		transparent
+  	)
+  );
+}
+:root[geckium-seventeen][gkthemed]:not([gkchrthemed])[footer-themable=true] {
+  --logo-wordmark-color: var(--toolbar-color, var(--lwt-text-color));
+  --footer-background: linear-gradient(
+  	to bottom,
+  	color-mix(
+  		in srgb,
+  		var(--gktoolbar-bgcolor, var(--toolbar-bgcolor, var(--lwt-accent-color))) 90%,
+  		transparent
+  	),
+  	color-mix(
+  		in srgb,
+  		color-mix(in srgb, var(--gktoolbar-bgcolor, var(--toolbar-bgcolor, var(--lwt-accent-color))) 86%, black)
+  			90%,
+  		transparent
+  	)
+  );
+  --footer-color: var(--toolbar-color, var(--lwt-text-color));
+  --dot-color-normal: color-mix(
+  	in srgb,
+  	var(--toolbar-color, var(--lwt-text-color)) 20%,
+  	gray
+  );
+  --dot-color-hot: var(--toolbar-color, var(--lwt-text-color));
+  --selection-bar-background-color-normal: color-mix(
+  	in srgb,
+  	var(--toolbar-color, var(--lwt-text-color)) 20%,
+  	transparent
+  );
+  --selection-bar-background-color-hot: color-mix(
+  	in srgb,
+  	var(--toolbar-color, var(--lwt-text-color)) 40%,
+  	transparent
+  );
+  --selection-bar-background-color-active: var(--toolbar-color, var(--lwt-text-color));
+  --footer-item-color-hot: color-mix(
+  	in srgb,
+  	var(--toolbar-color, var(--lwt-text-color)) 90%,
+  	black
+  );
+  --footer-menu-button-glyph-background-color-normal: var(--toolbar-color, var(--lwt-text-color, var(--default-footer-menu-button-glyph-background-color-normal)));
+  --footer-menu-background-color: var(--gktoolbar-bgcolor, var(--toolbar-bgcolor, var(--lwt-accent-color)));
+  --footer-menu-outline-color: color-mix(
+  	in srgb,
+  	var(--toolbar-color, var(--lwt-text-color)) 20%,
+  	transparent
+  );
+  --footer-menu-item-link-color: var(--toolbar-color, var(--lwt-text-color));
+  --footer-vertical-separator-background-color: color-mix(
+  	in srgb,
+  	var(--toolbar-color, var(--lwt-text-color)) 40%,
+  	transparent
+  );
+}
+:root[geckium-seventeen][gkthemed][gkchrthemed] {
+  --footer-border: linear-gradient(
+  	to left,
+  	color-mix(
+  		in srgb,
+  		var(--chrtheme-ntp-header) 20%,
+  		transparent
+  	),
+  	/* COLOR_NTP_SECTION_BORDER */
+  		color-mix(
+  			in srgb,
+  			var(--chrtheme-ntp-header) 30%,
+  			transparent
+  		)
+  		20%,
+  	/* COLOR_NTP_SECTION_BORDER */
+  		color-mix(
+  			in srgb,
+  			var(--chrtheme-ntp-header) 30%,
+  			transparent
+  		)
+  		80%,
+  	/* COLOR_NTP_SECTION_BORDER */
+  		color-mix(
+  			in srgb,
+  			var(--chrtheme-ntp-header) 20%,
+  			transparent
+  		)
+  );
+}
+:root[geckium-seventeen][gkthemed][gkchrthemed][footer-themable=true][style~="--chrtheme-ntp-background:"][style~="--chrtheme-ntp-text:"]:not([style*="--chrtheme-ntp-background: rgb(255, 255, 255);"]), :root[geckium-seventeen][gkthemed][gkchrthemed][footer-themable=true][style~="--chrtheme-toolbar:"][style~="--chrtheme-toolbar-button-icon:"] {
+  --gk-footer-bg: var(--chrtheme-ntp-background);
+  --gk-footer-fg: var(--chrtheme-ntp-text);
+}
+:root[geckium-seventeen][gkthemed][gkchrthemed][footer-themable=true][style~="--chrtheme-ntp-background:"][style~="--chrtheme-ntp-text:"]:not([style*="--chrtheme-ntp-background: rgb(255, 255, 255);"])[style~="--chrtheme-toolbar:"][style~="--chrtheme-toolbar-button-icon:"], :root[geckium-seventeen][gkthemed][gkchrthemed][footer-themable=true][style~="--chrtheme-toolbar:"][style~="--chrtheme-toolbar-button-icon:"][style~="--chrtheme-toolbar:"][style~="--chrtheme-toolbar-button-icon:"] {
+  --gk-footer-bg: var(--chrtheme-toolbar);
+  --gk-footer-fg: var(--chrtheme-toolbar-button-icon, #7f7f7f);
+}
+:root[geckium-seventeen][gkthemed][gkchrthemed][footer-themable=true][style~="--chrtheme-ntp-background:"][style~="--chrtheme-ntp-text:"]:not([style*="--chrtheme-ntp-background: rgb(255, 255, 255);"]), :root[geckium-seventeen][gkthemed][gkchrthemed][footer-themable=true][style~="--chrtheme-toolbar:"][style~="--chrtheme-toolbar-button-icon:"] {
+  --logo-wordmark-color: var(--gk-footer-fg);
+  --footer-background: linear-gradient(
+  	to bottom,
+  	color-mix(
+  		in srgb,
+  		var(--gk-footer-bg) 90%,
+  		transparent
+  	),
+  	color-mix(
+  		in srgb,
+  		color-mix(in srgb, var(--gk-footer-bg) 86%, black)
+  			90%,
+  		transparent
+  	)
+  );
+  --footer-color: var(--gk-footer-fg);
+  --dot-color-normal: color-mix(
+  	in srgb,
+  	var(--gk-footer-fg) 20%,
+  	gray
+  );
+  --dot-color-hot: var(--gk-footer-fg);
+  --selection-bar-background-color-normal: color-mix(
+  	in srgb,
+  	var(--gk-footer-fg) 20%,
+  	transparent
+  );
+  --selection-bar-background-color-hot: color-mix(
+  	in srgb,
+  	var(--gk-footer-fg) 40%,
+  	transparent
+  );
+  --selection-bar-background-color-active: var(--gk-footer-fg);
+  --footer-item-color-hot: color-mix(
+  	in srgb,
+  	var(--gk-footer-fg) 90%,
+  	black
+  );
+  --footer-menu-button-glyph-background-color-normal: var(--gk-footer-fg);
+  --footer-menu-background-color: var(--gk-footer-bg);
+  --footer-menu-outline-color: color-mix(
+  	in srgb,
+  	var(--gk-footer-fg) 20%,
+  	transparent
+  );
+  --footer-menu-item-link-color: var(--gk-footer-fg, var(--default-footer-menu-item-link-color));
+  --footer-vertical-separator-background-color: color-mix(
+  	in srgb,
+  	var(--gk-footer-fg) 40%,
+  	transparent
+  );
+}
+:root[geckium-seventeen][gksystheme=gtk]:not([gkthemed], [gkchrthemed]) {
+  --footer-border: linear-gradient(
+  	to left,
+  	color-mix(
+  		in srgb,
+  		color-mix(
+  				in srgb,
+  				ActiveCaption 10%,
+  				black
+  			)
+  			20%,
+  		transparent
+  	),
+  	color-mix(
+  		in srgb,
+  		color-mix(
+  				in srgb,
+  				ActiveCaption 10%,
+  				black
+  			)
+  			20%,
+  		transparent
+  	)
+  );
+}
+:root[geckium-seventeen][gksystheme=gtk]:not([gkthemed], [gkchrthemed])[footer-themable=true] {
+  --logo-wordmark-color: -moz-dialogtext;
+  --footer-background: linear-gradient(
+  	to bottom,
+  	color-mix(
+  		in srgb,
+  		-moz-dialog 90%,
+  		transparent
+  	),
+  	color-mix(
+  		in srgb,
+  		color-mix(in srgb, -moz-dialog 92%, black)
+  			90%,
+  		transparent
+  	)
+  );
+  --footer-color: -moz-dialogtext;
+  --dot-color-normal: color-mix(
+  	in srgb,
+  	-moz-dialogtext 20%,
+  	gray
+  );
+  --dot-color-hot: -moz-dialogtext;
+  --selection-bar-background-color-normal: color-mix(
+  	in srgb,
+  	-moz-dialogtext 20%,
+  	transparent
+  );
+  --selection-bar-background-color-hot: color-mix(
+  	in srgb,
+  	-moz-dialogtext 40%,
+  	transparent
+  );
+  --selection-bar-background-color-active: -moz-dialogtext;
+  --footer-item-color-hot: color-mix(
+  	in srgb,
+  	-moz-dialogtext 90%,
+  	black
+  );
+  --footer-menu-button-glyph-background-color-normal: -moz-dialogtext;
+  --footer-menu-item-link-color: AccentColor;
+  --footer-vertical-separator-background-color: color-mix(
+  	in srgb,
+  	-moz-dialogtext 40%,
+  	transparent
+  );
+}
+:root[geckium-seventeen][gkbranding=chromium] #chrome-web-store-link::after {
+  content: url("chrome://userchrome/content/pages/newTabHome/assets/chrome-21/imgs/chromium/IDR_WEBSTORE_ICON_24.png");
+}
+:root[geckium-seventeen][gkbranding=chrome] #chrome-web-store-link::after {
+  content: url("chrome://userchrome/content/pages/newTabHome/assets/chrome-21/imgs/chrome/IDR_WEBSTORE_ICON_24.png");
+}
+:root[geckium-seventeen] #footer {
+  max-width: var(--page-width);
+  font-size: 8pt;
+}
+:root[geckium-seventeen] #footer img {
+  align-self: center;
+}
+:root[geckium-seventeen] #footer {
+  background-image: var(--footer-background);
+  color: var(--footer-color);
+  font-weight: bold;
+}
+:root[geckium-seventeen] #footer #footer-border {
+  height: 1px;
+  background: var(--footer-border);
+}
+:root[geckium-seventeen] #footer #footer-content {
+  height: 49px;
+}
+:root[geckium-seventeen] #footer #logo-img {
+  padding-block-start: 0;
+  padding-block-end: 1px;
+  padding-inline: 9px;
+}
+:root[geckium-seventeen] #footer #dot-list {
+  flex: 1;
+  justify-content: center;
+  gap: 12px;
+}
+:root[geckium-seventeen] #footer #footer-menu-container {
+  align-items: center;
+}
+:root[geckium-seventeen] #footer .dot,
+:root[geckium-seventeen] #footer .footer-menu-button,
+:root[geckium-seventeen] #footer a {
+  all: unset;
+  display: flex;
+  align-items: center;
+}
+:root[geckium-seventeen] #footer .dot:not([disabled]),
+:root[geckium-seventeen] #footer .footer-menu-button:not([disabled]),
+:root[geckium-seventeen] #footer a:not([disabled]) {
+  cursor: pointer;
+}
+:root[geckium-seventeen] #footer .dot {
+  display: flex;
+  flex-direction: column;
+  padding-top: 10px;
+  color: var(--dot-color-normal);
+  width: 80px;
+  text-align: start;
+  align-items: start;
+  transition-property: color;
+  transition-duration: 200ms;
+}
+:root[geckium-seventeen] #footer .dot:not([disbled]):hover, :root[geckium-seventeen] #footer .dot:not([disbled]):focus, :root[geckium-seventeen] #footer .dot:not([disbled]).selected {
+  color: var(--dot-color-hot);
+}
+:root[geckium-seventeen] #footer .dot:not([disbled]):hover .selection-bar, :root[geckium-seventeen] #footer .dot:not([disbled]):focus .selection-bar {
+  background-color: var(--selection-bar-background-color-hot);
+}
+:root[geckium-seventeen] #footer .dot:not([disbled]).selected .selection-bar {
+  background-color: var(--selection-bar-background-color-active);
+}
+:root[geckium-seventeen] #footer .dot .selection-bar {
+  width: 100%;
+  height: 5px;
+  background-color: var(--selection-bar-background-color-normal);
+  margin-block-end: 3px;
+  transition-property: background-color;
+  transition-duration: 200ms;
+}
+:root[geckium-seventeen] #footer .dot .button-box {
+  margin-inline-start: 3px;
+}
+:root[geckium-seventeen] #footer .dot .button-text {
+  align-self: start;
+}
+:root[geckium-seventeen] #footer .footer-menu-button:not([disabled], .footer-menu-item):hover,
+:root[geckium-seventeen] #footer a:not([disabled], .footer-menu-item):hover {
+  color: var(--footer-item-color-hot);
+}
+:root[geckium-seventeen] #footer .footer-menu-button {
+  position: relative;
+  padding-inline-start: 9px;
+  padding-inline-end: 15px;
+}
+:root[geckium-seventeen] #footer .footer-menu-button:not([disabled]):hover::after {
+  background-color: var(--footer-item-color-hot);
+}
+:root[geckium-seventeen] #footer .footer-menu-button:not([disabled])[open] .footer-menu {
+  display: flex;
+}
+:root[geckium-seventeen] #footer .footer-menu-button::after {
+  content: "";
+  margin-inline-start: 5px;
+  height: 9px;
+  width: 9px;
+  background-color: var(--footer-menu-button-glyph-background-color-normal);
+  -webkit-mask-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAkAAAAJCAYAAADgkQYQAAAAJUlEQVQYV2NgoDuYSQSGK/RB0+yDrACbQqwKkBUW41OArJB0AAACXws0ERupuAAAAABJRU5ErkJggg==");
+          mask-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAkAAAAJCAYAAADgkQYQAAAAJUlEQVQYV2NgoDuYSQSGK/RB0+yDrACbQqwKkBUW41OArJB0AAACXws0ERupuAAAAABJRU5ErkJggg==");
+}
+:root[geckium-seventeen] #footer .footer-menu {
+  display: none;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+  background: var(--footer-menu-background-color);
+  cursor: default;
+  margin: 0;
+  outline: 1px solid var(--footer-menu-outline-color);
+  position: absolute;
+  white-space: nowrap;
+  margin-inline-end: 10px;
+  max-height: 400px;
+  overflow: auto;
+  padding: 6px 8px;
+  z-index: 10;
+  min-width: 150px;
+  bottom: 23px;
+  right: 0;
+}
+:root[geckium-seventeen] #footer .footer-menu-item {
+  margin-inline-end: 8px;
+  margin-inline-start: 0;
+  padding-inline-end: 0;
+  background: no-repeat 0 50%;
+  background-color: transparent;
+  background-size: 16px 16px;
+  box-sizing: border-box;
+  display: flex;
+  line-height: 1.5em;
+  margin-bottom: 0.5em;
+  margin-top: 0.25em;
+  max-width: 450px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  color: var(--footer-menu-item-link-color);
+  font-weight: normal;
+  font-size: 9pt;
+  align-items: center;
+  -moz-context-properties: fill, fill-opacity;
+}
+@media (prefers-color-scheme: dark) {
+  :root[geckium-seventeen] #footer .footer-menu-item {
+    fill: white;
+  }
+}
+:root[geckium-seventeen] #footer .footer-menu-item:not([disabled]):hover {
+  text-decoration: underline;
+}
+:root[geckium-seventeen] #footer .footer-menu-item image {
+  width: 16px;
+  height: 16px;
+  margin-inline-end: 6px;
+}
+:root[geckium-seventeen] #footer .footer-menu-item label {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+:root[geckium-seventeen] #footer #vertical-separator {
+  background-color: var(--footer-vertical-separator-background-color);
+  height: 20px;
+  width: 1px;
+}
+:root[geckium-seventeen] #footer #chrome-web-store-link {
+  padding-inline-start: 15px;
+}
+:root[geckium-seventeen] #footer #chrome-web-store-link::after {
+  margin-block-start: 3px;
+  margin-inline-start: 12px;
+}
+:root[geckium-twentyone] .page-switcher[id*=end]:not([disabled]):hover, :root[geckium-twentyone] .page-switcher[id*=end]:not([disabled]):focus {
+  background: linear-gradient(to bottom, transparent 0, color-mix(in srgb, var(--thumbnail-container-color) 1%, transparent) 60px, color-mix(in srgb, var(--thumbnail-container-color) 6%, transparent) 183px);
+}
+:root[geckium-twentyone] {
+  --default-thumbnail-background-color: #EEE;
+  --thumbnail-background-color: var(--default-thumbnail-background-color);
+}
+@media (prefers-color-scheme: dark) {
+  :root[geckium-twentyone] {
+    --default-thumbnail-background-color: #505050;
+  }
+}
+:root[geckium-twentyone][gkthemed]:not([gkchrthemed]) {
+  --thumbnail-background-color: color-mix(
+  	in srgb,
+  	var(--gktoolbar-bgcolor, var(--toolbar-bgcolor, var(--lwt-accent-color))) 12.3029601%,
+  	transparent
+  );
+}
+:root[geckium-twentyone] #most-visited-page .tile .thumbnail {
+  background-color: var(--thumbnail-background-color);
+}
+:root[geckium-twentyone] {
+  --default-dot-color-normal: #999;
+  --default-dot-color-hot: #7f7f7f;
+}
+@media (prefers-color-scheme: dark) {
+  :root[geckium-twentyone] {
+    --default-dot-color-normal: #666666;
+  }
+}
+:root[geckium-twentyone] #footer #footer-content {
+  padding-inline-end: 12px;
+}
+:root[geckium-twentyone] #footer #logo-img {
+  padding-block-start: 2px;
+  padding-block-end: 0;
+}
+:root[geckium-twentyone] #footer .dot .selection-bar {
+  margin-block-end: 5px;
+}
+:root[geckium-twentyone] #footer .footer-menu {
+  bottom: 32px;
+}
+:root[geckium-twentyfive][gkbranding=chromium] #chrome-web-store-link::after {
+  content: url("chrome://userchrome/content/pages/newTabHome/assets/chrome-25/chromium/IDR_WEBSTORE_ICON_24.png");
+}
+:root[geckium-twentyfive][gkbranding=chrome] #chrome-web-store-link::after {
+  content: url("chrome://userchrome/content/pages/newTabHome/assets/chrome-25/chrome/IDR_WEBSTORE_ICON_24.png");
+}
+:root[geckium-thirtyseven] {
+  --default-google-bar-color: black;
+  --google-bar-color: var(--default-google-bar-color);
+}
+@media (prefers-color-scheme: dark) {
+  :root[geckium-thirtyseven] {
+    --google-bar-color: white;
+  }
+  :root[geckium-thirtyseven]:not([geckium-fortyseven]) #google-bar > a {
+    filter: drop-shadow(0px 2px 1px rgba(0, 0, 0, 0.3));
+    font-weight: bold;
+  }
+  :root[geckium-thirtyseven] #logo {
+    background-image: url("chrome://userchrome/content/pages/newTabHome/assets/chrome-37/imgs/white_google_logo.svg");
+  }
+}
+:root[geckium-thirtyseven][style*="--chrtheme-ntp-logo-alternate: 1"], :root[geckium-thirtyseven][style*="--lwt-gkntp-logo-alternate: 1"] {
+  --google-bar-color: white;
+}
+:root[geckium-thirtyseven][style*="--chrtheme-ntp-logo-alternate: 1"]:not([geckium-fortyseven]) #google-bar > a, :root[geckium-thirtyseven][style*="--lwt-gkntp-logo-alternate: 1"]:not([geckium-fortyseven]) #google-bar > a {
+  filter: drop-shadow(0px 2px 1px rgba(0, 0, 0, 0.3));
+  font-weight: bold;
+}
+:root[geckium-thirtyseven][style*="--chrtheme-ntp-logo-alternate: 1"] #logo, :root[geckium-thirtyseven][style*="--lwt-gkntp-logo-alternate: 1"] #logo {
+  background-image: url("chrome://userchrome/content/pages/newTabHome/assets/chrome-37/imgs/white_google_logo.svg");
+}
+@media only screen and (max-width: 820px) {
+  :root[geckium-thirtyseven]:not([geckium-fortyseven]) #fakebox {
+    width: 458px;
+  }
+}
+@media only screen and (max-width: 660px) {
+  :root[geckium-thirtyseven]:not([geckium-fortyseven]) #fakebox {
+    width: 298px;
+  }
+}
+:root[geckium-thirtyseven] #google-bar {
+  gap: 15px;
+  margin-block-start: 14px;
+  margin-inline-end: 14px;
+  align-items: center;
+  justify-content: end;
+}
+:root[geckium-thirtyseven] #google-bar a {
+  color: color-mix(in srgb, var(--google-bar-color) 87%, transparent);
+  text-decoration: none;
+}
+:root[geckium-thirtyseven] #google-bar a:not([disabled]):hover, :root[geckium-thirtyseven] #google-bar a:not([disabled]):focus {
+  text-decoration: underline;
+}
+:root[geckium-thirtyseven] #google-bar #google-products-link {
+  position: relative;
+  width: 30px;
+  height: 30px;
+  list-style-image: url("chrome://userchrome/content/pages/newTabHome/assets/chrome-37/imgs/products-link.svg");
+  opacity: 0.55;
+  -moz-context-properties: fill, fill-opacity;
+  fill: var(--google-bar-color);
+}
+:root[geckium-thirtyseven] #google-bar #google-products-link:not([disabled]):hover, :root[geckium-thirtyseven] #google-bar #google-products-link:not([disabled]):focus {
+  opacity: 0.85;
+}
+:root[geckium-thirtyseven] #google-bar #login-avatar,
+:root[geckium-thirtyseven] #google-bar #login-avatar > img {
+  width: 32px;
+  height: 32px;
+}
+:root[geckium-thirtyseven] #google-bar #login-avatar > img {
+  border-radius: 50%;
+}
+:root[geckium-thirtyseven] #logo,
+:root[geckium-thirtyseven] #fakebox {
+  margin-inline: auto;
+}
+:root[geckium-thirtyseven] #logo {
+  background-image: url("chrome://userchrome/content/pages/newTabHome/assets/chrome-37/imgs/google_logo.svg");
+  background-repeat: no-repeat;
+  background-size: 269px 95px;
+  height: 95px;
+  margin-block-start: 157px;
+  margin-block-end: 24px;
+  width: 269px;
+}
+:root[geckium-thirtyseven] #fakebox {
+  display: flex;
+  width: 618px;
+  transition: border-color 100ms linear;
+  background-color: white;
+  border: 1px solid rgb(185, 185, 185);
+  border-radius: 1px;
+  border-block-start-color: rgb(160, 160, 160);
+  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
+  cursor: text;
+  font-size: 18px;
+  height: 36px;
+  max-width: 620px;
+  position: relative;
+}
+:root[geckium-thirtyseven] #fakebox:hover {
+  border: 1px solid rgb(169, 169, 169);
+  border-block-start-color: rgb(144, 144, 144);
+}
+:root[geckium-thirtyseven] #fakebox > form {
+  display: flex;
+  flex: 1;
+}
+:root[geckium-thirtyseven] #main-container.fakebox-focused #fakebox {
+  border: 1px solid rgb(77, 144, 254);
+}
+:root[geckium-thirtyseven] #fakebox-input {
+  all: unset;
+  flex: 1;
+  margin: 2px;
+  padding-block: 1px;
+  padding-inline: 8px;
+}
+:root[geckium-thirtyseven] #cursor {
+  background: #333;
+  bottom: 5px;
+  left: 9px;
+  visibility: hidden;
+  width: 1px;
+  position: absolute;
+  top: 5px;
+}
+:root[geckium-thirtyseven][fxastatus=signed_in] #products-grid-arrow-background {
+  right: 53.5px;
+}
+:root[geckium-thirtyseven][fxastatus=signed_in] #products-grid-arrow-border {
+  right: 53.5px;
+}
+:root[geckium-thirtyseven] #google-products-link[open=true] + #products-grid-pane-container {
+  display: flex;
+}
+:root[geckium-thirtyseven] #products-grid-pane-container {
+  display: none;
+  position: absolute;
+  right: 15px;
+  top: 55px;
+  z-index: 1;
+}
+:root[geckium-thirtyseven] #products-grid-arrow-background {
+  border-color: transparent;
+  border-bottom-color: #fff;
+  border-style: dashed dashed solid;
+  border-width: 0 8.5px 8.5px;
+  position: absolute;
+  right: 6.5px;
+  top: -6px;
+  z-index: 1;
+  height: 0;
+  width: 0;
+}
+:root[geckium-thirtyseven] #products-grid-arrow-border {
+  border-color: transparent;
+  border-style: dashed dashed solid;
+  border-width: 0 8.5px 8.5px;
+  position: absolute;
+  right: 6.5px;
+  z-index: 1;
+  height: 0;
+  width: 0;
+  border-bottom-color: rgba(0, 0, 0, 0.2);
+  top: -7px;
+}
+:root[geckium-thirtyseven] #products-grid-container {
+  background: #fff;
+  border: 1px solid #ccc;
+  border-color: rgba(0, 0, 0, 0.2);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+  outline: none;
+  overflow: hidden;
+  border-radius: 2px;
+  -webkit-user-select: text;
+     -moz-user-select: text;
+          user-select: text;
+  min-height: 196px;
+  overflow-y: auto;
+  width: 320px;
+  max-height: 1180px;
+  height: 396px;
+  box-sizing: content-box;
+}
+:root[geckium-thirtyseven] #products-grid-container.hide-scrollbar {
+  scrollbar-width: none;
+}
+:root[geckium-thirtyseven] #products-grid-container.hide-scrollbar #more-products-grid {
+  display: none;
+}
+:root[geckium-thirtyseven] #products-grid-container:not(.hide-scrollbar) #more-products-button {
+  display: none;
+}
+:root[geckium-thirtyseven] .products-grid {
+  background: #fff;
+  margin: 0;
+  min-height: 100px;
+  padding: 28px;
+  padding-right: 28px;
+  padding-right: 27px;
+  text-align: left;
+  white-space: normal;
+  width: 265px;
+  flex-shrink: 0;
+}
+:root[geckium-thirtyseven] .product-container {
+  border: 1px solid #fff;
+  border-radius: 2px;
+  display: inline-block;
+  vertical-align: top;
+  height: 98px;
+  width: 86px;
+}
+:root[geckium-thirtyseven] .product-container:hover {
+  border: 1px solid #e5e5e5;
+}
+:root[geckium-thirtyseven] .product {
+  display: inline-block;
+  font-size: 13px;
+  margin: 8px 2px;
+  text-align: center;
+  outline: none;
+  text-decoration: none !important;
+  cursor: pointer;
+}
+:root[geckium-thirtyseven] .product-icon {
+  display: inline-block;
+  vertical-align: top;
+  height: 64px;
+  width: 64px;
+  background-image: url("chrome://userchrome/content/pages/newTabHome/assets/chrome-37/imgs/products.png");
+  background-size: 134px 1238px;
+}
+:root[geckium-thirtyseven] .product-name {
+  display: block;
+  line-height: 20px;
+  overflow: hidden;
+  white-space: nowrap;
+  width: 84px;
+  text-overflow: ellipsis;
+  color: #404040;
+}
+:root[geckium-thirtyseven] #more-products-button,
+:root[geckium-thirtyseven] #even-more {
+  color: #737373 !important;
+}
+:root[geckium-thirtyseven] #more-products-button {
+  display: block;
+  line-height: 40px;
+  text-align: center;
+  width: 320px;
+  background: #f5f5f5;
+  cursor: pointer;
+  height: 40px;
+  overflow: hidden;
+  text-decoration: none;
+  flex-shrink: 0;
+}
+:root[geckium-thirtyseven] .divider,
+:root[geckium-thirtyseven] #even-more {
+  margin-inline: 28px;
+}
+:root[geckium-thirtyseven] .divider {
+  border-bottom: 1px solid #ebebeb;
+  width: 264px;
+}
+:root[geckium-thirtyseven] #even-more {
+  line-height: 40px;
+  text-align: center;
+  text-decoration: none;
+  width: 264px;
+}
+:root[geckium-thirtyseven] {
+  --default-tile-background: linear-gradient(
+  	to bottom,
+  	#f2f2f2,
+  	#e8e8e8
+  );
+  --tile-background: var(--default-tile-background);
+  --default-thumbnail-border-color-normal: #c0c0c0;
+  --default-thumbnail-border-color-hot: #7f7f7f;
+  --default-thumbnail-container-color: rgb(119, 119, 119);
+}
+@media (prefers-color-scheme: dark) {
+  :root[geckium-thirtyseven] {
+    --default-thumbnail-border-color-normal: hsl(0, 0%, 25%);
+    --default-thumbnail-border-color-hot: #7f7f7f;
+    --default-thumbnail-container-color: hsl(0, 0%, 53%);
+  }
+}
+:root[geckium-thirtyseven][style*="--chrtheme-ntp-logo-alternate: 1"], :root[geckium-thirtyseven][style*="--lwt-gkntp-logo-alternate: 1"] {
+  --default-thumbnail-border-color-normal: hsl(0, 0%, 25%);
+  --default-thumbnail-border-color-hot: #7f7f7f;
+  --default-thumbnail-container-color: hsl(0, 0%, 53%);
+}
+@media only screen and (max-width: 820px) {
+  :root[geckium-thirtyseven]:not([geckium-fortyseven]) #mv-tiles {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    width: 460px;
+  }
+  :root[geckium-thirtyseven]:not([geckium-fortyseven]) .mv-tile:nth-child(7),
+  :root[geckium-thirtyseven]:not([geckium-fortyseven]) .mv-tile:nth-child(8) {
+    display: none;
+  }
+}
+@media only screen and (max-width: 660px) {
+  :root[geckium-thirtyseven]:not([geckium-fortyseven]) #mv-tiles {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    width: 300px;
+  }
+  :root[geckium-thirtyseven]:not([geckium-fortyseven]) .mv-tile:nth-child(5),
+  :root[geckium-thirtyseven]:not([geckium-fortyseven]) .mv-tile:nth-child(6) {
+    display: none;
+  }
+}
+:root[geckium-thirtyseven][pinineveryera=false] .mv-pin {
+  display: none !important;
+}
+:root[geckium-thirtyseven] #most-visited {
+  display: flex;
+  margin-block-start: 51px;
+}
+:root[geckium-thirtyseven] #mv-tiles {
+  margin-inline: auto;
+  gap: 17px 20px;
+  width: 620px;
+  height: 260px;
+  padding-inline: 1em;
+}
+:root[geckium-thirtyseven] .mv-tile {
+  position: relative;
+  background: var(--tile-background);
+  border: 1px solid transparent;
+  border-radius: 3px;
+  box-shadow: inset 0 2px 3px rgba(0, 0, 0, 0.09);
+  height: 83px;
+  width: 138px;
+}
+:root[geckium-thirtyseven] .mv-page:focus .mv-mask {
+  transition: background-color 100ms ease-in-out;
+  background: linear-gradient(to bottom, transparent, transparent, rgba(255, 255, 255, 0.9));
+  background-color: black;
+}
+:root[geckium-thirtyseven] .mv-page[pinned=true] .mv-pin {
+  background: transparent url("chrome://userchrome/content/pages/newTabHome/assets/chrome-21/imgs/newtab_pin_off_p.svg");
+}
+:root[geckium-thirtyseven] .mv-page .mv-pin,
+:root[geckium-thirtyseven] .mv-page .mv-x {
+  transition: opacity 150ms;
+  opacity: 0;
+  position: absolute;
+  top: 2px;
+}
+:root[geckium-thirtyseven] .mv-page .mv-x {
+  right: 2px;
+}
+:root[geckium-thirtyseven] .mv-page .mv-pin {
+  left: 2px;
+}
+:root[geckium-thirtyseven] .mv-page-ready {
+  border: 1px solid var(--thumbnail-border-color);
+  cursor: pointer;
+}
+:root[geckium-thirtyseven] .mv-page-ready:hover, :root[geckium-thirtyseven] .mv-page-ready:focus {
+  border-color: var(--thumbnail-border-color-hot);
+}
+:root[geckium-thirtyseven] .mv-page-ready:hover .mv-pin,
+:root[geckium-thirtyseven] .mv-page-ready:hover .mv-x {
+  transition-delay: 500ms;
+  opacity: 1;
+}
+:root[geckium-thirtyseven] .mv-page-ready .mv-pin:hover,
+:root[geckium-thirtyseven] .mv-page-ready .mv-x:hover {
+  transition: none;
+}
+:root[geckium-thirtyseven] .mv-thumb,
+:root[geckium-thirtyseven] .mv-mask {
+  border: none;
+  cursor: pointer;
+  height: 83px;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 138px;
+}
+:root[geckium-thirtyseven] .shadow {
+  box-shadow: inset 0 2px 3px rgba(0, 0, 0, 0.09);
+  position: absolute;
+}
+:root[geckium-thirtyseven] .shadow,
+:root[geckium-thirtyseven] .thumb-img {
+  border-radius: 2px;
+  height: 100%;
+  width: 100%;
+}
+:root[geckium-thirtyseven] .thumb-img {
+  background-position: top center;
+  background-size: cover;
+}
+:root[geckium-thirtyseven] .mv-mask {
+  opacity: 0.35;
+  pointer-events: none;
+}
+:root[geckium-thirtyseven] .mv-pin,
+:root[geckium-thirtyseven] .mv-x {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  border: none;
+  cursor: default;
+  height: 16px;
+  width: 16px;
+}
+:root[geckium-thirtyseven] .mv-pin {
+  background: transparent url("chrome://userchrome/content/pages/newTabHome/assets/chrome-21/imgs/newtab_pin_off.svg");
+}
+:root[geckium-thirtyseven] .mv-pin:hover {
+  background: transparent url("chrome://userchrome/content/pages/newTabHome/assets/chrome-21/imgs/newtab_pin_off_h.svg");
+}
+:root[geckium-thirtyseven] .mv-pin:active {
+  background: transparent url("chrome://userchrome/content/pages/newTabHome/assets/chrome-21/imgs/newtab_pin_off_p.svg");
+}
+:root[geckium-thirtyseven] .mv-x {
+  background: transparent url("chrome://userchrome/content/assets/img/chrome-1/infobar/infobar_close_off.svg");
+}
+:root[geckium-thirtyseven] .mv-x:hover {
+  background: transparent url("chrome://userchrome/content/assets/img/chrome-1/infobar/infobar_close_off_h.svg");
+}
+:root[geckium-thirtyseven] .mv-x:active {
+  background: transparent url("chrome://userchrome/content/assets/img/chrome-1/infobar/infobar_close_off_p.svg");
+}
+:root[geckium-thirtyseven] .mv-favicon {
+  background-size: 16px;
+  bottom: -8px;
+  left: 61px;
+  pointer-events: none;
+  position: absolute;
+}
+:root[geckium-thirtyseven] .mv-title {
+  overflow: hidden;
+  text-align: center;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  text-decoration: none;
+  color: var(--thumbnail-container-color);
+  border: none;
+  bottom: -28px;
+  height: 18px;
+  left: 0;
+  position: absolute;
+  width: 140px;
+}
+:root[geckium-fortyseven] {
+  font: unset;
+  font-family: arial, sans-serif;
+  font-size: 9pt;
+}
+:root[geckium-fortyseven][gkthemed][gkchrthemed] {
+  --link-color: var(--default-link-color);
+}
+:root[geckium-fortyseven] #attribution {
+  right: 0;
+  bottom: 0;
+  color: var(--thumbnail-container-color);
+}
+:root[geckium-fortyseven][gkthemed]:not([gkchrthemed]) {
+  --google-bar-color: var(--link-color, var(--default-thumbnail-container-color));
+}
+:root[geckium-fortyseven][gkthemed][gkchrthemed] {
+  --google-bar-color: var(--chrtheme-ntp-text, var(--default-thumbnail-container-color));
+}
+:root[geckium-fortyseven][gksystheme=gtk]:not([gkthemed], [gkchrthemed]) {
+  --google-bar-color: FieldText;
+}
+:root[geckium-fortyseven][style*="--chrtheme-ntp-logo-alternate: 1"], :root[geckium-fortyseven][style*="--lwt-gkntp-logo-alternate: 1"] {
+  --google-bar-color: white;
+}
+:root[geckium-fortyseven][style*="--chrtheme-ntp-logo-alternate: 1"] #google-search #hplogo, :root[geckium-fortyseven][style*="--lwt-gkntp-logo-alternate: 1"] #google-search #hplogo {
+  background-image: url("chrome://userchrome/content/pages/newTabHome/assets/chrome-47/imgs/googlelogo_light.svg");
+}
+@media only screen and (max-width: 862px) {
+  :root[geckium-fortyseven][geckium-fortyseven] #google-search,
+  :root[geckium-fortyseven][geckium-fortyseven] #mv-tiles {
+    width: 495px;
+  }
+}
+@media only screen and (max-width: 693px) {
+  :root[geckium-fortyseven][geckium-fortyseven] #google-search,
+  :root[geckium-fortyseven][geckium-fortyseven] #mv-tiles {
+    width: 325px;
+  }
+}
+:root[geckium-fortyseven] #google-search,
+:root[geckium-fortyseven] #mv-tiles {
+  margin-inline: auto;
+  width: 664px;
+}
+:root[geckium-fortyseven] #google-search {
+  align-items: center;
+}
+:root[geckium-fortyseven] #google-search #hplogo {
+  margin-block-end: 24px;
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 272px;
+  height: 92px;
+  background-image: url("chrome://userchrome/content/pages/newTabHome/assets/chrome-47/imgs/googlelogo_color.svg");
+}
+:root[geckium-fortyseven] #google-search form {
+  width: 100%;
+}
+:root[geckium-fortyseven] #google-search #google-input {
+  all: unset;
+  width: 100%;
+  background-color: #fff;
+  padding-inline: 9px;
+  cursor: text;
+  display: inline-block;
+  font-family: arial, sans-serif;
+  line-height: 36px;
+  max-width: 672px;
+  font-size: 12pt;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  box-sizing: border-box;
+}
+@media (prefers-color-scheme: dark) {
+  :root[geckium-fortyseven] #google-search #google-input {
+    background-color: #353535;
+  }
+}
+:root[geckium-fortyseven] #google-search #google-input:not([disabled]):focus {
+  border-color: rgb(66, 133, 244);
+}
+:root[geckium-fortyseven] #google-search #google-input::-moz-placeholder {
+  opacity: 1;
+}
+:root[geckium-fortyseven] #google-search #google-input::placeholder {
+  opacity: 1;
+}
+:root[geckium-fortyseven]:not([icon-ntp]) #google-search {
+  margin-block-start: 115px;
+}
+:root[geckium-fortyseven]:not([icon-ntp]) #google-search #google-input {
+  border-radius: 1px;
+  border-width: 1px;
+  border-style: solid;
+  border-color: #d2d2d2;
+  border-top-color: #70757a;
+  height: 36px;
+  margin-block-end: 64px;
+}
+@media (prefers-color-scheme: dark) {
+  :root[geckium-fortyseven]:not([icon-ntp]) #google-search #google-input {
+    border-color: #575757;
+    border-top-color: #666666;
+  }
+}
+:root[geckium-fortyseven]:not([icon-ntp]) #google-search #google-input::-moz-placeholder {
+  color: #dadce0;
+}
+:root[geckium-fortyseven]:not([icon-ntp]) #google-search #google-input::placeholder {
+  color: #dadce0;
+}
+@media (prefers-color-scheme: dark) {
+  :root[geckium-fortyseven]:not([icon-ntp]) #google-search #google-input::-moz-placeholder {
+    color: #818181;
+  }
+  :root[geckium-fortyseven]:not([icon-ntp]) #google-search #google-input::placeholder {
+    color: #818181;
+  }
+}
+:root[geckium-fortyseven][icon-ntp] #google-search {
+  margin-block-start: 150px;
+}
+:root[geckium-fortyseven][icon-ntp] #google-search #google-input {
+  border-width: 1px;
+  border-style: solid;
+  border-color: rgb(169, 169, 169);
+  height: 38px;
+  margin-block-end: 100px;
+}
+@media (prefers-color-scheme: dark) {
+  :root[geckium-fortyseven][icon-ntp] #google-search #google-input {
+    border-color: #575757;
+  }
+}
+:root[geckium-fortyseven][icon-ntp] #google-search #google-input::-moz-placeholder {
+  color: #bbb;
+}
+:root[geckium-fortyseven][icon-ntp] #google-search #google-input::placeholder {
+  color: #bbb;
+}
+@media (prefers-color-scheme: dark) {
+  :root[geckium-fortyseven][icon-ntp] #google-search #google-input::-moz-placeholder {
+    color: #818181;
+  }
+  :root[geckium-fortyseven][icon-ntp] #google-search #google-input::placeholder {
+    color: #818181;
+  }
+}
+:root[geckium-fortyseven] {
+  --default-tile-background: rgb(242,242,242);
+  --tile-background: var(--default-tile-background);
+  --tile-background-disabled: var(--tile-background);
+  --tile-border-color-normal: rgba(150,150,150,.3137254901960784);
+  --tile-border-color-hot: rgba(150,150,150,1);
+  --tile-close-background-color-normal: rgba(90,90,90,.7);
+  --tile-close-background-color-hot: rgb(90,90,90);
+  --tile-close-background-color-active: rgb(66,133,244);
+  --tile-thumbnail-background-color: white;
+  --default-thumbnail-container-color: black;
+}
+@media (prefers-color-scheme: dark) {
+  :root[geckium-fortyseven] {
+    --default-tile-background: rgb(51, 51, 51);
+    --thumbnail-container-color: white;
+  }
+}
+:root[geckium-fortyseven][style*="--chrtheme-ntp-logo-alternate: 1"], :root[geckium-fortyseven][style*="--lwt-gkntp-logo-alternate: 1"] {
+  --default-tile-background: rgb(51, 51, 51);
+  --default-thumbnail-container-color: white;
+}
+:root[geckium-fortyseven][style*="--chrtheme-ntp-logo-alternate: 1"][geckium-choice=fortyseven][icon-ntp] .mv-tile, :root[geckium-fortyseven][style*="--lwt-gkntp-logo-alternate: 1"][geckium-choice=fortyseven][icon-ntp] .mv-tile {
+  color: rgb(170, 170, 170);
+}
+:root[geckium-fortyseven][gkthemed]:not([gkchrthemed])[footer-themable=true] {
+  --tile-background: var(--toolbar-bgcolor, var(--lwt-accent-color));
+  --tile-border-color-normal: color-mix(
+  	in srgb,
+  	var(--toolbar-bgcolor, var(--lwt-accent-color)) 90%,
+  	white
+  );
+  --tile-border-color-hot: color-mix(
+  	in srgb,
+  	var(--toolbar-bgcolor, var(--lwt-accent-color)) 80%,
+  	white
+  );
+  --tile-close-background-color-active: var(--thumbnail-container-color);
+  --thumbnail-container-color: var(--link-color, --default-link-color);
+}
+@media only screen and (max-width: 862px) {
+  :root[geckium-fortyseven][geckium-choice=fortyseven] #mv-tiles, :root[geckium-fortyseven][geckium-choice=sixtyeight] #mv-tiles {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+  :root[geckium-fortyseven][geckium-choice=fortyseven] .mv-tile:nth-child(7),
+  :root[geckium-fortyseven][geckium-choice=fortyseven] .mv-tile:nth-child(8), :root[geckium-fortyseven][geckium-choice=sixtyeight] .mv-tile:nth-child(7),
+  :root[geckium-fortyseven][geckium-choice=sixtyeight] .mv-tile:nth-child(8) {
+    display: none;
+  }
+}
+@media only screen and (max-width: 693px) {
+  :root[geckium-fortyseven][geckium-choice=fortyseven] #mv-tiles, :root[geckium-fortyseven][geckium-choice=sixtyeight] #mv-tiles {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  :root[geckium-fortyseven][geckium-choice=fortyseven] .mv-tile:nth-child(5),
+  :root[geckium-fortyseven][geckium-choice=fortyseven] .mv-tile:nth-child(6), :root[geckium-fortyseven][geckium-choice=sixtyeight] .mv-tile:nth-child(5),
+  :root[geckium-fortyseven][geckium-choice=sixtyeight] .mv-tile:nth-child(6) {
+    display: none;
+  }
+}
+:root[geckium-fortyseven]:not([icon-ntp]) #mv-tiles {
+  gap: 16px;
+}
+:root[geckium-fortyseven]:not([icon-ntp]) .mv-tile {
+  box-shadow: none;
+  width: auto;
+  position: relative;
+  border-radius: 2px;
+  height: 126px;
+  padding-inline: 3px;
+  text-decoration: none;
+  color: var(--thumbnail-container-color);
+  font-size: 9pt;
+  transition-duration: 200ms;
+  transition-property: border, box-shadow;
+}
+:root[geckium-fortyseven]:not([icon-ntp]) .mv-tile[disabled] {
+  background: var(--tile-background-disabled);
+}
+:root[geckium-fortyseven]:not([icon-ntp]) .mv-tile:not([disabled]) {
+  border: 1px solid var(--tile-border-color-normal);
+  background: var(--tile-background);
+}
+:root[geckium-fortyseven]:not([icon-ntp]) .mv-tile:not([disabled]):hover, :root[geckium-fortyseven]:not([icon-ntp]) .mv-tile:not([disabled]):focus {
+  border-color: var(--tile-border-color-hot);
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.1), 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+:root[geckium-fortyseven]:not([icon-ntp]) .mv-tile:not([disabled]):hover .mv-pin,
+:root[geckium-fortyseven]:not([icon-ntp]) .mv-tile:not([disabled]):hover .mv-x, :root[geckium-fortyseven]:not([icon-ntp]) .mv-tile:not([disabled]):focus .mv-pin,
+:root[geckium-fortyseven]:not([icon-ntp]) .mv-tile:not([disabled]):focus .mv-x {
+  opacity: 1;
+  transition-delay: 500ms;
+}
+:root[geckium-fortyseven]:not([icon-ntp]) .mv-tile button {
+  all: unset;
+}
+:root[geckium-fortyseven]:not([icon-ntp]) .mv-tile .title-container {
+  height: 31px;
+  align-items: center;
+  padding-inline-start: 4px;
+}
+:root[geckium-fortyseven]:not([icon-ntp]) .mv-tile .mv-favicon {
+  margin-inline-end: 9px;
+}
+:root[geckium-fortyseven]:not([icon-ntp]) .mv-tile .mv-title {
+  position: static;
+  height: auto;
+  text-align: start;
+  overflow: hidden;
+  white-space: nowrap;
+  width: 100%;
+  -webkit-mask-image: linear-gradient(to right, #000, #000, 100px, transparent);
+          mask-image: linear-gradient(to right, #000, #000, 100px, transparent);
+}
+:root[geckium-fortyseven]:not([icon-ntp]) .mv-tile .mv-pin,
+:root[geckium-fortyseven]:not([icon-ntp]) .mv-tile .mv-x {
+  position: absolute;
+  top: 0;
+  width: 32px;
+  height: 32px;
+  opacity: 0;
+  transition: opacity 150ms;
+}
+:root[geckium-fortyseven]:not([icon-ntp]) .mv-tile .mv-pin::after,
+:root[geckium-fortyseven]:not([icon-ntp]) .mv-tile .mv-x::after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 100%;
+  -webkit-mask-position: center;
+          mask-position: center;
+  -webkit-mask-repeat: no-repeat;
+          mask-repeat: no-repeat;
+  background-color: var(--tile-close-background-color-normal);
+}
+:root[geckium-fortyseven]:not([icon-ntp]) .mv-tile .mv-pin:not([disabled]):hover, :root[geckium-fortyseven]:not([icon-ntp]) .mv-tile .mv-pin:not([disabled]):focus,
+:root[geckium-fortyseven]:not([icon-ntp]) .mv-tile .mv-x:not([disabled]):hover,
+:root[geckium-fortyseven]:not([icon-ntp]) .mv-tile .mv-x:not([disabled]):focus {
+  transition: none;
+}
+:root[geckium-fortyseven]:not([icon-ntp]) .mv-tile .mv-pin:not([disabled]):hover::after, :root[geckium-fortyseven]:not([icon-ntp]) .mv-tile .mv-pin:not([disabled]):focus::after,
+:root[geckium-fortyseven]:not([icon-ntp]) .mv-tile .mv-x:not([disabled]):hover::after,
+:root[geckium-fortyseven]:not([icon-ntp]) .mv-tile .mv-x:not([disabled]):focus::after {
+  background-color: var(--tile-close-background-color-hot);
+}
+:root[geckium-fortyseven]:not([icon-ntp]) .mv-tile .mv-pin:not([disabled]):active::after,
+:root[geckium-fortyseven]:not([icon-ntp]) .mv-tile .mv-x:not([disabled]):active::after {
+  background-color: var(--tile-close-background-color-active);
+}
+:root[geckium-fortyseven]:not([icon-ntp]) .mv-tile .mv-pin {
+  left: 0;
+  background: var(--tile-background);
+}
+:root[geckium-fortyseven]:not([icon-ntp]) .mv-tile .mv-pin::after {
+  -webkit-mask-image: url("chrome://userchrome/content/pages/newTabHome/assets/chrome-47/imgs/pin_3_mask.svg");
+          mask-image: url("chrome://userchrome/content/pages/newTabHome/assets/chrome-47/imgs/pin_3_mask.svg");
+}
+:root[geckium-fortyseven]:not([icon-ntp]) .mv-tile[pinned=true] .mv-pin::after {
+  background-color: var(--tile-close-background-color-active);
+}
+:root[geckium-fortyseven]:not([icon-ntp]) .mv-tile .mv-x {
+  right: 0;
+  background: linear-gradient(to left, var(--tile-background) 60%, transparent);
+}
+:root[geckium-fortyseven]:not([icon-ntp]) .mv-tile .mv-x::after {
+  -webkit-mask-image: url("chrome://userchrome/content/pages/newTabHome/assets/chrome-47/imgs/close_3_mask.png");
+          mask-image: url("chrome://userchrome/content/pages/newTabHome/assets/chrome-47/imgs/close_3_mask.png");
+}
+:root[geckium-fortyseven]:not([icon-ntp]) .mv-tile .mv-thumb {
+  position: static;
+  background-color: var(--tile-thumbnail-background-color);
+  background-position: top center;
+  background-size: cover;
+  height: 94px;
+  width: 148px;
+}
+:root[geckium-fortyseven][geckium-choice=fortyseven][icon-ntp] #mv-tiles {
+  gap: 24px;
+  width: 433px;
+}
+:root[geckium-fortyseven][geckium-choice=fortyseven][icon-ntp] .mv-tile {
+  box-shadow: none;
+  width: auto;
+  background: transparent;
+  border: 0;
+  border-radius: 0;
+  height: auto;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: rgb(126, 126, 126);
+  text-decoration: none;
+  text-align: center;
+  font-size: 9pt;
+  width: 84px;
+}
+@media (prefers-color-scheme: dark) {
+  :root[geckium-fortyseven][geckium-choice=fortyseven][icon-ntp] .mv-tile {
+    color: rgb(170, 170, 170);
+  }
+}
+:root[geckium-fortyseven][geckium-choice=fortyseven][icon-ntp] .mv-tile:not([disabled]):hover .mv-pin,
+:root[geckium-fortyseven][geckium-choice=fortyseven][icon-ntp] .mv-tile:not([disabled]):hover .mv-x, :root[geckium-fortyseven][geckium-choice=fortyseven][icon-ntp] .mv-tile:not([disabled]):focus .mv-pin,
+:root[geckium-fortyseven][geckium-choice=fortyseven][icon-ntp] .mv-tile:not([disabled]):focus .mv-x {
+  opacity: 1;
+  transition-delay: 500ms;
+}
+:root[geckium-fortyseven][geckium-choice=fortyseven][icon-ntp] .mv-tile[style="list-style-image: url(chrome://userchrome/content/assets/img/chrome-1/toolbar/grayfolder.png)"] .mv-favicon {
+  display: none;
+}
+:root[geckium-fortyseven][geckium-choice=fortyseven][icon-ntp] .mv-tile[style="list-style-image: url(chrome://userchrome/content/assets/img/chrome-1/toolbar/grayfolder.png)"]::before {
+  content: attr(data-letter);
+  display: flex;
+  border-radius: 4px;
+  font-size: 15pt;
+  color: white;
+  align-items: center;
+  justify-content: center;
+  background-color: rgb(128, 128, 128);
+}
+:root[geckium-fortyseven][geckium-choice=fortyseven][icon-ntp] .mv-tile .mv-favicon, :root[geckium-fortyseven][geckium-choice=fortyseven][icon-ntp] .mv-tile::before {
+  width: 48px;
+  height: 48px;
+  margin-block-end: 8px;
+}
+:root[geckium-fortyseven][geckium-choice=fortyseven][icon-ntp] .mv-tile .mv-title {
+  position: static;
+  height: auto;
+  white-space: unset;
+  width: auto;
+  height: 29px;
+  overflow: hidden;
+}
+:root[geckium-fortyseven][geckium-choice=fortyseven][icon-ntp] .mv-tile .mv-pin,
+:root[geckium-fortyseven][geckium-choice=fortyseven][icon-ntp] .mv-tile .mv-x {
+  all: unset;
+  position: absolute;
+  top: -8px;
+  right: 10px;
+  height: 16px;
+  width: 16px;
+  background: black;
+  opacity: 0;
+  transition: opacity 150ms;
+}
+:root[geckium-fortyseven][geckium-choice=fortyseven][icon-ntp] .mv-tile .mv-pin::after,
+:root[geckium-fortyseven][geckium-choice=fortyseven][icon-ntp] .mv-tile .mv-x::after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 100%;
+  -webkit-mask-position: center;
+          mask-position: center;
+  -webkit-mask-repeat: no-repeat;
+          mask-repeat: no-repeat;
+  -webkit-mask-size: 8px;
+          mask-size: 8px;
+  background-color: white;
+}
+:root[geckium-fortyseven][geckium-choice=fortyseven][icon-ntp] .mv-tile .mv-pin:not([disabled]):hover, :root[geckium-fortyseven][geckium-choice=fortyseven][icon-ntp] .mv-tile .mv-pin:not([disabled]):focus,
+:root[geckium-fortyseven][geckium-choice=fortyseven][icon-ntp] .mv-tile .mv-x:not([disabled]):hover,
+:root[geckium-fortyseven][geckium-choice=fortyseven][icon-ntp] .mv-tile .mv-x:not([disabled]):focus {
+  transition: none;
+}
+:root[geckium-fortyseven][geckium-choice=fortyseven][icon-ntp] .mv-tile .mv-pin::after {
+  -webkit-mask-image: url("chrome://userchrome/content/pages/newTabHome/assets/chrome-47/imgs/pin_3_mask.svg");
+          mask-image: url("chrome://userchrome/content/pages/newTabHome/assets/chrome-47/imgs/pin_3_mask.svg");
+}
+:root[geckium-fortyseven][geckium-choice=fortyseven][icon-ntp] .mv-tile .mv-x::after {
+  -webkit-mask-image: url("chrome://userchrome/content/pages/newTabHome/assets/chrome-47/imgs/close_3_mask.png");
+          mask-image: url("chrome://userchrome/content/pages/newTabHome/assets/chrome-47/imgs/close_3_mask.png");
+}
+:root {
+  /*&[geckium-sixtyeight] {
+  	@import "partials/chrome-68/final";
+  }*/
+}/*# sourceMappingURL=eras.css.map */

@@ -1,0 +1,97 @@
+& {
+	font-family: Helvetica, Arial, sans-serif;
+	font-size: 9pt !important;
+	
+	@media (-moz-platform: linux) {
+		font: message-box;
+	}
+
+	// Custom theme support
+	// lwtheme
+	&[gkthemed]:not([gkchrthemed]) {
+		&[style*="--lwt-gknewtab-attribution-image"] {
+			#attribution {
+				display: flex;
+			}
+
+			#attribution-img {
+				background-image: var(--lwt-gknewtab-attribution-image);
+				width: var(--lwt-gknewtab-attribution-width);
+				height: var(--lwt-gknewtab-attribution-height);
+			}
+		}
+	}
+
+	// chrtheme
+	&[gkthemed][gkchrthemed] {
+		#attribution-img {
+			background-image: var(--chrtheme-theme-ntp-attribution);
+			width: var(--chrtheme-theme-ntp-attribution-width);
+			height: var(--chrtheme-theme-ntp-attribution-height);
+		}
+
+		&[style*="--chrtheme-theme-ntp-attribution"] {
+			#attribution {
+				display: flex;
+			}
+		}
+	}
+
+	&[geckium-choice="three"],
+	&[geckium-choice="four"],
+	&[geckium-choice="five"],
+	&[geckium-choice="six"] {
+		@media only screen and (max-width: 920px) {
+			#main {
+				width: 692px;
+			}
+		}
+	}
+}
+
+&[geckium-choice="three"],
+&[geckium-choice="four"],
+&[geckium-choice="five"],
+&[geckium-choice="six"] {
+	&[gkbranding="chromium"] {
+		#main {
+			background: url(chrome://userchrome/content/pages/newTabHome/assets/chrome-3/chromium/product_logo.png) no-repeat 0px 8px;
+		}
+	}
+	&[gkbranding="chrome"] {
+		#main {
+			background: url(chrome://userchrome/content/pages/newTabHome/assets/chrome-3/google-chrome/product_logo.png) no-repeat 0px 8px;
+		
+			@media (prefers-color-scheme: dark) {
+				background: url(chrome://userchrome/content/pages/newTabHome/assets/chrome-3/google-chrome/product_logo_alternate.png) no-repeat 0px 8px;
+			}
+		}
+	
+		&[style*="--chrtheme-ntp-logo-alternate: 1"],
+		&[style*="--lwt-gkntp-logo-alternate: 1"] {
+			#main {
+				background: url(chrome://userchrome/content/pages/newTabHome/assets/chrome-3/google-chrome/product_logo_alternate.png) no-repeat 0px 8px;
+			}
+		}
+	}
+}
+
+
+#main {
+	margin-inline: auto;
+	width: 920px;
+	gap: 0px;
+
+	transition-property: height, width;
+	transition-duration: .15s;
+}
+
+#attribution-img {
+	background-size: contain;
+	background-repeat: no-repeat;
+}
+
+@import "most-visited";
+@import "recently-closed";
+@import "lower-sections";
+@import "footer";

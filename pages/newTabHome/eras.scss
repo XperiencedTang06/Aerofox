@@ -1,0 +1,96 @@
+:root {
+	--default-ntp-background-color: white;
+	--ntp-background-color: var(--default-ntp-background-color);
+
+	@media (prefers-color-scheme: dark) {
+		--default-ntp-background-color: rgb(32, 32, 32);
+	}
+
+	&[data-url*="about:apps"] {
+		#page-list {
+			transform: unset !important;
+		}
+
+		#most-visited-page,
+		[id*="page-switcher"],
+		.dot,
+		#recently-closed-menu-button,
+		#recently-closed-menu-button + #vertical-separator {
+			display: none !important;
+		}
+	}
+
+	body {
+		min-height: 100vh;
+		display: flex;
+		flex-direction: column;
+		background-color: var(--ntp-background-color);
+	}
+	
+	#main-container {
+		flex: 1;
+		height: 100vh;
+	}
+
+	.favicon,
+	.mv-favicon {
+		width: 16px;
+		height: 16px;
+	}
+
+	&:not([geckium-one]) body > * {
+		visibility: hidden;
+	}
+
+	&[geckium-one] {
+		@import "partials/chrome-1/final";
+	}
+
+	&[geckium-two] {
+		@import "partials/chrome-2/final";
+	}
+
+	&[geckium-three] {
+		@import "partials/chrome-3/final";
+	}
+
+	&[geckium-four] {
+		@import "partials/chrome-4/final";
+	}
+
+	&[geckium-five] {
+		@import "partials/chrome-5/final";
+	}
+
+	&[geckium-six] {
+		@import "partials/chrome-6/final";
+	}
+
+	&[geckium-eleven] {
+		@import "partials/chrome-11/final";
+	}
+
+	&[geckium-seventeen] {
+		@import "partials/chrome-17/final";
+	}
+
+	&[geckium-twentyone] {
+		@import "partials/chrome-21/final";
+	}
+
+	&[geckium-twentyfive] {
+		@import "partials/chrome-25/final";
+	}
+
+	&[geckium-thirtyseven] {
+		@import "partials/chrome-37/final";
+	}
+
+	&[geckium-fortyseven] {
+		@import "partials/chrome-47/final";
+	}
+
+	/*&[geckium-sixtyeight] {
+		@import "partials/chrome-68/final";
+	}*/
+}

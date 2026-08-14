@@ -1,0 +1,19 @@
+.page-switcher[id*="end"]:not([disabled]) {
+    &:hover,
+    &:focus {
+        background: linear-gradient(
+            to bottom,
+            transparent 0,
+            color-mix(
+                in srgb,
+                var(--thumbnail-container-color) 1%,
+                transparent
+            ) 60px,
+            color-mix(
+                in srgb,
+                var(--thumbnail-container-color) 6%,
+                transparent
+            ) 183px
+        );
+    }
+}

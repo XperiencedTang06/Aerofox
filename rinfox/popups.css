@@ -1,0 +1,120 @@
+/*developer panel order*/
+#PanelUI-developer-tools-view > .subviewbutton[label="Web Developer Tools"] {order:1 !important}
+#PanelUI-developer-tools-view > .subviewbutton[label="Task Manager"] {order:5 !important}
+#PanelUI-developer-tools-view > .subviewbutton[label="Remote Debugging"] {order:9 !important}
+#PanelUI-developer-tools-view > .subviewbutton[label="Browser Toolbox"] {order:6 !important}
+#PanelUI-developer-tools-view > .subviewbutton[label="Browser Console"] {order:7 !important}
+#PanelUI-developer-tools-view > .subviewbutton[label="Responsive Design Mode"] {order:2 !important}
+#PanelUI-developer-tools-view > .subviewbutton[label="Eyedropper"] {order:3 !important}
+#PanelUI-developer-tools-view > .subviewbutton[label="Page Source"] {order:4 !important}
+#PanelUI-developer-tools-view > .subviewbutton[label="Extensions for developers"] {order:8 !important}
+
+
+/*developer panel labels*/
+#PanelUI-developer-tools-view > .subviewbutton[label="Web Developer Tools"] > label:nth-child(2) {
+    visibility: hidden !important;
+           font-size: 0px !important;
+}
+
+#PanelUI-developer-tools-view > .subviewbutton[label="Web Developer Tools"] > label:nth-child(2)::before {
+    content: 'Edit page' !important;
+            visibility: visible !important;
+        display: block !important;
+        font-size: 12px !important;
+}
+
+#PanelUI-developer-tools-view > .subviewbutton[label="Browser Toolbox"] > label:nth-child(2) {
+    visibility: hidden !important;
+           font-size: 0px !important;
+}
+
+#PanelUI-developer-tools-view > .subviewbutton[label="Browser Toolbox"] > label:nth-child(2)::before {
+    content: 'Edit Internet Explorer' !important;
+            visibility: visible !important;
+        display: block !important;
+        font-size: 12px !important;
+}
+
+#PanelUI-developer-tools-view > .subviewbutton[label="Remote Debugging"] > label:nth-child(2) {
+    visibility: hidden !important;
+           font-size: 0px !important;
+}
+
+#PanelUI-developer-tools-view > .subviewbutton[label="Remote Debugging"] > label:nth-child(2)::before {
+    content: 'Debug Internet Explorer remotely' !important;
+            visibility: visible !important;
+        display: block !important;
+        font-size: 12px !important;
+}
+
+#PanelUI-developer-tools-view > .subviewbutton[label="Eyedropper"] > label:nth-child(2) {
+    visibility: hidden !important;
+           font-size: 0px !important;
+}
+
+#PanelUI-developer-tools-view > .subviewbutton[label="Eyedropper"] > label:nth-child(2)::before {
+    content: 'Pick a color' !important;
+            visibility: visible !important;
+        display: block !important;
+        font-size: 12px !important;
+}
+
+#PanelUI-developer-tools-view > .subviewbutton[label="Page Source"] > label:nth-child(2) {
+    visibility: hidden !important;
+           font-size: 0px !important;
+}
+
+#PanelUI-developer-tools-view > .subviewbutton[label="Page Source"] > label:nth-child(2)::before {
+    content: 'View source' !important;
+            visibility: visible !important;
+        display: block !important;
+        font-size: 12px !important;
+}
+
+#PanelUI-developer-tools-view > .subviewbutton[label="Task Manager"] > label:nth-child(2) {
+    visibility: hidden !important;
+           font-size: 0px !important;
+}
+
+#PanelUI-developer-tools-view > .subviewbutton[label="Task Manager"] > label:nth-child(2)::before {
+    content: 'View running processes' !important;
+            visibility: visible !important;
+        display: block !important;
+        font-size: 12px !important;
+}
+
+#PanelUI-developer-tools-view > .subviewbutton[label="Responsive Design Mode"] > label:nth-child(2) {
+    visibility: hidden !important;
+           font-size: 0px !important;
+}
+
+#PanelUI-developer-tools-view > .subviewbutton[label="Responsive Design Mode"] > label:nth-child(2)::before {
+    content: 'View in different screen sizes' !important;
+            visibility: visible !important;
+        display: block !important;
+        font-size: 12px !important;
+}
+
+#PanelUI-developer-tools-view > .subviewbutton[label="Browser Console"] > label:nth-child(2) {
+    visibility: hidden !important;
+           font-size: 0px !important;
+}
+
+#PanelUI-developer-tools-view > .subviewbutton[label="Browser Console"] > label:nth-child(2)::before {
+    content: 'Internet Explorer Console' !important;
+            visibility: visible !important;
+        display: block !important;
+        font-size: 12px !important;
+}
+
+#PanelUI-developer-tools-view > .subviewbutton[label="Extensions for developers"] > label:nth-child(2) {
+    visibility: hidden !important;
+           font-size: 0px !important;
+}
+
+#PanelUI-developer-tools-view > .subviewbutton[label="Extensions for developers"] > label:nth-child(2)::before {
+    content: 'Get more tools' !important;
+            visibility: visible !important;
+        display: block !important;
+        font-size: 12px !important;
+}

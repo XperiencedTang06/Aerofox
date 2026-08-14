@@ -1,0 +1,41 @@
+:root {
+	p {
+		margin: 0 !important;
+	}
+
+	a {
+		color: #00E !important;
+
+		@media (prefers-color-scheme: dark) {
+			color: hsl(240, 100%, 67%) !important;
+		}
+	}
+
+	&:not([geckium-one]) body > * {
+		visibility: hidden;
+	}
+
+	&[geckium-one] {
+		@import "partials/chrome-1/final";
+	}
+
+	&[geckium-one][geckium-four] {
+		@import "partials/chrome-4/final";
+	}
+
+	&[geckium-one][geckium-four][geckium-six] {
+		@import "partials/chrome-6/final";
+	}
+
+	&[geckium-one][geckium-four][geckium-six][geckium-twentyone] {
+		@import "partials/chrome-21/final";
+	}
+
+	&[geckium-one][geckium-four][geckium-six][geckium-twentyone][geckium-thirtyseven] {
+		@import "partials/chrome-37/final";
+	}
+
+	&[geckium-one][geckium-four][geckium-six][geckium-twentyone][geckium-thirtyseven][geckium-sixtyeight] {
+		@import "partials/chrome-68/final";
+	}
+}

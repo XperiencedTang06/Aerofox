@@ -1,0 +1,10 @@
+#attribution {
+	display: none;
+	align-items: end;
+	margin-block: 10px;
+	color: var(--link-color, --default-link-color);
+	font-size: 10pt;
+}
+
+@import "most-visited";
+@import "recently-closed";

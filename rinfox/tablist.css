@@ -1,0 +1,34 @@
+/*panel background 1*/
+#customizationui-widget-panel {
+    --panel-border-radius: 0 !important;
+--panel-border-color: #9f9f9f !important;
+}
+
+/*panel background 2*/
+.PanelUI-subView, .cui-widget-panelview {
+    background-color: #f5f5f5 !important;
+}
+
+/*hover background*/
+:is(panelview .toolbarbutton-1, toolbarbutton.subviewbutton, .widget-overflow-list .toolbarbutton-1, .toolbaritem-combined-buttons:is(:not([cui-areatype="toolbar"]), [overflowedItem="true"]) > toolbarbutton):not([disabled]):hover {
+    background-color: transparent !important;
+background-image: linear-gradient(rgba(236, 246, 253, .7) 0%, rgba(196, 233, 252, .7) 100%) !important;
+background-size: 100% 100% !important;
+image-redering: crisp-edges !important;
+
+box-shadow:
+ 0 0 0 1px rgba(111, 209, 253, .7) !important;
+
+border-radius: 2px !important;
+}
+
+/*remove some items from settings panel*/
+#appMenu-protonMainView > vbox:nth-child(1) > toolbarseparator:nth-child(8),
+#appMenu-bookmarks-button,
+#appMenu-history-button,
+#appMenu-downloads-button,
+#appMenu-passwords-button,
+#appMenu-extensions-themes-button
+{
+    display:none !important
+}

@@ -1,0 +1,19 @@
+& {
+	font: unset;
+	font-family: arial, sans-serif;
+	font-size: 9pt;
+
+	// chrtheme
+	&[gkthemed][gkchrthemed] {
+		--link-color: var(--default-link-color);
+	}
+}
+
+#attribution {
+	right: 0;
+	bottom: 0;
+	color: var(--thumbnail-container-color);
+}
+
+@import "google";
+@import "most-visited";

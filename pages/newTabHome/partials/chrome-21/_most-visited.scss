@@ -1,0 +1,22 @@
+& {
+	--default-thumbnail-background-color: #EEE;
+	--thumbnail-background-color: var(--default-thumbnail-background-color);
+
+	@media (prefers-color-scheme: dark) {
+		--default-thumbnail-background-color: #505050;
+	}
+
+	// Custom theme support
+	// lwtheme
+	&[gkthemed]:not([gkchrthemed]) {
+		--thumbnail-background-color: color-mix(
+			in srgb,
+			var(--gktoolbar-bgcolor, var(--toolbar-bgcolor, var(--lwt-accent-color))) 12.3029601%,
+			transparent
+		);
+	}
+}
+
+#most-visited-page .tile .thumbnail {
+	background-color: var(--thumbnail-background-color);
+}

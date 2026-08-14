@@ -1,0 +1,73 @@
+/*main top command bar*/
+
+.devtools-tabbar {
+    background-image: url('assets/dev/mainbar.png') !important;
+    background-size: 100% 100% !important;
+    image-rendering: crisp-edges !important;
+
+    /*top command bar hover fix*/
+}
+.devtools-tabbar-button {
+    background-color: transparent !important;
+}
+.devtools-tab {
+    background-color: transparent !important;
+}
+
+/*select element image*/
+
+#cmmand-button-pick {
+min-width: 0px !important;
+padding: 0 !important;
+}
+
+
+#cmmand-button-pick::before{
+   background-image: url('assets/dev/selector.png') !important;
+   background-size: contain !important;
+image-rendering: crisp-edges !important;
+width: 21px !important;
+height: 21px !important;
+background-position: 2px 1px !important;
+filter: brightness(100%) drop-shadow(1px 1px 1px #00000057) !important;
+transition: filter 0.3s !important;
+}
+
+#cmmand-button-pick:hover {
+    filter: brightness(150%) !important;
+}
+
+div.split-box.horz.inspector-sidebar-splitter div.splitter {
+    diplay: none !important;
+}
+
+/*css panel command bar*/
+.tabs .tabs-navigation {
+    background-image: url('assets/dev/cssbar.bmp') !important;
+    background-size: 100% 100% !important;
+    image-rendering: crisp-edges !important;
+    border-bottom: none !important;
+}
+
+/*css panel command bar hover fix*/
+
+.tabs-menu {
+/*WIP*/
+}
+
+/*css panel main panel image*/
+
+#ruleview-container {
+    background-image: url('assets/dev/cssbg.jpg') !important;
+    background-size: cover !important;
+    background-position-x: right !important;
+    background-position-y: bottom !important;
+}
+
+/*css panel main panel text*/
+
+.devtools-monospace {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif !important;
+    font-size: 12px !important;
+    text-shadow: 2px 2px 2px #00000054 !important;
+}

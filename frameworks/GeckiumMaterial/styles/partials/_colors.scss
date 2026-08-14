@@ -1,0 +1,83 @@
+$colors: (
+	"red": #F44336,
+	"pink": #E91E63,
+	"purple": #9C27B0,
+	"deep-purple": #673AB7,
+	"indigo": #3F51B5,
+	"blue": #2196F3,
+	"light-blue": #03A9F4,
+	"cyan": #00BCD4,
+	"teal": #009688,
+	"green": #4CAF50,
+	"light-green": #8BC34A,
+	"lime": #CDDC39,
+	"yellow": #FFEB3B,
+	"amber": #FFC107,
+	"orange": #FF9800,
+	"deep-orange": #FF5722,
+	"brown": #795548,
+	"grey": #9E9E9E,
+	"blue-grey": #607D8B
+);
+
+:root {
+	@each $name, $color in $colors {
+	 	--#{$name}: #{$color};
+	}
+}
+
+#window {
+	--secondary-color: var(--chosen-secondary-color);
+
+	@media (prefers-color-scheme: dark) {
+		--secondary-color: color-mix(in srgb, var(--chosen-secondary-color), #ffffff 16.7%);
+	}
+}
+  
+.primary-color {
+	--primary-color-tone-50:	color-mix(in srgb, var(--primary-color-tone-500), #ffffff 83.5%);
+	--primary-color-tone-100:	color-mix(in srgb, var(--primary-color-tone-500), #ffffff 66.8%);
+	--primary-color-tone-200:	color-mix(in srgb, var(--primary-color-tone-500), #ffffff 50.1%);
+	--primary-color-tone-300:	color-mix(in srgb, var(--primary-color-tone-500), #ffffff 33.4%);
+	--primary-color-tone-400:	color-mix(in srgb, var(--primary-color-tone-500), #ffffff 16.7%);
+	--primary-color-tone-500:	var(--primary-color);
+	--primary-color-tone-600:	color-mix(in srgb, var(--primary-color-tone-500), #000000 5%);
+	--primary-color-tone-700:	color-mix(in srgb, var(--primary-color-tone-500), #000000 10%);
+	--primary-color-tone-800:	color-mix(in srgb, var(--primary-color-tone-500), #000000 15%);
+	--primary-color-tone-900:	color-mix(in srgb, var(--primary-color-tone-500), #000000 20%);
+
+	@each $name, $color in $colors {
+		&.primary-color-#{$name} {
+			--primary-color: var(--#{$name});
+		}
+	}
+}
+
+.light {
+	color: white !important;
+}
+  
+#current-color {
+	.color-tag {
+		flex: 1;
+
+		&:first-child {
+			height: auto;
+		}
+	}
+}
+
+.color-tag {
+	height: 45px;
+	padding: 10px 15px 11px;
+	font-weight: 500;
+	color: black;
+
+	&:first-child {
+		height: 122px;
+	}
+	
+	&:not(vbox) {
+		align-items: center;
+	}
+}

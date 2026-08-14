@@ -1,0 +1,162 @@
+<?xml version="1.0"?>
+
+<?xml-stylesheet href="chrome://global/skin/global.css" type="text/css"?>
+<?xml-stylesheet href="chrome://userchrome/content/frameworks/GeckiumMaterial/styles/final.css" type="text/css"?>
+<?xml-stylesheet href="chrome://userchrome/content/windows/gwizard/style.css" type="text/css"?>
+
+<!DOCTYPE window [
+	<!ENTITY % dialog SYSTEM "chrome://geckium/locale/dtd/dialog.dtd">
+    %dialog;
+    <!ENTITY % gm SYSTEM "chrome://geckium/locale/dtd/gm.dtd">
+    %gm;
+    <!ENTITY % gwizard SYSTEM "chrome://geckium/locale/dtd/gwizard.dtd">
+    %gwizard;
+]>
+
+<window xmlns:html="http://www.w3.org/1999/xhtml"
+		xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"
+		windowtype="geckiummaterial:gwizard"
+		containertype="page"
+		title="Geckium Wizard"
+		width="1100"
+		height="788">
+	<html:div id="window-container">
+		<hbox id="window" class="primary-color" style="--primary-color: AccentColor; --chosen-secondary-color: var(--pink)" preview-pane="false">
+			<vbox id="window-content-container" style="padding-top: 0;">
+				<vbox class="window-top-bars light">
+					<hbox class="window-top-bar">
+						<hbox class="window-toolbar">
+							<html:button id="btn-back" class="ripple-enabled text color icon-arrow-back" />
+							<h3 id="window-title" data-page-container="main"/>
+							<spacer />
+						</hbox>
+					</hbox>
+				</vbox>
+				<vbox id="window-content">
+					<hbox class="stepper">
+						<hbox class="step ripple-enabled" data-page="0">
+							<html:div>
+								<html:p>1</html:p>
+							</html:div>
+							<label>&gwizard.chooseAVisualStyle;</label>
+						</hbox>
+						<spacer />
+						<hbox class="step ripple-enabled" data-page="1">
+							<html:div>
+								<html:p>2</html:p>
+							</html:div>
+							<label>&gwizard.additionalSettings;</label>
+						</hbox>
+						<spacer />
+						<hbox class="step ripple-enabled" data-page="2">
+							<html:div>
+								<html:p>3</html:p>
+							</html:div>
+							<label>&gwizard.finish;</label>
+						</hbox>
+					</hbox>
+					<div class="pages">
+						<vbox class="pages-container" data-page-container="main">
+							<vbox class="page" data-page="0">
+								<vbox class="content-container">
+									<vbox class="content">
+										<vbox class="list-container" style="margin-top: 4%;">
+											<vbox class="card" style="padding-block-start: 19px">
+												<vbox class="item" flex="1">
+													<grid id="global-appearance-container" style="margin-block-end: 19px; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 10px;" flex="1" />
+												</vbox>
+											</vbox>
+										</vbox>
+									</vbox>
+								</vbox>
+							</vbox>
+							<vbox class="page" data-page="1">
+								<vbox class="content-container">
+									<vbox class="content">
+										<vbox class="list-container" style="margin-top: 4%; gap: 8px;">
+											<html:button class="link icon-web-asset ripple-enabled" onclick="openGSettings('wizard')">
+												<vbox>
+													<label>Geckium Settings</label>
+													<p>&gwizard.gsettingsDescription;</p>
+												</vbox>
+												<hbox>
+													<label>&gwizard.launch;</label>
+													<spacer />
+													<div class="icon" />
+												</hbox>
+											</html:button>
+											<html:button class="link icon-web-asset ripple-enabled" onclick="gmPages.skipToPage('main', 10)" disabled="true">
+												<vbox>
+													<label>&gwizard.chromiumFlagsTitle;</label>
+													<p>&gwizard.chromiumFlagsDescription;</p>
+												</vbox>
+												<hbox>
+													<label>&gm.goToPage;</label>
+													<spacer />
+													<div class="icon" />
+												</hbox>
+											</html:button>
+											<vbox class="card" style="padding: 16px">
+												<html:p class="headline-5" style="margin-block-start: 0">
+													&gwizard.publicBetaTitle;
+												</html:p>
+												<html:p>
+													&gwizard.publicBetaDescription;
+												</html:p>
+												<html:p>
+													&gwizard.publicBetaLocalise;
+												</html:p>
+											</vbox>
+										</vbox>
+									</vbox>
+								</vbox>
+							</vbox>
+							<vbox class="page" data-page="2">
+								<vbox class="content-container">
+									<vbox class="content">
+										<vbox class="list-container" style="margin-top: 4%;">
+											<vbox class="card" style="padding: 16px">
+												<html:p class="headline-5" style="margin-block-start: 0">
+													&gwizard.youAreAllSetTitle;
+												</html:p>
+												<html:p>
+													&gwizard.youAreAllSetDescription;
+												</html:p>
+											</vbox>
+										</vbox>
+									</vbox>
+								</vbox>
+							</vbox>
+						</vbox>
+					</div>
+					<footer>
+						<spacer />
+						<button id="btn-next" class="button ripple-enabled text color" label="&dialog.next;" />
+						<button id="btn-finish" class="button ripple-enabled text color" label="&dialog.finish;"/>
+					</footer>
+				</vbox>
+			</vbox>
+		</hbox>
+	</html:div>
+
+	<script>
+		var { AppConstants } = ChromeUtils.importESModule("resource://gre/modules/AppConstants.sys.mjs");
+	</script>
+
+	<script src="chrome://userchrome/content/JS/Geckium_utils.uc.js" />
+
+	<script src="chrome://userchrome/content/JS/Geckium_styles.uc.js" type="text/javascript" defer="true"/>
+
+	<script src="chrome://userchrome/content/windows/gwizard/scripts/pages.js" type="text/javascript" defer="true"/>
+
+	<script src="chrome://userchrome/content/windows/gsettings/scripts/globalVisualStyles.js" type="text/javascript" defer="true"/>
+
+	<script src="chrome://userchrome/content/frameworks/GeckiumMaterial/scripts/window.js" type="text/javascript" defer="true"/>
+	<script src="chrome://userchrome/content/frameworks/GeckiumMaterial/scripts/sfx.js" type="text/javascript" defer="true" />
+	<script src="chrome://userchrome/content/frameworks/GeckiumMaterial/scripts/ripple.js" type="text/javascript" defer="true"/>
+	<script src="chrome://userchrome/content/frameworks/GeckiumMaterial/scripts/pages.js" type="text/javascript" defer="true"/>
+	<script src="chrome://userchrome/content/frameworks/GeckiumMaterial/scripts/menu.js" type="text/javascript" defer="true"/>
+	<script src="chrome://userchrome/content/frameworks/GeckiumMaterial/zoo/script.js" type="text/javascript" defer="true"/>
+
+	<script src="chrome://userchrome/content/frameworks/GeckiumMaterial/scripts/modal.js" type="text/javascript" defer="true"/>
+</window>

@@ -1,0 +1,33 @@
+:root {
+	--default-link-color: rgb(0,0,255);
+
+	background-color: white;
+
+	@media (prefers-color-scheme: dark) {
+		--default-link-color: hsl(240, 100%, 80%);
+		
+		background-color: rgb(32, 32, 32);
+	}
+
+	body {
+		margin: 10px;
+	}
+
+	#header {
+		align-items: center;
+
+		h1 {
+			margin: 0;
+		}
+	}
+
+	&[geckium-one] {
+		@import "partials/chrome-8/final";
+	}
+	&[geckium-one][geckium-twentyone] {
+		@import "partials/chrome-21/final";
+	}
+	&[geckium-one][geckium-twentyone][geckium-fortyseven] {
+		@import "partials/chrome-47/final";
+	}
+}
