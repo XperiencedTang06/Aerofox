@@ -373,21 +373,21 @@ left: initial !important;
     }
 
 
+    .searchbar-search-icon {
+      width: 13px !important;
+      height: 22px !important;
+      background-position-x: -22px !important;
+      background-image: url('assets/search-button.png') !important;
+      z-index: unset !important;
+    }
+
+
     
 }
 
 
 
     @supports not -moz-bool-pref("RinfoxEvolved.XP") {
-
-
-    .searchbar-search-icon {
-      width: 7px !important;
-      height: 4px !important;
-      background-position-x: 0 !important;
-      background-image: url('assets/chevron-vista.png') !important;
-      z-index: 1 !important;
-    }
 
 
     #urlbar-input::placeholder {

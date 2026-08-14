@@ -541,14 +541,16 @@ width: calc(100% - 1px) !important;
   background-position-y: -44px !important;
 }
 
-.searchbar-search-icon
-{
-  width: 13px !important;
-  height: 22px !important;
+.searchbar-search-icon {
   margin-inline: 0 !important;
   list-style-image: none !important;
-  background-image: url('assets/search-button.png') !important;
-  background-position-x: -22px !important;
+
+  /*From tweaks*/
+  width: 7px !important;
+      height: 4px !important;
+      background-position-x: 0 !important;
+      background-image: url('assets/chevron-vista.png') !important;
+      z-index: 1 !important;
 }
 
 .searchbar-search-button[addengines="true"] > .searchbar-search-icon-overlay {
