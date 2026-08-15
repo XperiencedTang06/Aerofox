@@ -433,25 +433,24 @@ left: initial !important;
 }
 
 
+#toolbar-menubar[inactive="true"]:not([customizing="true"]) {
+      max-height: unset !important;
+      padding: unset !important;
+      border: unset !important;
+    }
+
+
+#menubar-items {
+      margin-top: unset !important;
+    }
+
+
 
 }
 
 
-
     @supports not -moz-bool-pref("RinfoxEvolved.XP") {
-
-
-    #toolbar-menubar[inactive="true"]:not([customizing="true"]) {
-      max-height: 0 !important;
-      padding: 0 !important;
-      border: 0 !important;
-    }
-
-
-    #menubar-items {
-      margin-top: 0 !important;
-    }
-
+      
 
     .searchbar-search-button[addengines="true"] > .searchbar-search-icon-overlay {
       width: 15px !important;

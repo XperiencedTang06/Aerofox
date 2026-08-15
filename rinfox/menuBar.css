@@ -14,7 +14,12 @@
 }
 
 
-
+/*FROM tweaks*/
+#toolbar-menubar[inactive="true"]:not([customizing="true"]) {
+      max-height: 0 !important;
+      padding: 0 !important;
+      border: 0 !important;
+    }
 
 
 #main-menubar > menu[_moz-menuactive] 
@@ -26,6 +31,9 @@
 {
   height: 21px !important;
   align-items: stretch !important;
+
+  /*FROM tweaks*/
+  margin-top: 0 !important;
 }
 
 #main-menubar {
