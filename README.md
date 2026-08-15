@@ -1,6 +1,6 @@
 # Aerofox (Experimental)
 
-Aerofox is a WIP experimentation for Firefox 153 ESR, based off of RinFox, an Internet Explorer 7/8 theme for Firefox 115 ESR, which i plan to migrate from, and Geckium, which has a modern foundation and JS.
+Aerofox is a WIP experimentation for Firefox 153 ESR, based off of RinFox, an Internet Explorer 7/8 theme for Firefox 115 ESR, which i plan to migrate from, Beautyfox 1, an Internet Explorer 9 theme also for Firefox 115 ESR, and Geckium, which has a modern foundation, supports Firefox 153 ESR, and has the necessary JS logic.
 
 ## NOTICE:
 
