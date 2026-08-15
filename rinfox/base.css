@@ -72,9 +72,7 @@ toolbarbutton.toolbarbutton-1:not(
 #alltabs-button,
 #tiptab_william_wong-BAP,
 #webext_com_github_du33169_tabstray-BAP
-),
-#main-menubar > menu
-{
+) {
 	border: 0 !important;
 	appearance: auto !important;
 }

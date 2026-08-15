@@ -53,15 +53,17 @@
   background-image: url('assets/navigation-vista.png') !important;
 }
 
-#back-button > .toolbarbutton-icon
-{
-  background-position-x: 0px !important;
-}
 
-#forward-button > .toolbarbutton-icon
-{
-  background-position-x: -29px !important;
-}
+/*From tweaks*/
+#forward-button > .toolbarbutton-icon {
+      background-position-x: -27px !important;
+    }
+
+
+    #back-button > .toolbarbutton-icon {
+      background-position-x: 0px !important;
+    }
+
 
 #back-button:not([disabled="true"]) > .toolbarbutton-icon,
 #forward-button:not([disabled="true"]) > .toolbarbutton-icon

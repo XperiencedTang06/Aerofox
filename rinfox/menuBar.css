@@ -33,6 +33,14 @@
 }
 
 
+#main-menubar > menu {
+  border: 0 !important;
+
+  /*FROM tweaks*/
+  appearance: none !important;
+}
+
+
 #main-menubar:not(:-moz-lwtheme, :-moz-window-inactive) {
       background-color: transparent !important;
       border-radius: 0 !important;

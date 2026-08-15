@@ -382,22 +382,14 @@ left: initial !important;
     }
 
 
-    
-}
-
-
-
-    @supports not -moz-bool-pref("RinfoxEvolved.XP") {
-
-
     #urlbar-input::placeholder {
-      font-style: italic !important;
-      opacity: 0 !important;
+      font-style: unset !important;
+      opacity: unset !important;
     }
 
 
-    #forward-button > .toolbarbutton-icon {
-      background-position-x: -27px !important;
+#forward-button > .toolbarbutton-icon {
+      background-position-x: -29px !important;
     }
 
 
@@ -406,28 +398,21 @@ left: initial !important;
     }
 
 
-    #urlbar[breakout][breakout-extend] > #urlbar-input-container {
-      padding: 0 !important;
+#urlbar[breakout][breakout-extend] #urlbar-input-container {
+      padding: 2px !important;
     }
 
 
     #search-container:hover::before, #search-container:hover::after, #search-container:hover #searchbar::before {
-      background-position-y: -26px !important;
+      background-position-y: unset !important;
     }
 
 
     #TabsToolbar > .toolbar-items {
-      border-top: 1px solid #A9BFD6 !important;
-      box-shadow: inset 0 -1px 0 #EDF3FE, inset 0 -2px 0 #8B919F, inset 1px 0 0 #FFF, inset -1px 0 0 #FFF !important;
-      padding-inline: 0 !important;
+      border-top: unset !important;
+      box-shadow: unset !important;
+      padding-inline: unset !important;
     }
-
-
-
-    #TabsToolbar > .toolbar-items {
-      padding-inline: 2px !important;
-    }
-
 
 
     #PanelUI-menu-button::after,
@@ -438,14 +423,22 @@ left: initial !important;
     #print-button::after,
     #_a9c2ad37-e940-4892-8dce-cd73c6cbbc0c_-BAP::after
     {
-      background-image: url('assets/chevron-vista.png') !important;
-      margin-top: 2px !important;
+      background-image: url('assets/chevron.png') !important;
+      margin-top: unset !important;
     }
 
 
-    #main-menubar > menu {
-      appearance: none !important;
-    }
+#main-menubar > menu {
+  appearance: auto !important;
+}
+
+
+
+}
+
+
+
+    @supports not -moz-bool-pref("RinfoxEvolved.XP") {
 
 
     #toolbar-menubar[inactive="true"]:not([customizing="true"]) {

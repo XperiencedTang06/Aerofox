@@ -51,6 +51,13 @@
 
 
 /*From tweaks*/
+#urlbar-input::placeholder {
+  font-style: italic !important;
+      opacity: 0 !important;
+}
+
+
+/*From tweaks*/
 .searchbar-textbox::placeholder {
       font-style: italic !important;
     }
@@ -80,6 +87,12 @@
   height: 100% !important;
 }
 
+
+/*From tweaks*/
+#urlbar[breakout][breakout-extend] > #urlbar-input-container {
+      padding: 0 !important;
+    }
+
 #urlbar[breakout][breakout-extend] {
   left: unset !important;
   width: 100% !important;
@@ -100,10 +113,6 @@ width: calc(100% - 1px) !important;
       left: 1px !important; 
       top: -2px !important;
 
-}
-
-#urlbar[breakout][breakout-extend] #urlbar-input-container {
-  padding: 2px !important;
 }
 
 .urlbarView-row {
@@ -478,6 +487,11 @@ width: calc(100% - 1px) !important;
       z-index: -1 !important;
     }
 
+
+    /*HOVER pseudo elements*/
+#search-container:hover::before, #search-container:hover::after, #search-container:hover #searchbar::before {
+      background-position-y: -26px !important;
+    }
 
 
 
