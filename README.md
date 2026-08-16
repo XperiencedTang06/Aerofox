@@ -8,7 +8,7 @@ Aerofox is a WIP Internet Explorer 7 and 8 userchrome CSS theme for Firefox 153 
 ## NOTICE:
 
 
-This theme is currently in it's experimental phase, and i'm still developing the theme. Expect lots of bugs in this phase.
+This theme is currently in it's indev phase, and i'm still developing the theme. Expect lots of bugs in this phase.
 
 
 ## INSTALLATION
