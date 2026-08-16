@@ -17,7 +17,7 @@ This theme is currently in its indev phase, and i'm still developing the theme. 
 To be added
 
 ## CONTRIBUTION
-Although I didn't add any contributors, you can contribute by adding issues and fixes in the "Issues" section, and the "Pull requests" section allows you to share your modified code for me to test out. Contribution is highly encouraged!
+Although I don't wanna add any contributors yet, you can contribute by adding issues and fixes in the "Issues" section, and the "Pull requests" section allows you to share your modified code for me to test out. Contribution is highly encouraged and will especially help with large goals, such as the Windows 10 or 11 native context menu.
 
 
 ## GOALS:
@@ -25,11 +25,14 @@ Although I didn't add any contributors, you can contribute by adding issues and 
 This list isn't ordered in any particular way.
 
 1. Figure out how Geckium uses JS as an equivalent to "@supports moz-bool-pref("uservalue")", as that's required for the IE8 theme, theme options, and more.
-2. (Help encouraged) Somehow get the windows 10 and 11 native context menus to work in FireFox 153 ESR, as the about:config toggle "browser.display.windows.non_native_menus" stopped working in FF128ESR and above. Otherwise, recreate as many .msstyles menu textures as possible if there's no way to bring them back
+2. (Help needed) Somehow get the windows 10 and 11 native context menus to work in FireFox 153 ESR, as the about:config toggle "browser.display.windows.non_native_menus" stopped working in FF128ESR and above. Otherwise, recreate as many .msstyles menu textures as possible if there's no way to bring them back
 3. Transform Geckium's settings page to look like an original IE7/8 inspired page, and understand and modify the JS code to update the about:config settings
-4. Add a Windows XP mode
-5. Add a classic windows mode
-6. Make everything look more like Internet Explorer 7, and soon, Internet Explorer 8
+4. Transform the first boot startup of geckium to look like a beautified version of Internet Explorer 7's initial setup screen, with animations and quick, easy setup options
+5. Add a Windows XP mode
+6. Add a classic windows mode
+7. Make everything look more like Internet Explorer 7, and soon, Internet Explorer 8
+8. Make an easy installer .bat script to install the latest version of FF153ESR using winget, installkng in a custom directory, making backups of every profile on case a future FF version messes up bookmarks and more, uses resource hacker command line to automatically replace the icons of firefox.exe and privatebrowsing.exe, and somehow injecting "toolkit.legacyUserProfileCustomizations.stylesheets" into prefs.js after i learn how.
+9. (Help encouraged) Disable FF153ESR's auto update system and replace it with a custom userscript javascript installer with another custom IE7/8 inspired interface, with automatic resource hacker command line, so users don't have to manually replace the files again after updating
 #### More goals coming soon
 
 
