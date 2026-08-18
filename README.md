@@ -2,7 +2,9 @@
 # Aerofox
 
 
-Aerofox is a WIP Internet Explorer 7 and 8 userchrome CSS theme for Firefox 153 ESR, a spiritual successor of RinFox, an Internet Explorer 7/8 theme for Firefox 115 ESR, which I plan to migrate from, and contains parts from BeautyFox 1, an Internet Explorer 9 theme also for Firefox 115 ESR, and Geckium, which has a modern foundation, supports Firefox 153 ESR, and has the necessary JS logic, which i plan on understanding soon.
+Aerofox is a WIP Internet Explorer 7 and 8 userchrome CSS theme for Firefox 153 ESR, a spiritual successor of RinFox, a theme for Firefox 115 ESR, which I plan to migrate from, and aims to make it feel more native to IE7/8, add in new features and QOL improvements such as animations, and it plans to make the web work for you.
+
+Aerofox is based mainly from Rinfox, an Internet Explorer 7/8 theme for Firefox 115 ESR, set to end support in March 2027 (until further notice), with the elements being adapted for the new UI id's and classes. It also contains parts from BeautyFox 1, an Internet Explorer 9 theme also for Firefox 115 ESR, and Geckium, which has a modern foundation, supports Firefox 153 ESR, and has the necessary JS logic, which i plan on understanding soon.
 
 
 ## NOTICE:
