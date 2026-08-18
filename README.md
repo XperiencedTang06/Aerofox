@@ -30,11 +30,14 @@ This list isn't ordered in any particular way.
 2. (Help needed) Somehow get the windows 10 and 11 native context menus to work in FireFox 153 ESR, as the about:config toggle "browser.display.windows.non_native_menus" stopped working in FF128ESR and above. Otherwise, recreate as many .msstyles menu textures as possible if there's no way to bring them back
 3. Transform Geckium's settings page to look like an original IE7/8 inspired page, and understand and modify the JS code to update the about:config settings
 4. Transform the first boot startup of geckium to look like a beautified version of Internet Explorer 7's initial setup screen, with animations and quick, easy setup options
-5. Add a Windows XP mode
+5. Return the Windows XP mode hidden in the original RinFox via an about.config toggle
 6. Add a classic windows mode
 7. Make everything look more like Internet Explorer 7, and soon, Internet Explorer 8
-8. Make an easy installer .bat script to install the latest version of FF153ESR using winget, installkng in a custom directory, making backups of every profile on case a future FF version messes up bookmarks and more, uses resource hacker command line to automatically replace the icons of firefox.exe and privatebrowsing.exe, and somehow injecting "toolkit.legacyUserProfileCustomizations.stylesheets" into prefs.js after i learn how.
+8. Make an easy installer .bat script to install the latest version of FF153ESR using winget, installing in a custom directory, making backups of every profile in case a future FF version messes up bookmarks and more, uses resource hacker command line to automatically replace the icons of firefox.exe and privatebrowsing.exe, and somehow injecting "toolkit.legacyUserProfileCustomizations.stylesheets" into prefs.js after i learn how.
 9. (Help encouraged) Disable FF153ESR's auto update system and replace it with a custom userscript javascript installer with another custom IE7/8 inspired interface, with automatic resource hacker command line, so users don't have to manually replace the files again after updating
+10. Redesign the Firefox settings interface with UserContent.css
+11. Bring back Quick Tabs via an extension that's easier and doesn't open seperately in a new tab like Tip Tab (I know the name, but i will show the name later)
+12. Borrow JS code from Beautyfox to restore the Page, Tools, and for IE8, Safety dropdown button on the command bar
 #### More goals coming soon
 
 
