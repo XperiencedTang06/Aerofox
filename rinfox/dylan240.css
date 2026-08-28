@@ -69,19 +69,7 @@ transition-timing-function: cubic-bezier(0,.46,.26,1)  !important;
     transform: translateY(-2px);
 }
 
-/*fix the moving tabs animation*/
-  #tabbrowser-tabs[movingtab] > #tabbrowser-arrowscrollbox > .tabbrowser-tab[fadein]:not([selected]):not([multiselected]) {
-    transition: transform 200ms cubic-bezier(0,.23,.18,1) !important;
-  }
 
-  /*no animation if value is at 2*/
-  /*
-  @media moz-pref("ui.prefersReducedMotion", 2) {
-    #tabbrowser-tabs[movingtab] > #tabbrowser-arrowscrollbox > .tabbrowser-tab[fadein]:not([selected]):not([multiselected]) {
-        transition-duration: 0s !important;
-    }
-  }
-    */
 
   /*more accurate sidebar*/
 #sidebar-header {

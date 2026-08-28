@@ -10,6 +10,7 @@
   }
   .tab-background,
   #tabs-newtab-button,
+  #new-tab-button,
   #alltabs-button,
   #TabsToolbar #tiptab_william_wong-BAP,
   #webext_com_github_du33169_tabstray-BAP,
@@ -22,6 +23,7 @@
   }
   .tabbrowser-tab:not([visuallyselected=""]):hover .tab-background,
   #tabs-newtab-button:hover,
+  #new-tab-button:hover,
   #alltabs-button:hover,
   #TabsToolbar #tiptab_william_wong-BAP:hover,
   #webext_com_github_du33169_tabstray-BAP,

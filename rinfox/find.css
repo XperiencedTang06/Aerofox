@@ -1,0 +1,10 @@
+/*PARENT*/
+.browserContainer > findbar {
+    height: 32px !important;
+    order: -1 !important;
+}
+
+.browserContainer > findbar .findbar-container {
+    height: inherit !important;
+    
+}

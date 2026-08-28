@@ -278,7 +278,7 @@ left: initial !important;
     }
     
     
-    #TabsToolbar toolbarbutton:not(#alltabs-button, #tabs-newtab-button, #tiptab_william_wong-BAP, #webext_com_github_du33169_tabstray-BAP, #bookmarks-menu-button, #library-button) {
+    #TabsToolbar toolbarbutton:not(#alltabs-button, #tabs-newtab-button, #new-tab-button, #tiptab_william_wong-BAP, #webext_com_github_du33169_tabstray-BAP, #bookmarks-menu-button, #library-button) {
       min-width: unset !important;
       max-height: unset !important;
     }
@@ -724,6 +724,7 @@ margin: 0 !important;
 
   .tab-background,
   #tabs-newtab-button,
+  #new-tab-button,
   #alltabs-button,
   #tiptab_william_wong-BAP,
   #webext_com_github_du33169_tabstray-BAP {
@@ -743,6 +744,7 @@ margin: 0 !important;
 
   .tabbrowser-tab:not([visuallyselected=""]):hover .tab-background,
   #tabs-newtab-button:hover,
+  #new-tab-button:hover,
   #alltabs-button:hover
   {
     background-image: none !important;
@@ -774,7 +776,8 @@ margin: 0 !important;
   }
 
 
-  #tabs-newtab-button {
+  #tabs-newtab-button,
+  #new-tab-button {
     margin-inline: 1px !important;
     margin-top: 2px !important;
   }
@@ -790,29 +793,29 @@ margin: 0 !important;
   }
 
 
-  #TabsToolbar toolbarbutton:not(#tabs-newtab-button, #alltabs-button):hover {
+  #TabsToolbar toolbarbutton:not(#tabs-newtab-button, #new-tab-button, #alltabs-button):hover {
     box-shadow: inset -1px -1px 0 ThreeDShadow, inset 1px 1px ThreeDHighlight !important;
   }
 
 
-  #TabsToolbar  toolbarbutton:not(#tabs-newtab-button, #alltabs-button):active,
-  #TabsToolbar toolbarbutton:not(#tabs-newtab-button, #alltabs-button)[open] {
+  #TabsToolbar  toolbarbutton:not(#tabs-newtab-button, #new-tab-button, #alltabs-button):active,
+  #TabsToolbar toolbarbutton:not(#tabs-newtab-button, #new-tab-button, #alltabs-button)[open] {
     box-shadow: inset -1px -1px 0 ThreeDHighlight, inset 1px 1px ThreeDShadow !important;
   }
 
 
   #TabsToolbar toolbarbutton:active > .toolbarbutton-badge-stack,
-  #TabsToolbar toolbarbutton:not(#tabs-newtab-button, #alltabs-button):active > .toolbarbutton-icon,
+  #TabsToolbar toolbarbutton:not(#tabs-newtab-button, #new-tab-button, #alltabs-button):active > .toolbarbutton-icon,
   #TabsToolbar toolbarbutton[open] > .toolbarbutton-badge-stack,
-  #TabsToolbar toolbarbutton:not(#tabs-newtab-button, #alltabs-button)[open] > .toolbarbutton-icon,
+  #TabsToolbar toolbarbutton:not(#tabs-newtab-button, #new-tab-button, #alltabs-button)[open] > .toolbarbutton-icon,
   #TabsToolbar toolbarbutton:active > .toolbarbutton-text,
-  #TabsToolbar toolbarbutton:not(#tabs-newtab-button, #alltabs-button)[open] > .toolbarbutton-text
+  #TabsToolbar toolbarbutton:not(#tabs-newtab-button, #new-tab-button, #alltabs-button)[open] > .toolbarbutton-text
   {
     transform: translate(1px, 1px) !important;
   }
 
 
-  #TabsToolbar toolbarbutton:not(#tabs-newtab-button, #alltabs-button, #history-panelmenu) {
+  #TabsToolbar toolbarbutton:not(#tabs-newtab-button, #new-tab-button, #alltabs-button, #history-panelmenu) {
     height: 22px !important;
   }
 
@@ -827,7 +830,7 @@ margin: 0 !important;
 
 
 @supports -moz-bool-pref("RinFox.Option.HideFakeDropdownGlyphs") {
-  #TabsToolbar toolbarbutton:not(#alltabs-button, #tabs-newtab-button, #tiptab_william_wong-BAP, #webext_com_github_du33169_tabstray-BAP) {
+  #TabsToolbar toolbarbutton:not(#alltabs-button, #tabs-newtab-button, #new-tab-button, #tiptab_william_wong-BAP, #webext_com_github_du33169_tabstray-BAP) {
     min-width: 32px !important;
   }
 

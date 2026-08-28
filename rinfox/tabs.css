@@ -159,7 +159,7 @@
 }
 
 /*From tweaks*/
-#TabsToolbar toolbarbutton:not(#alltabs-button, #tabs-newtab-button, #tiptab_william_wong-BAP, #webext_com_github_du33169_tabstray-BAP, #bookmarks-menu-button, #library-button) {
+#TabsToolbar toolbarbutton:not(#alltabs-button, #tabs-newtab-button, #new-tab-button, #tiptab_william_wong-BAP, #webext_com_github_du33169_tabstray-BAP, #bookmarks-menu-button, #library-button) {
       min-width: 24px !important;
       max-height: 24px !important;
     }
@@ -191,6 +191,7 @@
 
 #TabsToolbar .tab-background,
 #TabsToolbar #tabs-newtab-button,
+#TabsToolbat #new-tab-button,
 #TabsToolbar #alltabs-button,
 #TabsToolbar #tiptab_william_wong-BAP,
 #webext_com_github_du33169_tabstray-BAP,
@@ -210,6 +211,7 @@
 @supports -moz-bool-pref("RinfoxEvolved.LegacyRinfox") {
   #TabsToolbar .tab-background,
 #TabsToolbar #tabs-newtab-button,
+#TabsToolbar #new-tab-button,
 #TabsToolbar #alltabs-button,
 #TabsToolbar #tiptab_william_wong-BAP,
 #webext_com_github_du33169_tabstray-BAP,
@@ -221,6 +223,7 @@
 
 #TabsToolbar .tabbrowser-tab:not([visuallyselected=""]):hover .tab-background,
 #TabsToolbar #tabs-newtab-button:hover,
+#TabsToolbar #new-tab-button:hover,
 #TabsToolbar #alltabs-button:hover,
 #TabsToolbar #tiptab_william_wong-BAP:hover,
 #webext_com_github_du33169_tabstray-BAP:hover,
@@ -232,6 +235,7 @@
 @supports -moz-bool-pref("RinfoxEvolved.LegacyRinfox") {
 #TabsToolbar .tabbrowser-tab:not([visuallyselected=""]):hover .tab-background,
 #TabsToolbar #tabs-newtab-button:hover,
+#TabsToolbar #new-tab-button:hover,
 #TabsToolbar #alltabs-button:hover,
 #TabsToolbar #tiptab_william_wong-BAP:hover,
 #webext_com_github_du33169_tabstray-BAP:hover,
@@ -275,7 +279,7 @@
   z-index: 1 !important;
 }
 
-/* Disable animations while not breaking bookmarks bar (max-width animation) */    /*dylan240: bro you just broke the tab reordering functionality and i had to fix it travy patty*/
+/* Disable animations while not breaking bookmarks bar (max-width animation) */    /*XperiencedTang06: bro you just broke the tab reordering functionality and i had to fix it travy patty*/
 
 #TabsToolbar .tabbrowser-tab[fadein]:not([pinned]):not([style*="max-width"]):only-of-type {
   max-width: 299px !important
@@ -326,7 +330,40 @@
 
 
 
-/* Quick Tabs */
+
+
+
+
+/*fix the moving tabs animation*/
+  #tabbrowser-tabs[movingtab] > #tabbrowser-arrowscrollbox > .tabbrowser-tab[fadein]:not([selected]):not([multiselected]) {
+    transition: transform 200ms cubic-bezier(0,.23,.18,1) !important;
+  }
+
+  /*no animation if value is at 2*/
+  /*
+  @media moz-pref("ui.prefersReducedMotion", 2) {
+    #tabbrowser-tabs[movingtab] > #tabbrowser-arrowscrollbox > .tabbrowser-tab[fadein]:not([selected]):not([multiselected]) {
+        transition-duration: 0s !important;
+    }
+  }
+    */
+
+
+
+
+  
+  /*Tab Dragging Cursor*/
+  #tabbrowser-tabs[movingtab],
+  #tabbrowser-tabs[movingtab] * {
+    cursor: url("assets/interface/cursortab.cur"), pointer !important;
+  }
+
+  
+
+
+
+
+  /* Quick Tabs */
 #TabsToolbar #tiptab_william_wong-browser-action,
 #webext_com_github_du33169_tabstray-browser-action {
   order: -2 !important;
@@ -352,14 +389,16 @@
 }
 
 /* New Tab Button */
-#TabsToolbar #tabs-newtab-button {
+#TabsToolbar #tabs-newtab-button,
+#TabsToolbar#new-tab-button {
   width: 30px !important;
   max-height: 100% !important;
   margin-top: 4px !important;
   list-style-image: none !important;
 }
 
-#TabsToolbar #tabs-newtab-button:hover {
+#TabsToolbar #tabs-newtab-button:hover,
+#TabsToolbar #new-tab-button:hover {
   list-style-image: url('assets/newtab.png') !important;
 }
 

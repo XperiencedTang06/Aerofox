@@ -1,10 +1,10 @@
 @supports -moz-bool-pref("RinfoxEvolved.Aqua") {
 
-    .tab-background, #tabs-newtab-button, #alltabs-button, #TabsToolbar #tiptab_william_wong-BAP, #webext_com_github_du33169_tabstray-BAP, #scrollbutton-up, #scrollbutton-down {
+    .tab-background, #tabs-newtab-button, #new-tab-button, #alltabs-button, #TabsToolbar #tiptab_william_wong-BAP, #webext_com_github_du33169_tabstray-BAP, #scrollbutton-up, #scrollbutton-down {
         background-image: linear-gradient(to bottom, #f2f7fa 0%, #e5f0f5 31%, #cfe3eb 31%, #cfe3eb 34%, #e9f3fa 100%) !important;
     }
 
-    .tabbrowser-tab:not([visuallyselected=""]):hover .tab-background, #tabs-newtab-button:hover, #alltabs-button:hover, #TabsToolbar #tiptab_william_wong-BAP:hover, #webext_com_github_du33169_tabstray-BAP, #scrollbutton-up:hover, #scrollbutton-down:hover {
+    .tabbrowser-tab:not([visuallyselected=""]):hover .tab-background, #tabs-newtab-button:hover, #new-tab-button:hover, #alltabs-button:hover, #TabsToolbar #tiptab_william_wong-BAP:hover, #webext_com_github_du33169_tabstray-BAP, #scrollbutton-up:hover, #scrollbutton-down:hover {
         background-image: linear-gradient(to bottom, #edf7fc 0%, #c6f1f7 31%, #99e8ee 31%, #99e8ee 34%, #b0edf0 75%, #d1f4f7 100%) !important;
     }
 

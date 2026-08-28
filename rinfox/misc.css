@@ -4,14 +4,14 @@
 
 /* Inset Border on the browser container */
 
-.browserContainer 
+.browserStack 
 {
   padding: 2px !important;
   box-shadow: inset -1px -1px 0 ThreeDHighlight, inset 1px 1px 0 ThreeDShadow, inset -2px -2px 0 ThreeDFace, inset 2px 2px 0 ThreeDDarkShadow !important;
   border-radius: 0 !important;
 }
 
-:root[inFullscreen] .browserContainer
+:root[inFullscreen] .browserStack
 {
   padding: 0 !important;
   box-shadow: none !important;
