@@ -191,7 +191,7 @@
 
 #TabsToolbar .tab-background,
 #TabsToolbar #tabs-newtab-button,
-#TabsToolbat #new-tab-button,
+#TabsToolbar #new-tab-button,
 #TabsToolbar #alltabs-button,
 #TabsToolbar #tiptab_william_wong-BAP,
 #webext_com_github_du33169_tabstray-BAP,
@@ -390,11 +390,20 @@
 
 /* New Tab Button */
 #TabsToolbar #tabs-newtab-button,
-#TabsToolbar#new-tab-button {
+#TabsToolbar #new-tab-button {
   width: 30px !important;
   max-height: 100% !important;
   margin-top: 4px !important;
   list-style-image: none !important;
+}
+
+#new-tab-button {
+  margin-left: -1px !important;
+  align-self: stretch !important;
+
+  /*Center icon by default*/
+  justify-content: center !important;
+  align-items: center !important;
 }
 
 #TabsToolbar #tabs-newtab-button:hover,

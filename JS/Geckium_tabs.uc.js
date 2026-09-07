@@ -4,6 +4,10 @@
 // @include			main
 // ==/UserScript==
 
+// Disable this for now
+
+/*
+
 UC_API.Runtime.startupFinished().then(async () => {
 	// Modify currently existing tabs
 	document.querySelectorAll(`.tabbrowser-tab:not([gkmodified="true"])`).forEach(existingTab => {
@@ -149,3 +153,5 @@ function modifyTab(tab) {
 		};
 	}
 })();
+
+*/
